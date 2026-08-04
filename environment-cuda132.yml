@@ -1,0 +1,52 @@
+name: cryptic-mbl
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  # Python
+  - python=3.11
+  
+  # PyTorch with GPU (CUDA 13.2 via pip — conda pytorch channel may lag)
+  # We'll install via pip below for latest CUDA 13.2 support
+  
+  # Scientific computing (conda)
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=1.5
+  
+  # Structure/bioinformatics
+  - biotite>=0.40
+  
+  # Visualization & analysis
+  - matplotlib>=3.8
+  - scikit-learn>=1.3
+  - umap-learn>=0.5
+  
+  # Utilities & logging
+  - tqdm
+  - requests
+  - pyyaml
+  - tensorboard
+  
+  # Development
+  - jupyter
+  - jupyterlab
+  - ipython
+  - ipykernel
+  - black
+  - pylint
+  
+  # Build tools
+  - pip
+  - setuptools
+  - cmake
+
+pip:
+  # PyTorch with CUDA 13.2 (install via pip for latest support)
+  - torch>=2.5.0
+  - torchvision
+  - torch_geometric
+  - torch_scatter
+  - torch_sparse
+  - pytorch-lightning

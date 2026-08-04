@@ -1,0 +1,43 @@
+name: metal3d
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python (updated from 3.8 to 3.11 — 3.8 is EOL)
+  - python=3.11
+  
+  # Core ML/Science (conda)
+  - numpy>=1.24
+  - scipy
+  - scikit-learn
+  - joblib
+  - tqdm
+  
+  # Bioinformatics
+  - biopython>=1.79
+  - rdkit>=2022.03
+  - openbabel>=3.1.1
+  
+  # Molecular toolkit
+  - propka
+  
+  # Visualization
+  - matplotlib
+  - py3dmol
+  
+  # Development
+  - ipython
+  - jupyter
+  - ipykernel
+  
+  # Build tools
+  - pip
+
+pip:
+  # PyTorch with CUDA 13.2 (install via pip for latest support)
+  - torch==2.5.0
+  - torchvision==0.20.0
+  
+  # Molecular packages (conda-forge versions may lag)
+  - pdb2pqr
+  - moleculekit

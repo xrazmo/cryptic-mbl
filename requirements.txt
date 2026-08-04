@@ -1,0 +1,13 @@
+biotite>=0.40
+numpy>=1.24
+scipy>=1.10
+torch>=2.1
+torch_geometric>=2.5
+umap-learn>=0.5
+matplotlib>=3.8
+scikit-learn>=1.3
+
+# Not pip-installable — install separately and ensure on PATH:
+#   foldseek   (https://github.com/steineggerlab/foldseek)
+#   fpocket    (https://github.com/Discngine/fpocket)
+#   Metal3D, PinMyMetal — see their respective repos
