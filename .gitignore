@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+
+# Vendored external tool (installed separately, see run_metal3d.sh)
+assets/
+
+# Raw/derived structure data (regenerate via catalog_to_manifest.py + data_assembly.py + clustering_split.py)
+final_structures/
+data/
+
+# Unrelated
+files/
+files.zip

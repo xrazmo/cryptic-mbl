@@ -4,17 +4,18 @@ evaluate.py — Task 7 (spec §10)
 Given a trained ensemble (directory of seed_*/best.pt checkpoints) and a
 fold's test split + the external holdout, computes:
   - k-NN classification accuracy in embedding space (k=3-5) against the
-    reference bank, for the held-out subclass's test set.
+    reference bank, for the fold's test set.
   - Recall@K of known positives ranked against the full hard-negative pool.
-  - External validation: rank of AMM-1 / SZM-1 / CAM-2 relative to hard
-    negatives (the key feasibility checkpoint before real metagenomes).
+  - External validation: rank of curated environmental candidates relative
+    to hard negatives (the key feasibility checkpoint before real metagenomes).
   - Embedding visualization (UMAP if installed, else PCA fallback),
-    colored by subclass/label, saved as a static PNG for manual inspection.
+    colored by subclass/label (subclass shown for inspection only — it is
+    not the split axis, see clustering_split.py), saved as a static PNG.
   - All metrics additionally stratified by confidence_tier.
 
 CLI:
-    python evaluate.py --fold-json data/splits.json --held-out-subclass B2 \
-        --pockets-dir data/pockets --ensemble-dir models/fold_B2_ensemble \
+    python evaluate.py --fold-json data/splits.json --fold-id 0 \
+        --pockets-dir data/pockets --ensemble-dir models/fold_0_ensemble \
         --reference-bank-ids NDM-1 VIM-2 IMP-1 CphA Sfh-I L1 FEZ-1 \
         --external-ids AMM-1 SZM-1 CAM-2 \
         --out-dir results/fold_B2
@@ -171,7 +172,7 @@ def stratify_by_tier(metrics_fn, graphs_by_tier: dict) -> dict:
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--fold-json", required=True, type=Path)
-    p.add_argument("--held-out-subclass", required=True, choices=["B1", "B2", "B3"])
+    p.add_argument("--fold-id", required=True, type=int)
     p.add_argument("--pockets-dir", required=True, type=Path)
     p.add_argument("--ensemble-dir", required=True, type=Path)
     p.add_argument("--reference-bank-ids", nargs="+", required=True)
@@ -182,7 +183,7 @@ def main():
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     folds = json.loads(args.fold_json.read_text())["folds"]
-    fold = next(f for f in folds if f["held_out_subclass"] == args.held_out_subclass)
+    fold = next(f for f in folds if f["fold_id"] == args.fold_id)
 
     all_needed_ids = fold["test"] + args.reference_bank_ids + args.external_ids
     graphs = load_graphs(args.pockets_dir, sorted(set(all_needed_ids)))
@@ -217,7 +218,7 @@ def main():
     )
 
     results = {
-        "held_out_subclass": args.held_out_subclass,
+        "fold_id": args.fold_id,
         "knn_accuracy": knn_acc,
         "recall_at_k": recall,
         "external_validation": external,

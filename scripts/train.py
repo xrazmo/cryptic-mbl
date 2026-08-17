@@ -10,14 +10,14 @@ semi-hard negatives every `remine_every_n_epochs` epochs using the current
 encoder's embeddings over the full train pool (spec §6, §8).
 
 CLI (single model):
-    python train.py --fold-json data/splits.json --held-out-subclass B2 \
+    python train.py --fold-json data/splits.json --fold-id 0 \
         --pockets-dir data/pockets --graphs-dir data/graphs \
-        --seed 0 --out-dir models/fold_B2_seed0
+        --seed 0 --out-dir models/fold_0_seed0
 
 CLI (full ensemble for one fold):
-    python train.py --fold-json data/splits.json --held-out-subclass B2 \
+    python train.py --fold-json data/splits.json --fold-id 0 \
         --pockets-dir data/pockets --graphs-dir data/graphs \
-        --ensemble --n-seeds 8 --out-dir models/fold_B2_ensemble
+        --ensemble --n-seeds 8 --out-dir models/fold_0_ensemble
 """
 
 from __future__ import annotations
@@ -183,9 +183,9 @@ def evaluate_val_loss(model, graphs, val_buckets, margin, device, seed, n_triple
     return float(np.mean(losses))
 
 
-def run_ensemble(fold_json: Path, held_out_subclass: str, pockets_dir: Path, out_dir: Path, n_seeds: int = 8, **kwargs):
+def run_ensemble(fold_json: Path, fold_id: int, pockets_dir: Path, out_dir: Path, n_seeds: int = 8, **kwargs):
     folds = json.loads(fold_json.read_text())["folds"]
-    fold = next(f for f in folds if f["held_out_subclass"] == held_out_subclass)
+    fold = next(f for f in folds if f["fold_id"] == fold_id)
     for seed in range(n_seeds):
         seed_dir = out_dir / f"seed_{seed}"
         log.info(f"Training ensemble member seed={seed} -> {seed_dir}")
@@ -195,7 +195,7 @@ def run_ensemble(fold_json: Path, held_out_subclass: str, pockets_dir: Path, out
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--fold-json", required=True, type=Path)
-    p.add_argument("--held-out-subclass", required=True, choices=["B1", "B2", "B3"])
+    p.add_argument("--fold-id", required=True, type=int)
     p.add_argument("--pockets-dir", required=True, type=Path)
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--seed", type=int, default=0)
@@ -205,11 +205,11 @@ def main():
     args = p.parse_args()
 
     if args.ensemble:
-        run_ensemble(args.fold_json, args.held_out_subclass, args.pockets_dir, args.out_dir,
+        run_ensemble(args.fold_json, args.fold_id, args.pockets_dir, args.out_dir,
                      n_seeds=args.n_seeds, n_epochs=args.n_epochs)
     else:
         folds = json.loads(args.fold_json.read_text())["folds"]
-        fold = next(f for f in folds if f["held_out_subclass"] == args.held_out_subclass)
+        fold = next(f for f in folds if f["fold_id"] == args.fold_id)
         train_one_model(fold["train"], fold["val"], args.pockets_dir, args.out_dir,
                          seed=args.seed, n_epochs=args.n_epochs)
 

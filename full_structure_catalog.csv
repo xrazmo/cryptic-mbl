@@ -1,0 +1,1071 @@
+accession,label,subclass,neg_family,name,source,structure_source,confidence_score,source_filename,original_structure_path
+MBU4627809.1,positive,B2,,PFM-4,CARD,manual_af3,0.94,MBU4627809.1.pdb,../script/data/structures/MBU4627809.1.pdb
+UBK05373.1,positive,B3,,AIM-2,CARD,manual_af3,0.96,UBK05373.1.pdb,../script/data/structures/UBK05373.1.pdb
+QWJ89341.1,positive,B3,,B3SU1-1,CARD,manual_af3,0.92,QWJ89341.1.pdb,../script/data/structures/QWJ89341.1.pdb
+AYD68552.1,positive,B3,,LMB-1,CARD,manual_af3,0.94,AYD68552.1.pdb,../script/data/structures/AYD68552.1.pdb
+QXM27671.1,positive,B3,,NWM-1,CARD,manual_af3,0.92,QXM27671.1.pdb,../script/data/structures/QXM27671.1.pdb
+WP_213603971.1,positive,B3,,PJM-1,CARD,manual_af3,0.96,WP_213603971.1.pdb,../script/data/structures/WP_213603971.1.pdb
+AWN09461.1,positive,B3,,PNGM-1,CARD,manual_af3,1.04,AWN09461.1.pdb,../script/data/structures/AWN09461.1.pdb
+AGU01679.2,positive,B3,,Rm3,CARD,manual_af3,0.95,AGU01679.2.pdb,../script/data/structures/AGU01679.2.pdb
+MFS1702987.1,positive,B1,,AMM-1,CARD,manual_af3,0.92,MFS1702987.1.pdb,../script/data/structures/MFS1702987.1.pdb
+UZX27393.1,positive,B1,,BMHC-1,CARD,manual_af3,0.94,UZX27393.1.pdb,../script/data/structures/UZX27393.1.pdb
+WP_123865086.1,positive,B1,,CIM-1,CARD,manual_af3,0.94,WP_123865086.1.pdb,../script/data/structures/WP_123865086.1.pdb
+MBE7399711.1,positive,B1,,CfiA28,CARD,manual_af3,0.96,MBE7399711.1.pdb,../script/data/structures/MBE7399711.1.pdb
+BES62776.2,positive,B1,,DYB-1,CARD,manual_af3,0.94,BES62776.2.pdb,../script/data/structures/BES62776.2.pdb
+KYO71936.1,positive,B1,,HMB-2,CARD,manual_af3,0.96,KYO71936.1.pdb,../script/data/structures/KYO71936.1.pdb
+WDE35088.1,positive,B1,,IND-18,CARD,manual_af3,0.94,WDE35088.1.pdb,../script/data/structures/WDE35088.1.pdb
+QTJ60982.1,positive,B1,,VAM-1,CARD,manual_af3,0.92,QTJ60982.1.pdb,../script/data/structures/QTJ60982.1.pdb
+MBS5055441.1,positive,B1,,crxA,CARD,manual_af3,0.88,MBS5055441.1.pdb,../script/data/structures/MBS5055441.1.pdb
+UPP01678.1,positive,UNCLASSIFIED,,WUS-1,CARD,manual_af3,0.93,UPP01678.1.pdb,../script/data/structures/UPP01678.1.pdb
+G04,positive,B1,,MYO-1,Berglund2017,manual_af3,0.91,G04.pdb,../positive_set/structures/G04.pdb
+G06,positive,B1,,SHD-1,Berglund2017,manual_af3,0.92,G06.pdb,../positive_set/structures/G06.pdb
+G09,positive,B1,,SPS-1,Berglund2017,manual_af3,0.96,G09.pdb,../positive_set/structures/G09.pdb
+G12,positive,B1,,MYX-1,Berglund2017,manual_af3,0.91,G12.pdb,../positive_set/structures/G12.pdb
+G13,positive,B1,,STA-1,Berglund2017,manual_af3,0.91,G13.pdb,../positive_set/structures/G13.pdb
+G27,positive,B1,,ANA-1,Berglund2017,manual_af3,0.94,G27.pdb,../positive_set/structures/G27.pdb
+G28,positive,B1,,ECV-1,Berglund2017,manual_af3,0.93,G28.pdb,../positive_set/structures/G28.pdb
+G29,positive,B1,,ORR-1,Berglund2017,manual_af3,0.94,G29.pdb,../positive_set/structures/G29.pdb
+G31,positive,B1,,FIA-1,Berglund2017,manual_af3,0.94,G31.pdb,../positive_set/structures/G31.pdb
+G33,positive,B1,,G33,Berglund2017,manual_af3,0.94,G33.pdb,../positive_set/structures/G33.pdb
+G37,positive,B1,,G37,Berglund2017,manual_af3,0.92,G37.pdb,../positive_set/structures/G37.pdb
+G52,positive,B1,,ZOG-1,Berglund2017,manual_af3,0.93,G52.pdb,../positive_set/structures/G52.pdb
+G58,positive,B1,,G58,Berglund2017,manual_af3,0.93,G58.pdb,../positive_set/structures/G58.pdb
+G63,positive,B1,,TTU-1,Berglund2017,manual_af3,0.95,G63.pdb,../positive_set/structures/G63.pdb
+G67,positive,B1,,PST-1,Berglund2017,manual_af3,0.94,G67.pdb,../positive_set/structures/G67.pdb
+G70,positive,B1,,G70,Berglund2017,manual_af3,0.93,G70.pdb,../positive_set/structures/G70.pdb
+G71,positive,B1,,G71,Berglund2017,manual_af3,0.95,G71.pdb,../positive_set/structures/G71.pdb
+G74,positive,B1,,SHN-1,Berglund2017,manual_af3,0.94,G74.pdb,../positive_set/structures/G74.pdb
+G77,positive,B1,,ALI-2,Berglund2017,manual_af3,0.93,G77.pdb,../positive_set/structures/G77.pdb
+APR64485.1,positive,B3,,DHT2-1,Gudeta2016b,manual_af3,0.94,APR64485.1.pdb,../positive_set/structures/APR64485.1.pdb
+APR64486.1,positive,B1,,SPN79-1,Gudeta2016b,manual_af3,0.9,APR64486.1.pdb,../positive_set/structures/APR64486.1.pdb
+APR64487.1,positive,B3,,CRD3-1,Gudeta2016b,manual_af3,0.93,APR64487.1.pdb,../positive_set/structures/APR64487.1.pdb
+APR64488.1,positive,B3,,ALG6-1,Gudeta2016b,manual_af3,0.93,APR64488.1.pdb,../positive_set/structures/APR64488.1.pdb
+APR64489.1,positive,B3,,ALG11-1,Gudeta2016b,manual_af3,0.94,APR64489.1.pdb,../positive_set/structures/APR64489.1.pdb
+APR64490.1,positive,B3,,ESP-2,Gudeta2016b,manual_af3,0.96,APR64490.1.pdb,../positive_set/structures/APR64490.1.pdb
+APR64491.1,positive,B3,,PEDO-1,Gudeta2016b,manual_af3,0.97,APR64491.1.pdb,../positive_set/structures/APR64491.1.pdb
+APR64492.1,positive,B3,,GRD33-1,Gudeta2016b,manual_af3,0.94,APR64492.1.pdb,../positive_set/structures/APR64492.1.pdb
+APR64493.1,positive,B1,,GRD23-1,Gudeta2016b,manual_af3,0.96,APR64493.1.pdb,../positive_set/structures/APR64493.1.pdb
+AEX08599.1,positive,B1,,NDM-6,CARD,afdb,,G9JVE6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/G9JVE6.pdb
+AGT37351.1,positive,B1,,NDM-10,CARD,afdb,,S5ZIP8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/S5ZIP8.pdb
+AAZ73123.1,positive,B1,,VIM-12,CARD,afdb,,Q3YBY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q3YBY0.pdb
+AFN88953.1,positive,B1,,VIM-34,CARD,afdb,,I6ZVA9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/I6ZVA9.pdb
+AFP99885.1,positive,B1,,VIM-29,CARD,afdb,,J7HGI2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/J7HGI2.pdb
+ABW90721.1,positive,B1,,VIM-17,CARD,afdb,,B5KVR9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/B5KVR9.pdb
+AJP67511.1,positive,B1,,VIM-43,CARD,afdb,,A0A0C5KH21.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5KH21.pdb
+AAS13759.1,positive,B1,,VIM-8,CARD,afdb,,Q6QUV4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q6QUV4.pdb
+AWU66462.1,positive,B1,,NDM-23,CARD,afdb,,A0A2Z4BV56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A2Z4BV56.pdb
+AGE83081.2,positive,B1,,VIM-38,CARD,afdb,,M1JB36.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/M1JB36.pdb
+ABR10840.1,positive,B1,,VIM-2,CARD,afdb,,Q9K2N0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q9K2N0.pdb
+AAN84550.1,positive,B1,,VIM-6,CARD,afdb,,Q8GCU7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q8GCU7.pdb
+BAQ02518.1,positive,B1,,NDM-13,CARD,afdb,,A0A0A8J940.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0A8J940.pdb
+AWU66463.1,positive,B1,,NDM-24,CARD,afdb,,A0A2Z4BV07.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A2Z4BV07.pdb
+CBY80143.1,positive,B1,,VIM-26,CARD,afdb,,E5BDC6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/E5BDC6.pdb
+AAT36613.1,positive,B1,,VIM-11,CARD,afdb,,Q700T0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q700T0.pdb
+AGC50805.1,positive,B1,,VIM-35,CARD,afdb,,L7UN39.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/L7UN39.pdb
+AFQ31613.1,positive,B1,,NDM-7,CARD,afdb,,J7I0S9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/J7I0S9.pdb
+ACB54703.1,positive,B1,,VIM-16,CARD,afdb,,B4YAJ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/B4YAJ7.pdb
+BAM84089.1,positive,B1,,NDM-8,CARD,afdb,,M1VE66.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/M1VE66.pdb
+AEI25539.1,positive,B1,,VIM-28,CARD,afdb,,F8UTU0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/F8UTU0.pdb
+AAN52134.1,positive,B1,,VIM-5,CARD,afdb,,Q8GKX2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q8GKX2.pdb
+AYF56302.1,positive,B1,,NDM-25,CARD,afdb,,A0A5K6VNM3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A5K6VNM3.pdb
+CAZ39946.1,positive,B1,,NDM-1,CARD,afdb,,C7C422.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/C7C422.pdb
+ADO50679.1,positive,B1,,VIM-25,CARD,afdb,,E5G503.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/E5G503.pdb
+AFK24647.1,positive,B1,,VIM-31,CARD,afdb,,I3RJZ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/I3RJZ3.pdb
+ACY29468.1,positive,B1,,VIM-19,CARD,afdb,,D2D9J0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/D2D9J0.pdb
+ADX78234.1,positive,B1,,VIM-27,CARD,afdb,,F6L7B6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/F6L7B6.pdb
+CAJ32502.1,positive,B1,,VIM-4,CARD,afdb,,Q8KRJ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q8KRJ3.pdb
+AEN03071.1,positive,B1,,NDM-5,CARD,afdb,,G3K399.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/G3K399.pdb
+CAC87665.1,positive,B3,,CAU-1,CARD,afdb,,Q8KKG1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q8KKG1.pdb
+AGU91756.1,positive,B1,,NDM-9,CARD,afdb,,T2A6Y2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/T2A6Y2.pdb
+AGS82586.1,positive,B1,,VIM-39,CARD,afdb,,A0A059PYQ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A059PYQ6.pdb
+AAN63496.1,positive,B1,,VIM-1,CARD,afdb,,Q9XAY4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q9XAY4.pdb
+AAA22562.1,positive,B1,,BcII,CARD,afdb,,P14488.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/P14488.pdb
+ADL27533.1,positive,B1,,VIM-24,CARD,afdb,,E0AFT6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/E0AFT6.pdb
+AFK80349.1,positive,B1,,NDM-3,CARD,afdb,,I3VKD5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/I3VKD5.pdb
+ABC94518.1,positive,B1,,VIM-13,CARD,afdb,,Q2HY42.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q2HY42.pdb
+AIY26289.1,positive,B1,,GIM-2,CARD,afdb,,A0A0A1ECK6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0A1ECK6.pdb
+AEA41876.1,positive,B1,,NDM-2,CARD,afdb,,F2YZ26.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/F2YZ26.pdb
+AAT48653.1,positive,B1,,VIM-14,CARD,afdb,,Q6GUL7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q6GUL7.pdb
+AGC92784.1,positive,B1,,DIM-1,CARD,afdb,,L7X1X1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/L7X1X1.pdb
+ACB54702.1,positive,B1,,VIM-15,CARD,afdb,,B4YAJ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/B4YAJ6.pdb
+AAG27703.1,positive,B1,,VIM-3,CARD,afdb,,Q9F629.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q9F629.pdb
+AFB82585.1,positive,B1,,NDM-4,CARD,afdb,,H6WZS9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/H6WZS9.pdb
+BAO79439.1,positive,B1,,NDM-12,CARD,afdb,,A0A024FRL9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A024FRL9.pdb
+CAO83029.1,positive,B1,,VIM-18,CARD,afdb,,A7WPA3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A7WPA3.pdb
+AFP99175.1,positive,B1,,VIM-33,CARD,afdb,,J7HBJ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/J7HBJ4.pdb
+CAD61201.1,positive,B1,,VIM-7,CARD,afdb,,Q840P9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q840P9.pdb
+AJP18054.1,positive,B1,,NDM-14,CARD,afdb,,A0A0C5H135.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5H135.pdb
+AJP77059.1,positive,B3,,PEDO-1,CARD,afdb,,A0A0C5LDD9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5LDD9.pdb
+AJP77071.1,positive,B3,,PEDO-2,CARD,afdb,,A0A0C5L392.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5L392.pdb
+AJP77076.1,positive,B1,,PEDO-3,CARD,afdb,,A0A0C5L398.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5L398.pdb
+AJP77054.1,positive,B3,,CPS-1,CARD,afdb,,A0A0C5LDD5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5LDD5.pdb
+AJP77085.1,positive,B3,,ESP-1,CARD,afdb,,A0A0C5LQ44.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5LQ44.pdb
+AJP77057.1,positive,B3,,MSI-1,CARD,afdb,,A0A0C5LDH9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5LDH9.pdb
+AJP77080.1,positive,B3,,SPG-1,CARD,afdb,,A0A0C5LQ34.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0C5LQ34.pdb
+CAD37801.1,positive,B1,,SPM-1,CARD,afdb,,Q8G9Q0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q8G9Q0.pdb
+AFV91534.1,positive,UNCLASSIFIED,,FIM-1,CARD,afdb,,K7SA42.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/K7SA42.pdb
+AQY45923.1,positive,B1,,NDM-20,CARD,afdb,,A0A2P1H1P0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A2P1H1P0.pdb
+AYP70146.1,positive,B1,,NDM-27,CARD,afdb,,A0A3G3C0Q6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A3G3C0Q6.pdb
+QAT97614.1,positive,B1,,NDM-28,CARD,afdb,,A0A410SN60.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A410SN60.pdb
+AGH88989.1,positive,UNCLASSIFIED,,BRP(MBL),CARD,afdb,,G3GBT0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/G3GBT0.pdb
+AOT73359.1,positive,B1,,NDM-17,CARD,afdb,,A0A1P8C735.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A1P8C735.pdb
+CBY88906.1,positive,B1,,TMB-1,CARD,afdb,,E7BCS5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/E7BCS5.pdb
+BAM73613.1,positive,B1,,TMB-2,CARD,afdb,,L0N4W6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/L0N4W6.pdb
+AAF94716.1,positive,B1,,Vibrio cholerae varG,CARD,afdb,,Q9KRS4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q9KRS4.pdb
+AKF43458.1,positive,B1,,NDM-15,CARD,afdb,,A0A0F6ZNP0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0F6ZNP0.pdb
+BAR80870.1,positive,B1,,IMP-52,CARD,afdb,,A0A0G4CR63.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0G4CR63.pdb
+ASC49561.1,positive,B1,,NDM-19,CARD,afdb,,A0A1Z3FWF5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A1Z3FWF5.pdb
+ALT07696.1,positive,B1,,IMP-55,CARD,afdb,,A0A0S2MTX2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0S2MTX2.pdb
+ALT53802.1,positive,B1,,IMP-56,CARD,afdb,,A0A0U2ULS0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0U2ULS0.pdb
+APZ75411.1,positive,B1,,NDM-18,CARD,afdb,,A0A1P8VH15.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A1P8VH15.pdb
+ATJ25942.1,positive,B1,,NDM-21,CARD,afdb,,A0A291NY14.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A291NY14.pdb
+AVX51087.1,positive,UNCLASSIFIED,,CAM-1,CARD,afdb,,A0A2R4PHC7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A2R4PHC7.pdb
+AWI33311.1,positive,B1,,NDM-22,CARD,afdb,,A0A2S1T3V3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A2S1T3V3.pdb
+ASU31903.1,positive,B1,,IMP-68,CARD,afdb,,A0A288Z5L0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A288Z5L0.pdb
+QFZ95817.1,positive,B1,,NDM-29,CARD,afdb,,A0A5Q0MV96.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A5Q0MV96.pdb
+BAF91108.1,positive,B1,,KHM-1,CARD,afdb,,A8R403.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A8R403.pdb
+BAO01151.1,positive,B3,,PAM-1,CARD,afdb,,U3U4Q6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/U3U4Q6.pdb
+AKZ20823.1,positive,B1,,NDM-16a,CARD,afdb,,A0A0K1Z5K4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A0K1Z5K4.pdb
+QVU28093.1,positive,B1,,NDM-34,CARD,afdb,,A0A8E7DAJ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8E7DAJ6.pdb
+QVU28098.1,positive,B1,,NDM-35,CARD,afdb,,A0A8E7DD97.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8E7DD97.pdb
+QWO25674.1,positive,B1,,NDM-38,CARD,afdb,,A0A8F1D5U2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8F1D5U2.pdb
+QYZ89892.1,positive,B1,,NDM-39,CARD,afdb,,A0A8G1A6Q8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8G1A6Q8.pdb
+QYZ89893.1,positive,B1,,NDM-40,CARD,afdb,,A0A8G1A6Z8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8G1A6Z8.pdb
+APL95059.1,positive,B3,,SIE-1,CARD,afdb,,A0A1L5BQA7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A1L5BQA7.pdb
+QTH36338.1,positive,B1,,AFM-3,CARD,afdb,,A0A8A5YR11.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8A5YR11.pdb
+AAW82619.1,positive,B3,,GOB-17,CARD,afdb,,Q5EEU4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/Q5EEU4.pdb
+BBQ04269.1,positive,B3,,GOB-52,CARD,afdb,,A0A5S9MQZ5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A5S9MQZ5.pdb
+QIZ64888.1,positive,B1,,IMP-86,CARD,afdb,,A0A8E4CDK2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8E4CDK2.pdb
+QIZ64889.1,positive,B1,,IMP-87,CARD,afdb,,A0A8E4CDL2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8E4CDL2.pdb
+QTG68658.1,positive,B1,,IMP-90,CARD,afdb,,A0A8A5TKR5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/script/data/structures/A0A8A5TKR5.pdb
+O44476,hard_negative,,rnase_z,Zinc phosphodiesterase ELAC protein 2 homolog (EC 3.1.26.11) (Homolog of ELAC2 protein) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,O44476.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O44476.pdb
+Q8L633,hard_negative,,rnase_z,"tRNase Z TRZ2, chloroplastic (EC 3.1.26.11) (Chloroplast ribonuclease Z) (Chloroplast RNase Z) (Short tRNase Z 2) (Zinc phosphodiesterase CPZ) (tRNA 3 endonuclease) (tRNase ZS2) (AthTRZS2)",UniProt,afdb,,Q8L633.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8L633.pdb
+Q8LGU7,hard_negative,,rnase_z,tRNase Z TRZ1 (EC 3.1.26.11) (Nuclear ribonuclease Z) (Nuclear RNase Z) (Short tRNase Z 1) (Zinc phosphodiesterase NUZ) (tRNA 3 endonuclease) (tRNase ZS1) (AthTRZS1),UniProt,afdb,,Q8LGU7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8LGU7.pdb
+D4GZ88,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,D4GZ88.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/D4GZ88.pdb
+P54548,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,P54548.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P54548.pdb
+P87168,hard_negative,,rnase_z,"Ribonuclease Z 2, mitochondrial (RNase Z 2) (EC 3.1.26.11) (tRNA 3 endonuclease 2) (tRNase Z 2)",UniProt,afdb,,P87168.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P87168.pdb
+A0PTY0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A0PTY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0PTY0.pdb
+A0RID9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A0RID9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0RID9.pdb
+A0RYQ9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A0RYQ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0RYQ9.pdb
+A2BY56,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A2BY56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2BY56.pdb
+A2C4C2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A2C4C2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2C4C2.pdb
+A2C725,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A2C725.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2C725.pdb
+A5GN87,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A5GN87.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5GN87.pdb
+A5VJA0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A5VJA0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5VJA0.pdb
+A6L3H3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A6L3H3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6L3H3.pdb
+A6UUY8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A6UUY8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6UUY8.pdb
+A7GSG2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A7GSG2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7GSG2.pdb
+A7Z6F0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A7Z6F0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7Z6F0.pdb
+A8ABB4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A8ABB4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8ABB4.pdb
+A8YV16,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A8YV16.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8YV16.pdb
+A9A3X2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A9A3X2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9A3X2.pdb
+A9VG79,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A9VG79.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9VG79.pdb
+B0CE23,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B0CE23.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0CE23.pdb
+B0JGG3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B0JGG3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0JGG3.pdb
+B0R7E2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B0R7E2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0R7E2.pdb
+B1MZQ4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1MZQ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1MZQ4.pdb
+B1WQW1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1WQW1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1WQW1.pdb
+B1XN66,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1XN66.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1XN66.pdb
+B1YLU8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1YLU8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1YLU8.pdb
+B2G6S0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2G6S0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2G6S0.pdb
+B2GBD1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2GBD1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2GBD1.pdb
+B2J3C7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2J3C7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2J3C7.pdb
+B4U3M1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B4U3M1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4U3M1.pdb
+B6YT50,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B6YT50.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B6YT50.pdb
+B7GHJ4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7GHJ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7GHJ4.pdb
+B7HB12,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7HB12.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7HB12.pdb
+B7HNQ7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7HNQ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7HNQ7.pdb
+B7IWQ5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7IWQ5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7IWQ5.pdb
+B7JLZ5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7JLZ5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7JLZ5.pdb
+B7K1N1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7K1N1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7K1N1.pdb
+B7K762,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7K762.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7K762.pdb
+B8HP81,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B8HP81.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B8HP81.pdb
+B9IXD7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B9IXD7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B9IXD7.pdb
+B9LQT0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B9LQT0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B9LQT0.pdb
+C0MAM9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C0MAM9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C0MAM9.pdb
+C0MDJ9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C0MDJ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C0MDJ9.pdb
+C0ZBP8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C0ZBP8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C0ZBP8.pdb
+C1AAD9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C1AAD9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C1AAD9.pdb
+C1ER14,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C1ER14.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C1ER14.pdb
+C1KWS1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C1KWS1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C1KWS1.pdb
+C3LJR8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C3LJR8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3LJR8.pdb
+C3P7S4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C3P7S4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3P7S4.pdb
+C5A5S2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C5A5S2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C5A5S2.pdb
+C5D428,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C5D428.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C5D428.pdb
+C6A2P3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C6A2P3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C6A2P3.pdb
+O07896,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O07896.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O07896.pdb
+O27859,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O27859.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O27859.pdb
+O29323,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O29323.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O29323.pdb
+O51696,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O51696.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O51696.pdb
+O58883,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O58883.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O58883.pdb
+O84350,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,O84350.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O84350.pdb
+P60193,hard_negative,,rnase_z,Nuclear ribonuclease Z (RNase Z) (EC 3.1.26.11) (Zinc phosphodiesterase ELAC) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,P60193.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P60193.pdb
+P9WGZ4,hard_negative,,rnase_z,Putative ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,P9WGZ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P9WGZ4.pdb
+P9WGZ5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,P9WGZ5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P9WGZ5.pdb
+Q03QP5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q03QP5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q03QP5.pdb
+Q03W55,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q03W55.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q03W55.pdb
+Q0SMA2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q0SMA2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0SMA2.pdb
+Q118J2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q118J2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q118J2.pdb
+Q1DEJ2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q1DEJ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1DEJ2.pdb
+Q29RY4,hard_negative,,rnase_z,Zinc phosphodiesterase ELAC protein 1 (EC 3.1.26.11) (ElaC homolog protein 1) (Ribonuclease Z 1) (RNase Z 1) (tRNA 3 endonuclease 1) (tRNase Z 1),UniProt,afdb,,Q29RY4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q29RY4.pdb
+Q3AHP8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q3AHP8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3AHP8.pdb
+Q3AZH7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q3AZH7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3AZH7.pdb
+Q3IRM5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q3IRM5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3IRM5.pdb
+Q46JB7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q46JB7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q46JB7.pdb
+Q49744,hard_negative,,rnase_z,Putative ribonuclease Z (RNase Z) (tRNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease),UniProt,afdb,,Q49744.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q49744.pdb
+Q55132,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q55132.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q55132.pdb
+Q58897,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q58897.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q58897.pdb
+Q5JE70,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5JE70.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5JE70.pdb
+Q5KXG8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5KXG8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5KXG8.pdb
+Q5UZJ9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5UZJ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5UZJ9.pdb
+Q5WGC3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5WGC3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5WGC3.pdb
+Q5YQ00,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5YQ00.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5YQ00.pdb
+Q635E2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q635E2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q635E2.pdb
+Q65HN6,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q65HN6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q65HN6.pdb
+Q6HE20,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q6HE20.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6HE20.pdb
+Q6KZJ4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q6KZJ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6KZJ4.pdb
+Q6ME16,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q6ME16.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6ME16.pdb
+Q71Y44,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q71Y44.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q71Y44.pdb
+Q731F6,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q731F6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q731F6.pdb
+Q73LB4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q73LB4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q73LB4.pdb
+Q7NDW3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q7NDW3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7NDW3.pdb
+Q818V3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q818V3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q818V3.pdb
+Q81M88,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q81M88.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q81M88.pdb
+Q89NF8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q89NF8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q89NF8.pdb
+Q8HY87,hard_negative,,rnase_z,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (RNase Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,Q8HY87.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8HY87.pdb
+Q8Q032,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8Q032.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8Q032.pdb
+Q8TLK5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8TLK5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8TLK5.pdb
+Q8TWK0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8TWK0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8TWK0.pdb
+Q8U182,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8U182.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8U182.pdb
+Q8Y5S8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8Y5S8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8Y5S8.pdb
+Q8YLZ0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8YLZ0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8YLZ0.pdb
+Q8ZTJ7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8ZTJ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8ZTJ7.pdb
+Q92A38,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q92A38.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q92A38.pdb
+Q97IQ6,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q97IQ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q97IQ6.pdb
+Q9CHT8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9CHT8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9CHT8.pdb
+Q9HJ19,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9HJ19.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9HJ19.pdb
+Q9HN60,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9HN60.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9HN60.pdb
+Q9KC61,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9KC61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9KC61.pdb
+Q9RDE4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9RDE4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9RDE4.pdb
+Q9UZP4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9UZP4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9UZP4.pdb
+Q9Z9F6,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9Z9F6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9Z9F6.pdb
+A0QDL1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A0QDL1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0QDL1.pdb
+A1KL99,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A1KL99.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1KL99.pdb
+A1RRK1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A1RRK1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1RRK1.pdb
+A1UIW4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A1UIW4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1UIW4.pdb
+A3MV61,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A3MV61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3MV61.pdb
+A3Q2B8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A3Q2B8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3Q2B8.pdb
+A4T2G4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A4T2G4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4T2G4.pdb
+A4WKM8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A4WKM8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4WKM8.pdb
+A4YHP1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A4YHP1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4YHP1.pdb
+A4YN80,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A4YN80.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4YN80.pdb
+A5U5A1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A5U5A1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5U5A1.pdb
+A6LU82,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A6LU82.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6LU82.pdb
+A6WFU4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A6WFU4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6WFU4.pdb
+A8M3K2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A8M3K2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8M3K2.pdb
+A8MGK0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A8MGK0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8MGK0.pdb
+A9KSU3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,A9KSU3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9KSU3.pdb
+B0B7R5,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B0B7R5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0B7R5.pdb
+B0BBY0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B0BBY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0BBY0.pdb
+B1VY42,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1VY42.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1VY42.pdb
+B1YAJ2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B1YAJ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1YAJ2.pdb
+B2HMC3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2HMC3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2HMC3.pdb
+B2RIU4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2RIU4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2RIU4.pdb
+B2S457,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B2S457.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2S457.pdb
+B5RMU7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B5RMU7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5RMU7.pdb
+B5RQ92,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B5RQ92.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5RQ92.pdb
+B6IRV8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B6IRV8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B6IRV8.pdb
+B7J0K1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B7J0K1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7J0K1.pdb
+B9KYQ3,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,B9KYQ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B9KYQ3.pdb
+C1AQX2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C1AQX2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C1AQX2.pdb
+C3NDQ2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C3NDQ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3NDQ2.pdb
+C3NHZ9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,C3NHZ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3NHZ9.pdb
+Q0ST77,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q0ST77.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0ST77.pdb
+Q0TQN4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q0TQN4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0TQN4.pdb
+Q1B671,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q1B671.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1B671.pdb
+Q253T0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q253T0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q253T0.pdb
+Q3KM12,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q3KM12.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3KM12.pdb
+Q47PQ7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q47PQ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q47PQ7.pdb
+Q4J9A4,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q4J9A4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4J9A4.pdb
+Q51834,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q51834.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q51834.pdb
+Q5L6G2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5L6G2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5L6G2.pdb
+Q5LGN7,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q5LGN7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5LGN7.pdb
+Q64XI2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q64XI2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q64XI2.pdb
+Q660C0,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q660C0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q660C0.pdb
+Q73XT9,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q73XT9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q73XT9.pdb
+Q74MH2,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q74MH2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q74MH2.pdb
+Q7TYN1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q7TYN1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7TYN1.pdb
+Q823T8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q823T8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q823T8.pdb
+Q82BX8,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q82BX8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q82BX8.pdb
+Q8XKN1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q8XKN1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8XKN1.pdb
+Q973F1,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q973F1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q973F1.pdb
+Q9PK48,hard_negative,,rnase_z,Ribonuclease Z (RNase Z) (EC 3.1.26.11) (tRNA 3 endonuclease) (tRNase Z),UniProt,afdb,,Q9PK48.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9PK48.pdb
+O24495,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase 1, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,O24495.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O24495.pdb
+O24496,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase cytoplasmic (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,O24496.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O24496.pdb
+O35952,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II) (Round spermatid protein RSP29)",UniProt,afdb,,O35952.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O35952.pdb
+P0AC84,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase GloB (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P0AC84.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P0AC84.pdb
+P75849,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase GloC (EC 3.1.2.6) (Accessory type II glyoxalase) (Glyoxalase II 2) (GlxII-2),UniProt,afdb,,P75849.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P75849.pdb
+Q05584,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, cytoplasmic isozyme (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q05584.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q05584.pdb
+Q12320,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q12320.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q12320.pdb
+Q16775,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q16775.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q16775.pdb
+Q99KB8,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q99KB8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q99KB8.pdb
+Q9SID3,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase 2, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q9SID3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9SID3.pdb
+B4F6K2,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,B4F6K2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4F6K2.pdb
+Q28333,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Germ cell-specific protein) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q28333.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q28333.pdb
+Q3B7M2,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q3B7M2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3B7M2.pdb
+Q4R6C1,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q4R6C1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4R6C1.pdb
+Q5ZI23,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q5ZI23.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5ZI23.pdb
+Q6P963,hard_negative,,glyoxalase_ii,"Hydroxyacylglutathione hydrolase, mitochondrial (EC 3.1.2.6) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q6P963.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6P963.pdb
+Q8LDW8,hard_negative,,glyoxalase_ii,"Probable hydroxyacylglutathione hydrolase 2, chloroplastic (EC 3.1.2.6) (Glyoxalase 2-4) (Glyoxalase II) (Glx II)",UniProt,afdb,,Q8LDW8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8LDW8.pdb
+Q8ZRM2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8ZRM2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8ZRM2.pdb
+A0KIK2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A0KIK2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0KIK2.pdb
+A0KXS9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A0KXS9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0KXS9.pdb
+A1JKA9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1JKA9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1JKA9.pdb
+A1S6T3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1S6T3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1S6T3.pdb
+A1SS88,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1SS88.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1SS88.pdb
+A1U0V1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1U0V1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1U0V1.pdb
+A1WXD9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1WXD9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1WXD9.pdb
+A2BQ40,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A2BQ40.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2BQ40.pdb
+A2C7W3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A2C7W3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2C7W3.pdb
+A3D437,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A3D437.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3D437.pdb
+A3PBT3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A3PBT3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3PBT3.pdb
+A3QET2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A3QET2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3QET2.pdb
+A4G7G5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4G7G5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4G7G5.pdb
+A4SPI6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4SPI6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4SPI6.pdb
+A4W6V2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4W6V2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4W6V2.pdb
+A4XU09,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4XU09.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4XU09.pdb
+A4YKS8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4YKS8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4YKS8.pdb
+A5ETG1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5ETG1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5ETG1.pdb
+A5F635,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5F635.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5F635.pdb
+A5FZE9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5FZE9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5FZE9.pdb
+A5GJK5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5GJK5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5GJK5.pdb
+A5VSR1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5VSR1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5VSR1.pdb
+A6T510,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6T510.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6T510.pdb
+A6VNK4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6VNK4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6VNK4.pdb
+A6WXE0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6WXE0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6WXE0.pdb
+A7ZHU8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7ZHU8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7ZHU8.pdb
+A8AKR2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A8AKR2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8AKR2.pdb
+A8GA75,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A8GA75.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8GA75.pdb
+A8H589,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A8H589.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8H589.pdb
+A9BEI3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9BEI3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9BEI3.pdb
+A9M8S2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9M8S2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9M8S2.pdb
+B0BZI8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0BZI8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0BZI8.pdb
+B0JW10,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0JW10.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0JW10.pdb
+B0TRL8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0TRL8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0TRL8.pdb
+B1WUT9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1WUT9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1WUT9.pdb
+B2FR57,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2FR57.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2FR57.pdb
+B2IVH7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2IVH7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2IVH7.pdb
+B2U350,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2U350.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2U350.pdb
+B2VHJ7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2VHJ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2VHJ7.pdb
+B3R1Y0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B3R1Y0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B3R1Y0.pdb
+B4SLN7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B4SLN7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4SLN7.pdb
+B7K3R6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7K3R6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7K3R6.pdb
+B7KEB4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7KEB4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7KEB4.pdb
+B7LW87,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7LW87.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7LW87.pdb
+B7N874,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7N874.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7N874.pdb
+B7NKW6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7NKW6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7NKW6.pdb
+B8ICA2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B8ICA2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B8ICA2.pdb
+C3K9Q0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C3K9Q0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3K9Q0.pdb
+C4K7Z9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C4K7Z9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C4K7Z9.pdb
+C4LC58,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C4LC58.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C4LC58.pdb
+C5BEP2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C5BEP2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C5BEP2.pdb
+C6DC67,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C6DC67.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C6DC67.pdb
+O94250,hard_negative,,glyoxalase_ii,Probable hydroxyacylglutathione hydrolase SPCC13B11.03c (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,O94250.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O94250.pdb
+P0AC85,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P0AC85.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P0AC85.pdb
+P57336,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P57336.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P57336.pdb
+P71374,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P71374.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P71374.pdb
+P72933,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P72933.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P72933.pdb
+Q08889,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q08889.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q08889.pdb
+Q0A751,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0A751.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0A751.pdb
+Q0AE32,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0AE32.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0AE32.pdb
+Q0AM20,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0AM20.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0AM20.pdb
+Q0BWR4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0BWR4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0BWR4.pdb
+Q0I8S8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0I8S8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0I8S8.pdb
+Q0WHW5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0WHW5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0WHW5.pdb
+Q10Y41,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q10Y41.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q10Y41.pdb
+Q12MM2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q12MM2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q12MM2.pdb
+Q162S3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q162S3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q162S3.pdb
+Q1H188,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1H188.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1H188.pdb
+Q1I7T2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1I7T2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1I7T2.pdb
+Q1LL91,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1LL91.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1LL91.pdb
+Q1LT01,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1LT01.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1LT01.pdb
+Q1MB56,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1MB56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1MB56.pdb
+Q1QQZ1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1QQZ1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1QQZ1.pdb
+Q1QW62,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1QW62.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1QW62.pdb
+Q21C03,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q21C03.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q21C03.pdb
+Q21YF8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q21YF8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q21YF8.pdb
+Q28TK3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q28TK3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q28TK3.pdb
+Q2IJC6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2IJC6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2IJC6.pdb
+Q2J429,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2J429.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2J429.pdb
+Q2JPX4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2JPX4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2JPX4.pdb
+Q2JVC3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2JVC3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2JVC3.pdb
+Q2K3M6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2K3M6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2K3M6.pdb
+Q2N9P7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2N9P7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2N9P7.pdb
+Q2NVG1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2NVG1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2NVG1.pdb
+Q2RP80,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2RP80.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2RP80.pdb
+Q2SJ47,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2SJ47.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2SJ47.pdb
+Q31BX5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q31BX5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q31BX5.pdb
+Q31ND6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q31ND6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q31ND6.pdb
+Q32JQ1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q32JQ1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q32JQ1.pdb
+Q3AL08,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3AL08.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3AL08.pdb
+Q3AYI2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3AYI2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3AYI2.pdb
+Q3IIR9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3IIR9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3IIR9.pdb
+Q3J436,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3J436.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3J436.pdb
+Q3JAC4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3JAC4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3JAC4.pdb
+Q3MGD2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3MGD2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3MGD2.pdb
+Q3SIB0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3SIB0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3SIB0.pdb
+Q3SVQ1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3SVQ1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3SVQ1.pdb
+Q3Z5F1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3Z5F1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3Z5F1.pdb
+Q46GM1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q46GM1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q46GM1.pdb
+Q48KX8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q48KX8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q48KX8.pdb
+Q493H8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q493H8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q493H8.pdb
+Q4FP49,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q4FP49.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4FP49.pdb
+Q4KBH9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q4KBH9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4KBH9.pdb
+Q4ZVL3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q4ZVL3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4ZVL3.pdb
+Q54MR1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II) (Glyoxylase B1),UniProt,afdb,,Q54MR1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q54MR1.pdb
+Q57544,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase GloC (EC 3.1.2.6) (Accessory type II glyoxalase) (Glyoxalase II 2) (GlxII-2),UniProt,afdb,,Q57544.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q57544.pdb
+Q5E3G3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5E3G3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5E3G3.pdb
+Q5F7J0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5F7J0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5F7J0.pdb
+Q5LNN5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5LNN5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5LNN5.pdb
+Q5N5S6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5N5S6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5N5S6.pdb
+Q5NF43,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5NF43.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5NF43.pdb
+Q5QZL0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5QZL0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5QZL0.pdb
+Q5ZVZ3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5ZVZ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5ZVZ3.pdb
+Q60BX0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q60BX0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q60BX0.pdb
+Q65U07,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q65U07.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q65U07.pdb
+Q6D1V5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6D1V5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6D1V5.pdb
+Q6FYC3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6FYC3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6FYC3.pdb
+Q6G1L3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6G1L3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6G1L3.pdb
+Q6LN63,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6LN63.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6LN63.pdb
+Q6ML19,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6ML19.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6ML19.pdb
+Q6NC62,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q6NC62.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q6NC62.pdb
+Q7MII4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase 2 (EC 3.1.2.6) (Glyoxalase II 2) (Glx II 2),UniProt,afdb,,Q7MII4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7MII4.pdb
+Q7N809,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7N809.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7N809.pdb
+Q7NG34,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7NG34.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7NG34.pdb
+Q7U5Z8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7U5Z8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7U5Z8.pdb
+Q7V6G8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7V6G8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7V6G8.pdb
+Q7VD23,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7VD23.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7VD23.pdb
+Q7VM19,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7VM19.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7VM19.pdb
+Q82XW0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q82XW0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q82XW0.pdb
+Q83MC1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q83MC1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q83MC1.pdb
+Q87MG0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q87MG0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q87MG0.pdb
+Q87YS8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q87YS8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q87YS8.pdb
+Q88FF3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q88FF3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q88FF3.pdb
+Q89AN4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q89AN4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q89AN4.pdb
+Q89XT5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q89XT5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q89XT5.pdb
+Q8D3D4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8D3D4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8D3D4.pdb
+Q8DIF1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8DIF1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8DIF1.pdb
+Q8EE27,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8EE27.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8EE27.pdb
+Q8FKY7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8FKY7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8FKY7.pdb
+Q8PBY0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8PBY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8PBY0.pdb
+Q8PNI0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8PNI0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8PNI0.pdb
+Q8SSH0,hard_negative,,glyoxalase_ii,Probable hydroxyacylglutathione hydrolase ECU02_0580 (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8SSH0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8SSH0.pdb
+Q8U9W1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8U9W1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8U9W1.pdb
+Q8YZ99,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8YZ99.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8YZ99.pdb
+Q8Z983,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8Z983.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8Z983.pdb
+Q92MF8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q92MF8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q92MF8.pdb
+Q9CMW8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9CMW8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9CMW8.pdb
+Q9I2T1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9I2T1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9I2T1.pdb
+Q9JXK4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9JXK4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9JXK4.pdb
+Q9KPX6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9KPX6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9KPX6.pdb
+Q9PBI4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9PBI4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9PBI4.pdb
+Q9UT36,hard_negative,,glyoxalase_ii,Probable hydroxyacylglutathione hydrolase glo2 (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q9UT36.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9UT36.pdb
+A0Q7M7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A0Q7M7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0Q7M7.pdb
+A1A7Q3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1A7Q3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1A7Q3.pdb
+A1IPQ8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1IPQ8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1IPQ8.pdb
+A1KW76,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1KW76.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1KW76.pdb
+A1RK78,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A1RK78.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A1RK78.pdb
+A2C116,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A2C116.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A2C116.pdb
+A3MZD3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A3MZD3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3MZD3.pdb
+A3PIB4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A3PIB4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3PIB4.pdb
+A4IWV0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4IWV0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4IWV0.pdb
+A4TL56,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4TL56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4TL56.pdb
+A4WUN2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4WUN2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4WUN2.pdb
+A4Y6B8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A4Y6B8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A4Y6B8.pdb
+A5IBE7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5IBE7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5IBE7.pdb
+A5UF43,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5UF43.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5UF43.pdb
+A5W167,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A5W167.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A5W167.pdb
+A6V707,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6V707.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6V707.pdb
+A6VVZ9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6VVZ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6VVZ9.pdb
+A6WMW5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A6WMW5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A6WMW5.pdb
+A7FFK5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7FFK5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7FFK5.pdb
+A7MI37,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7MI37.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7MI37.pdb
+A7MY07,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7MY07.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7MY07.pdb
+A7NB16,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7NB16.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7NB16.pdb
+A7ZWF4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A7ZWF4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A7ZWF4.pdb
+A9IZW8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9IZW8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9IZW8.pdb
+A9L0E9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9L0E9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9L0E9.pdb
+A9M0M3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9M0M3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9M0M3.pdb
+A9MPF3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9MPF3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9MPF3.pdb
+A9MZ21,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,A9MZ21.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9MZ21.pdb
+B0BTR9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0BTR9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0BTR9.pdb
+B0CIU0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0CIU0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0CIU0.pdb
+B0KN02,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0KN02.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0KN02.pdb
+B0RTE9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0RTE9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0RTE9.pdb
+B0TXY0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0TXY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0TXY0.pdb
+B0U365,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0U365.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0U365.pdb
+B0UBD0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0UBD0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0UBD0.pdb
+B0UU01,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B0UU01.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B0UU01.pdb
+B1IPU6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1IPU6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1IPU6.pdb
+B1JBN3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1JBN3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1JBN3.pdb
+B1JR44,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1JR44.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1JR44.pdb
+B1LHM1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1LHM1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1LHM1.pdb
+B1XD76,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1XD76.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1XD76.pdb
+B1XQ70,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B1XQ70.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B1XQ70.pdb
+B2I5S5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2I5S5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2I5S5.pdb
+B2KAD1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2KAD1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2KAD1.pdb
+B2S889,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2S889.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2S889.pdb
+B2SFR3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B2SFR3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B2SFR3.pdb
+B3H0S9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B3H0S9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B3H0S9.pdb
+B4RJC7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B4RJC7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4RJC7.pdb
+B4SV37,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B4SV37.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4SV37.pdb
+B4TK83,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B4TK83.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4TK83.pdb
+B4TYG8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B4TYG8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B4TYG8.pdb
+B5BDW7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5BDW7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5BDW7.pdb
+B5F8X0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5F8X0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5F8X0.pdb
+B5F9V3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5F9V3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5F9V3.pdb
+B5FJ56,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5FJ56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5FJ56.pdb
+B5R447,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5R447.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5R447.pdb
+B5R5L1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5R5L1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5R5L1.pdb
+B5Y1G4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5Y1G4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5Y1G4.pdb
+B5Z0I6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B5Z0I6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B5Z0I6.pdb
+B6EJV4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B6EJV4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B6EJV4.pdb
+B6HZS5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B6HZS5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B6HZS5.pdb
+B7LHB8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7LHB8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7LHB8.pdb
+B7M211,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7M211.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7M211.pdb
+B7MBI8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7MBI8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7MBI8.pdb
+B7MQ21,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7MQ21.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7MQ21.pdb
+B7UJA8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7UJA8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7UJA8.pdb
+B7VB64,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7VB64.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7VB64.pdb
+B7VIP5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B7VIP5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7VIP5.pdb
+B8E5A2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B8E5A2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B8E5A2.pdb
+B8F6A3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B8F6A3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B8F6A3.pdb
+B8HMJ9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,B8HMJ9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B8HMJ9.pdb
+C0Q6N0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C0Q6N0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C0Q6N0.pdb
+C0RFI1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C0RFI1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C0RFI1.pdb
+C3LPP0,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C3LPP0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C3LPP0.pdb
+C4ZRU9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,C4ZRU9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C4ZRU9.pdb
+P05446,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P05446.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P05446.pdb
+P96981,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,P96981.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P96981.pdb
+Q04RQ6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q04RQ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q04RQ6.pdb
+Q051W5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q051W5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q051W5.pdb
+Q07VA9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q07VA9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q07VA9.pdb
+Q0BMS2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0BMS2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0BMS2.pdb
+Q0I3Q7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0I3Q7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0I3Q7.pdb
+Q0T802,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0T802.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0T802.pdb
+Q0TLC5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q0TLC5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q0TLC5.pdb
+Q11DS3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q11DS3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q11DS3.pdb
+Q12BV7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q12BV7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q12BV7.pdb
+Q13F06,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q13F06.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q13F06.pdb
+Q14GJ6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q14GJ6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q14GJ6.pdb
+Q1CAJ7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1CAJ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1CAJ7.pdb
+Q1CFI4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1CFI4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1CFI4.pdb
+Q1RFX9,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q1RFX9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1RFX9.pdb
+Q21J46,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q21J46.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q21J46.pdb
+Q2A4E2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2A4E2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2A4E2.pdb
+Q2P6Y4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2P6Y4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2P6Y4.pdb
+Q2YLU8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q2YLU8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q2YLU8.pdb
+Q31H51,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q31H51.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q31H51.pdb
+Q325T4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q325T4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q325T4.pdb
+Q3BWP5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3BWP5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3BWP5.pdb
+Q3KE79,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q3KE79.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q3KE79.pdb
+Q46Z82,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q46Z82.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q46Z82.pdb
+Q47FN7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q47FN7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q47FN7.pdb
+Q4QJZ3,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q4QJZ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4QJZ3.pdb
+Q4URM1,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q4URM1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q4URM1.pdb
+Q57AW2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q57AW2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q57AW2.pdb
+Q57SZ8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q57SZ8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q57SZ8.pdb
+Q5PFD6,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5PFD6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5PFD6.pdb
+Q5WX41,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5WX41.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5WX41.pdb
+Q5X5R2,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q5X5R2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q5X5R2.pdb
+Q667M5,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q667M5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q667M5.pdb
+Q7MQ55,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase 1 (EC 3.1.2.6) (Glyoxalase II 1) (Glx II 1),UniProt,afdb,,Q7MQ55.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7MQ55.pdb
+Q7VQB7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q7VQB7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7VQB7.pdb
+Q87C74,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q87C74.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q87C74.pdb
+Q8DBD8,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8DBD8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8DBD8.pdb
+Q8FYE7,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8FYE7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8FYE7.pdb
+Q8YJF4,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q8YJF4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8YJF4.pdb
+Q98G02,hard_negative,,glyoxalase_ii,Hydroxyacylglutathione hydrolase (EC 3.1.2.6) (Glyoxalase II) (Glx II),UniProt,afdb,,Q98G02.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q98G02.pdb
+P0CJ63,hard_negative,,lactonase,N-acyl homoserine lactonase AiiA (AHL-lactonase AiiA) (EC 3.1.1.81),UniProt,afdb,,P0CJ63.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P0CJ63.pdb
+Q9L8R8,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (Acyl-homoserine lactonase) (EC 3.1.1.81),UniProt,afdb,,Q9L8R8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q9L8R8.pdb
+A9CKY2,hard_negative,,lactonase,N-acyl homoserine lactonase AiiB (AHL-lactonase AiiB) (EC 3.1.1.81),UniProt,afdb,,A9CKY2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A9CKY2.pdb
+A3FJ64,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (EC 3.1.1.81) (Homoserine lactone lactonase),UniProt,afdb,,A3FJ64.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A3FJ64.pdb
+O34760,hard_negative,,lactonase,Probable quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,O34760.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/O34760.pdb
+A8IQD2,hard_negative,,lactonase,N-acyl homoserine lactonase AttM (AHL-lactonase AttM) (EC 3.1.1.81),UniProt,afdb,,A8IQD2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A8IQD2.pdb
+B7LLX4,hard_negative,,lactonase,Probable L-ascorbate-6-phosphate lactonase UlaG (EC 3.1.1.-) (L-ascorbate utilization protein G),UniProt,afdb,,B7LLX4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B7LLX4.pdb
+B9JPK6,hard_negative,,lactonase,N-acyl homoserine lactonase AiiB (AHL-lactonase AiiB) (EC 3.1.1.81),UniProt,afdb,,B9JPK6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/B9JPK6.pdb
+Q08GP4,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (EC 3.1.1.81) (Quorum-quenching N-acyl-homoserine lactonase),UniProt,afdb,,Q08GP4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q08GP4.pdb
+Q1M813,hard_negative,,lactonase,N-acyl homoserine lactonase AttM (AHL-lactonase AttM) (EC 3.1.1.81),UniProt,afdb,,Q1M813.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q1M813.pdb
+Q7B8C3,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (EC 3.1.1.81),UniProt,afdb,,Q7B8C3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7B8C3.pdb
+Q7B8C5,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (EC 3.1.1.81),UniProt,afdb,,Q7B8C5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7B8C5.pdb
+Q7D3U0,hard_negative,,lactonase,N-acyl homoserine lactonase AttM (AHL-lactonase AttM) (EC 3.1.1.81),UniProt,afdb,,Q7D3U0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7D3U0.pdb
+Q7X3T2,hard_negative,,lactonase,N-acyl homoserine lactonase (AHL-lactonase) (EC 3.1.1.81),UniProt,afdb,,Q7X3T2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7X3T2.pdb
+Q8VPD5,hard_negative,,lactonase,N-acyl homoserine lactonase AttM (AHL-lactonase AttM) (EC 3.1.1.81),UniProt,afdb,,Q8VPD5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8VPD5.pdb
+P16692,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55) (Phosphoribosyl cyclic phosphodiesterase)",UniProt,afdb,,P16692.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/P16692.pdb
+Q8MLZ3,hard_negative,,phosphodiesterase,"cGMP-dependent 3',5'-cGMP phosphodiesterase A (EC 3.1.4.35) (Cyclic GMP-binding protein A) (Phosphodiesterase 5) (DdPDE5) (Phosphodiesterase D)",UniProt,afdb,,Q8MLZ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8MLZ3.pdb
+Q8MM62,hard_negative,,phosphodiesterase,"cAMP/cGMP-dependent 3',5'-cAMP/cGMP phosphodiesterase B (EC 3.1.4.35) (EC 3.1.4.53) (Cyclic GMP-binding protein B) (Phosphodiesterase 6) (DdPDE6) (Phosphodiesterase E) (PdeE)",UniProt,afdb,,Q8MM62.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q8MM62.pdb
+A0A067RGU1,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A067RGU1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A067RGU1.pdb
+A0A1E1XAR2,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A1E1XAR2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1E1XAR2.pdb
+A0A2K5VWZ3,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A2K5VWZ3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2K5VWZ3.pdb
+A0A444UL76,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A444UL76.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A444UL76.pdb
+A0A6J2XK11,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A6J2XK11.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A6J2XK11.pdb
+A0A6P6HK25,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A6P6HK25.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A6P6HK25.pdb
+A0A8D2GAB8,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2 (EC 3.1.26.11) (ElaC homolog protein 2) (Ribonuclease Z 2) (tRNA 3 endonuclease 2) (tRNase Z 2),UniProt,afdb,,A0A8D2GAB8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8D2GAB8.pdb
+A0A0V1L202,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 2,UniProt,afdb,,A0A0V1L202.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0V1L202.pdb
+A0A031MH76,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A031MH76.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A031MH76.pdb
+A0A0K6HZD2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A0K6HZD2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0K6HZD2.pdb
+A0A0K8MDD2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A0K8MDD2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0K8MDD2.pdb
+A0A0P0NZM8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A0P0NZM8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0P0NZM8.pdb
+A0A0P7YRP2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A0P7YRP2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0P7YRP2.pdb
+A0A0R3LBT9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A0R3LBT9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0R3LBT9.pdb
+A0A146G6X6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A146G6X6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A146G6X6.pdb
+A0A1C3URC3,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1C3URC3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1C3URC3.pdb
+A0A1E3VS83,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1E3VS83.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1E3VS83.pdb
+A0A1G5IX61,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1G5IX61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G5IX61.pdb
+A0A1G6BZP4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1G6BZP4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G6BZP4.pdb
+A0A1G7EFR2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1G7EFR2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G7EFR2.pdb
+A0A1G7PBA9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1G7PBA9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G7PBA9.pdb
+A0A1G7W2L8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1G7W2L8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G7W2L8.pdb
+A0A1G7Y8F1,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1G7Y8F1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G7Y8F1.pdb
+A0A1G8L0W5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1G8L0W5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G8L0W5.pdb
+A0A1G9GS92,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1G9GS92.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G9GS92.pdb
+A0A1G9U3F5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1G9U3F5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G9U3F5.pdb
+A0A1H0BW55,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1H0BW55.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H0BW55.pdb
+A0A1H5SU62,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1H5SU62.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H5SU62.pdb
+A0A1H6LRP3,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1H6LRP3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H6LRP3.pdb
+A0A1H6VAN4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1H6VAN4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H6VAN4.pdb
+A0A1H7GI32,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1H7GI32.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H7GI32.pdb
+A0A1H7V9H2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1H7V9H2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H7V9H2.pdb
+A0A1H9WM90,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1H9WM90.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1H9WM90.pdb
+A0A1I1KIJ7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1I1KIJ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I1KIJ7.pdb
+A0A1I2VXJ0,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1I2VXJ0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I2VXJ0.pdb
+A0A1I3E0C4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1I3E0C4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I3E0C4.pdb
+A0A1I4PLV7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1I4PLV7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I4PLV7.pdb
+A0A1I4YHF6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1I4YHF6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I4YHF6.pdb
+A0A1I5Z4I9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1I5Z4I9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I5Z4I9.pdb
+A0A1I6M034,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1I6M034.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I6M034.pdb
+A0A1I7FI35,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1I7FI35.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I7FI35.pdb
+A0A1I7JH77,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1I7JH77.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I7JH77.pdb
+A0A1M4VEI6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M4VEI6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M4VEI6.pdb
+A0A1M4WZP5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M4WZP5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M4WZP5.pdb
+A0A1M4YXX1,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M4YXX1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M4YXX1.pdb
+A0A1M5B0B3,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M5B0B3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M5B0B3.pdb
+A0A1M5JYE7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M5JYE7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M5JYE7.pdb
+A0A1M5THW7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M5THW7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M5THW7.pdb
+A0A1M6NA22,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1M6NA22.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M6NA22.pdb
+A0A1M6RBX0,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1M6RBX0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M6RBX0.pdb
+A0A1M6TU08,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1M6TU08.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1M6TU08.pdb
+A0A1N6FTC8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1N6FTC8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1N6FTC8.pdb
+A0A1T4KDU1,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1T4KDU1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1T4KDU1.pdb
+A0A1T4XBU7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1T4XBU7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1T4XBU7.pdb
+A0A1U7Q0D1,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1U7Q0D1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1U7Q0D1.pdb
+A0A1W1Y4E4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A1W1Y4E4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1W1Y4E4.pdb
+A0A1Y6E558,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A1Y6E558.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1Y6E558.pdb
+A0A239CNS2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A239CNS2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A239CNS2.pdb
+A0A285G228,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A285G228.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A285G228.pdb
+A0A285P006,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A285P006.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A285P006.pdb
+A0A2M9ZMK7,hard_negative,,phosphodiesterase,"cAMP/cGMP-dependent 3',5'-cyclic-AMP/GMP phosphodiesterase",UniProt,afdb,,A0A2M9ZMK7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2M9ZMK7.pdb
+A0A2R4VZD3,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A2R4VZD3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2R4VZD3.pdb
+A0A2T0U5T8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A2T0U5T8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2T0U5T8.pdb
+A0A2T0VN24,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A2T0VN24.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2T0VN24.pdb
+A0A2T5YI32,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A2T5YI32.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2T5YI32.pdb
+A0A2T9JVZ8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A2T9JVZ8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2T9JVZ8.pdb
+A0A315Z7J6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A315Z7J6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A315Z7J6.pdb
+A0A323V274,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A323V274.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A323V274.pdb
+A0A327XFU5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A327XFU5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A327XFU5.pdb
+A0A372EH44,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A372EH44.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A372EH44.pdb
+A0A388T6N7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A388T6N7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A388T6N7.pdb
+A0A395JEV4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A395JEV4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A395JEV4.pdb
+A0A3E0AUH7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A3E0AUH7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3E0AUH7.pdb
+A0A3N1UG10,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A3N1UG10.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3N1UG10.pdb
+A0A3R9QGT2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A3R9QGT2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3R9QGT2.pdb
+A0A495WIK7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A495WIK7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A495WIK7.pdb
+A0A4P6ZH89,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A4P6ZH89.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4P6ZH89.pdb
+A0A4R2RH94,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A4R2RH94.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R2RH94.pdb
+A0A4R3JGP8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A4R3JGP8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R3JGP8.pdb
+A0A4R3YFP8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A4R3YFP8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R3YFP8.pdb
+A0A4R6E9R2,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A4R6E9R2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R6E9R2.pdb
+A0A4R6QSJ8,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A4R6QSJ8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R6QSJ8.pdb
+A0A4R8MI43,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0A4R8MI43.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R8MI43.pdb
+A0A4R8MS49,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A4R8MS49.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4R8MS49.pdb
+A0A4U5UTM1,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 1,UniProt,afdb,,A0A4U5UTM1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4U5UTM1.pdb
+A0A517NH52,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A517NH52.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A517NH52.pdb
+A0A518HTI5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A518HTI5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A518HTI5.pdb
+A0A557QX23,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A557QX23.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A557QX23.pdb
+A0A562JFU5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A562JFU5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A562JFU5.pdb
+A0A5C5CIR5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A5C5CIR5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5C5CIR5.pdb
+A0A5C5X4V6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A5C5X4V6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5C5X4V6.pdb
+A0A5C5YPS2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A5C5YPS2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5C5YPS2.pdb
+A0A5C6D8X4,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A5C6D8X4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5C6D8X4.pdb
+A0A5Q0UHR5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A5Q0UHR5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5Q0UHR5.pdb
+A0A656QB56,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A656QB56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A656QB56.pdb
+A0A657LY74,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A657LY74.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A657LY74.pdb
+A0A6S6XWU9,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A6S6XWU9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A6S6XWU9.pdb
+A0A7M1AZ87,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A7M1AZ87.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7M1AZ87.pdb
+A0A7R5L465,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 1 isoform X3,UniProt,afdb,,A0A7R5L465.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7R5L465.pdb
+A0A7W6GJP6,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A7W6GJP6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W6GJP6.pdb
+A0A7W6MX61,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A7W6MX61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W6MX61.pdb
+A0A7W7N3W9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A7W7N3W9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W7N3W9.pdb
+A0A7W9SXC1,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A7W9SXC1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W9SXC1.pdb
+A0A7W9W6C5,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A7W9W6C5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W9W6C5.pdb
+A0A7Y9JAM2,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A7Y9JAM2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7Y9JAM2.pdb
+A0A7Y9LNS3,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A7Y9LNS3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7Y9LNS3.pdb
+A0A835NGY8,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 1,UniProt,afdb,,A0A835NGY8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A835NGY8.pdb
+A0A840DTI9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A840DTI9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A840DTI9.pdb
+A0A840MS67,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A840MS67.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A840MS67.pdb
+A0A8D4VRK5,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A8D4VRK5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8D4VRK5.pdb
+A0A8G2F3V7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A8G2F3V7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8G2F3V7.pdb
+A0A8J7R7A9,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0A8J7R7A9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8J7R7A9.pdb
+A0A918J465,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0A918J465.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A918J465.pdb
+A0A923M675,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0A923M675.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A923M675.pdb
+A0A9X0CSG6,hard_negative,,phosphodiesterase,Zinc phosphodiesterase ELAC protein 1 (EC 3.1.26.11),UniProt,afdb,,A0A9X0CSG6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A9X0CSG6.pdb
+A0AA94IUY0,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase",UniProt,afdb,,A0AA94IUY0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AA94IUY0.pdb
+A0AA96JX48,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0AA96JX48.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AA96JX48.pdb
+A0AAN4R181,hard_negative,,phosphodiesterase,"3',5'-cyclic-nucleotide phosphodiesterase",UniProt,afdb,,A0AAN4R181.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAN4R181.pdb
+A0AAW3TW15,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphate phosphodiesterase (EC 3.1.4.55)",UniProt,afdb,,A0AAW3TW15.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAW3TW15.pdb
+A0AAX2F6N7,hard_negative,,phosphodiesterase,"Phosphoribosyl 1,2-cyclic phosphodiesterase",UniProt,afdb,,A0AAX2F6N7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAX2F6N7.pdb
+A0A1I5QUZ2,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A1I5QUZ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1I5QUZ2.pdb
+A0A508T8M4,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A508T8M4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A508T8M4.pdb
+A0A4P6JKW3,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4P6JKW3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4P6JKW3.pdb
+A0A3S8U7P6,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A3S8U7P6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3S8U7P6.pdb
+A0A1Y5SDN3,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A1Y5SDN3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1Y5SDN3.pdb
+A0A1G8ZNX2,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A1G8ZNX2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G8ZNX2.pdb
+A0A133Q315,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase (EC 3.1.1.-),UniProt,afdb,,A0A133Q315.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A133Q315.pdb
+A0A963YXC9,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A963YXC9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A963YXC9.pdb
+A0A194V3A3,hard_negative,,lactonase,N-acyl homoserine lactonase AttM,UniProt,afdb,,A0A194V3A3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A194V3A3.pdb
+A0A3R8Q5C0,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A3R8Q5C0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3R8Q5C0.pdb
+A0A430A0G4,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A430A0G4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A430A0G4.pdb
+A0A387HF14,hard_negative,,lactonase,Putative L-ascorbate-6-phosphate lactonase UlaG (EC 3.1.1.-),UniProt,afdb,,A0A387HF14.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A387HF14.pdb
+A0A941EXN1,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A941EXN1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A941EXN1.pdb
+A0A3S0KV03,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A3S0KV03.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3S0KV03.pdb
+A0AA35RBV4,hard_negative,,lactonase,Probable quorum-quenching lactonase YtnP,UniProt,afdb,,A0AA35RBV4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AA35RBV4.pdb
+A0A511N6S9,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A511N6S9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A511N6S9.pdb
+A0A2A6J3C8,hard_negative,,lactonase,quorum-quenching N-acyl-homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A2A6J3C8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2A6J3C8.pdb
+A0A2M9XPP3,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A2M9XPP3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2M9XPP3.pdb
+A0A963Z632,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A963Z632.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A963Z632.pdb
+A0A7G7MNS9,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7G7MNS9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7G7MNS9.pdb
+A0A511N681,hard_negative,,lactonase,N-acyl homoserine lactonase,UniProt,afdb,,A0A511N681.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A511N681.pdb
+A0A2C6WL85,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A2C6WL85.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2C6WL85.pdb
+A0A3N6SGM9,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A3N6SGM9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3N6SGM9.pdb
+A0A7C9RK31,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7C9RK31.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7C9RK31.pdb
+A0A1G8TRA5,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A1G8TRA5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G8TRA5.pdb
+A0A177HNH4,hard_negative,,lactonase,Putative quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,A0A177HNH4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A177HNH4.pdb
+A0A853FB61,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A853FB61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A853FB61.pdb
+A0A1C7M4V3,hard_negative,,lactonase,N-acyl homoserine lactonase AttM,UniProt,afdb,,A0A1C7M4V3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1C7M4V3.pdb
+A0A7W7HT93,hard_negative,,lactonase,N-acyl homoserine lactone hydrolase (EC 3.1.1.81),UniProt,afdb,,A0A7W7HT93.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W7HT93.pdb
+A0A7H0GKS3,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7H0GKS3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7H0GKS3.pdb
+A0A4U8Q812,hard_negative,,lactonase,Putative L-ascorbate-6-phosphate lactonase UlaG (EC 3.1.1.-),UniProt,afdb,,A0A4U8Q812.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4U8Q812.pdb
+F2YU82,hard_negative,,lactonase,quorum-quenching N-acyl-homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,F2YU82.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/F2YU82.pdb
+A0AAC9RQZ1,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0AAC9RQZ1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAC9RQZ1.pdb
+A0A1S8T918,hard_negative,,lactonase,N-acyl homoserine lactonase AiiB (EC 3.1.1.81),UniProt,afdb,,A0A1S8T918.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1S8T918.pdb
+A0A852R2E8,hard_negative,,lactonase,N-acyl homoserine lactone hydrolase (EC 3.1.1.81),UniProt,afdb,,A0A852R2E8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A852R2E8.pdb
+A0A0P1GBX2,hard_negative,,lactonase,N-acyl homoserine lactonase AttM (EC 3.1.1.81),UniProt,afdb,,A0A0P1GBX2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0P1GBX2.pdb
+A0A5B8W2A6,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A5B8W2A6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5B8W2A6.pdb
+H0EPE4,hard_negative,,lactonase,Putative N-acyl homoserine lactonase,UniProt,afdb,,H0EPE4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/H0EPE4.pdb
+A0A7X0IIS3,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase (EC 3.1.1.-),UniProt,afdb,,A0A7X0IIS3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7X0IIS3.pdb
+A0A372KNQ7,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A372KNQ7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A372KNQ7.pdb
+A0A0J6WHH6,hard_negative,,lactonase,Putative quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,A0A0J6WHH6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0J6WHH6.pdb
+Q7B8C1,hard_negative,,lactonase,quorum-quenching N-acyl-homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,Q7B8C1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/Q7B8C1.pdb
+A0A412PLA5,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase (EC 3.1.1.-),UniProt,afdb,,A0A412PLA5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A412PLA5.pdb
+A0A556AFC0,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A556AFC0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A556AFC0.pdb
+A0A0P7GRG3,hard_negative,,lactonase,Putative L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A0P7GRG3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0P7GRG3.pdb
+A0A430AK82,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A430AK82.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A430AK82.pdb
+A0A1G6MXT4,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A1G6MXT4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1G6MXT4.pdb
+A0AA41UPK5,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0AA41UPK5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AA41UPK5.pdb
+R2SPG9,hard_negative,,lactonase,"L-ascorbate 6-phosphate lactonase, UlaG",UniProt,afdb,,R2SPG9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/R2SPG9.pdb
+A0A7Y2LYN4,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7Y2LYN4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7Y2LYN4.pdb
+A0A2N9BJ56,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A2N9BJ56.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2N9BJ56.pdb
+A0A838CVA6,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A838CVA6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A838CVA6.pdb
+A0A7W2A716,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7W2A716.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7W2A716.pdb
+A0A3B0M742,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A3B0M742.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3B0M742.pdb
+A0A4V3Z522,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4V3Z522.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4V3Z522.pdb
+A0A0L0N0J0,hard_negative,,lactonase,N-acyl homoserine lactonase,UniProt,afdb,,A0A0L0N0J0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0L0N0J0.pdb
+A0A2S9XIX1,hard_negative,,lactonase,Putative quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,A0A2S9XIX1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2S9XIX1.pdb
+A0A4P6JKQ4,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4P6JKQ4.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4P6JKQ4.pdb
+A0A2P4NNR2,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A2P4NNR2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A2P4NNR2.pdb
+A0AAE3SUG5,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0AAE3SUG5.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAE3SUG5.pdb
+A0A853DBB1,hard_negative,,lactonase,N-acyl homoserine lactone hydrolase (EC 3.1.1.81),UniProt,afdb,,A0A853DBB1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A853DBB1.pdb
+A0A4Y9LQZ2,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4Y9LQZ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4Y9LQZ2.pdb
+A0A3R9Y657,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A3R9Y657.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3R9Y657.pdb
+A0A6L9Y322,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A6L9Y322.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A6L9Y322.pdb
+A0A089REM6,hard_negative,,lactonase,Ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A089REM6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A089REM6.pdb
+A0A418ISH9,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A418ISH9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A418ISH9.pdb
+C6C6L9,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,C6C6L9.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/C6C6L9.pdb
+A0A5S9RB49,hard_negative,,lactonase,N-acyl homoserine lactonase AiiA (EC 3.1.1.81),UniProt,afdb,,A0A5S9RB49.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5S9RB49.pdb
+A0A8J7YDX0,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A8J7YDX0.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8J7YDX0.pdb
+A0A4Y8LFJ2,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4Y8LFJ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4Y8LFJ2.pdb
+A0A0H3YS61,hard_negative,,lactonase,N-acyl homoserine lactonase,UniProt,afdb,,A0A0H3YS61.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A0H3YS61.pdb
+A0A3L7ACV6,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A3L7ACV6.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3L7ACV6.pdb
+A0A5S4WCZ2,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A5S4WCZ2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A5S4WCZ2.pdb
+A0A3L9DTP3,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase,UniProt,afdb,,A0A3L9DTP3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3L9DTP3.pdb
+A0A8J3MU11,hard_negative,,lactonase,N-acyl homoserine lactonase,UniProt,afdb,,A0A8J3MU11.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8J3MU11.pdb
+A0AAC8VRE7,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0AAC8VRE7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0AAC8VRE7.pdb
+A0A222E4V8,hard_negative,,lactonase,N-acyl homoserine lactonase (EC 3.1.1.81),UniProt,afdb,,A0A222E4V8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A222E4V8.pdb
+A0A4V0Z0M3,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4V0Z0M3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4V0Z0M3.pdb
+A0A4P6X9Z7,hard_negative,,lactonase,Putative quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,A0A4P6X9Z7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4P6X9Z7.pdb
+A0A4U0SSC7,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A4U0SSC7.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A4U0SSC7.pdb
+A0A9E7UBH1,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A9E7UBH1.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A9E7UBH1.pdb
+A0A8J7JGW8,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A8J7JGW8.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A8J7JGW8.pdb
+A0A7X1KRG2,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0A7X1KRG2.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A7X1KRG2.pdb
+A0A3R9PD20,hard_negative,,lactonase,L-ascorbate 6-phosphate lactonase (EC 3.1.1.-),UniProt,afdb,,A0A3R9PD20.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A3R9PD20.pdb
+A0A1Y5RQ26,hard_negative,,lactonase,Putative quorum-quenching lactonase YtnP (EC 3.1.1.-),UniProt,afdb,,A0A1Y5RQ26.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0A1Y5RQ26.pdb
+A0ABD5ZEV3,hard_negative,,lactonase,N-acyl homoserine lactonase family protein,UniProt,afdb,,A0ABD5ZEV3.pdb,/home/moraz/projects/MBL/cryptic-mbl/dataset/data/structures/A0ABD5ZEV3.pdb
+Q9UXX2,true_negative,,tim_barrel,,UniProt,afdb,,Q9UXX2.pdb,
+A4WG77,true_negative,,tim_barrel,,UniProt,afdb,,A4WG77.pdb,
+Q9SKP6,true_negative,,tim_barrel,,UniProt,afdb,,Q9SKP6.pdb,
+B7H1F6,true_negative,,tim_barrel,,UniProt,afdb,,B7H1F6.pdb,
+B3R3W5,true_negative,,tim_barrel,,UniProt,afdb,,B3R3W5.pdb,
+B2I782,true_negative,,tim_barrel,,UniProt,afdb,,B2I782.pdb,
+A6KXL2,true_negative,,tim_barrel,,UniProt,afdb,,A6KXL2.pdb,
+A4G646,true_negative,,tim_barrel,,UniProt,afdb,,A4G646.pdb,
+Q7MYB3,true_negative,,tim_barrel,,UniProt,afdb,,Q7MYB3.pdb,
+A2C2B2,true_negative,,tim_barrel,,UniProt,afdb,,A2C2B2.pdb,
+Q8G0F7,true_negative,,tim_barrel,,UniProt,afdb,,Q8G0F7.pdb,
+Q2FIL9,true_negative,,tim_barrel,,UniProt,afdb,,Q2FIL9.pdb,
+P15426,true_negative,,tim_barrel,,UniProt,afdb,,P15426.pdb,
+P00941,true_negative,,tim_barrel,,UniProt,afdb,,P00941.pdb,
+A3D7L0,true_negative,,tim_barrel,,UniProt,afdb,,A3D7L0.pdb,
+B1YLE0,true_negative,,tim_barrel,,UniProt,afdb,,B1YLE0.pdb,
+B2US24,true_negative,,tim_barrel,,UniProt,afdb,,B2US24.pdb,
+Q631M0,true_negative,,tim_barrel,,UniProt,afdb,,Q631M0.pdb,
+Q8UEY3,true_negative,,tim_barrel,,UniProt,afdb,,Q8UEY3.pdb,
+B0BM40,true_negative,,tim_barrel,,UniProt,afdb,,B0BM40.pdb,
+Q7X222,true_negative,,tim_barrel,,UniProt,afdb,,Q7X222.pdb,
+B0TWU2,true_negative,,tim_barrel,,UniProt,afdb,,B0TWU2.pdb,
+Q253S1,true_negative,,tim_barrel,,UniProt,afdb,,Q253S1.pdb,
+B2FNY1,true_negative,,tim_barrel,,UniProt,afdb,,B2FNY1.pdb,
+Q3BRM7,true_negative,,tim_barrel,,UniProt,afdb,,Q3BRM7.pdb,
+Q8FVH2,true_negative,,tim_barrel,,UniProt,afdb,,Q8FVH2.pdb,
+B7I3R5,true_negative,,tim_barrel,,UniProt,afdb,,B7I3R5.pdb,
+P04789,true_negative,,tim_barrel,,UniProt,afdb,,P04789.pdb,
+A7NI03,true_negative,,tim_barrel,,UniProt,afdb,,A7NI03.pdb,
+P68822,true_negative,,tim_barrel,,UniProt,afdb,,P68822.pdb,
+A7H5C4,true_negative,,tim_barrel,,UniProt,afdb,,A7H5C4.pdb,
+B1VA75,true_negative,,tim_barrel,,UniProt,afdb,,B1VA75.pdb,
+P62002,true_negative,,tim_barrel,,UniProt,afdb,,P62002.pdb,
+A3CV22,true_negative,,tim_barrel,,UniProt,afdb,,A3CV22.pdb,
+Q0IAV3,true_negative,,tim_barrel,,UniProt,afdb,,Q0IAV3.pdb,
+A3N3L9,true_negative,,tim_barrel,,UniProt,afdb,,A3N3L9.pdb,
+Q02FS4,true_negative,,tim_barrel,,UniProt,afdb,,Q02FS4.pdb,
+P72484,true_negative,,tim_barrel,,UniProt,afdb,,P72484.pdb,
+Q8XXP9,true_negative,,tim_barrel,,UniProt,afdb,,Q8XXP9.pdb,
+B5XKI2,true_negative,,tim_barrel,,UniProt,afdb,,B5XKI2.pdb,
+Q1MTI4,true_negative,,tim_barrel,,UniProt,afdb,,Q1MTI4.pdb,
+Q46DY6,true_negative,,tim_barrel,,UniProt,afdb,,Q46DY6.pdb,
+Q73NB9,true_negative,,tim_barrel,,UniProt,afdb,,Q73NB9.pdb,
+A5G381,true_negative,,tim_barrel,,UniProt,afdb,,A5G381.pdb,
+Q0HXR9,true_negative,,tim_barrel,,UniProt,afdb,,Q0HXR9.pdb,
+A1T8L2,true_negative,,tim_barrel,,UniProt,afdb,,A1T8L2.pdb,
+Q7V1N4,true_negative,,tim_barrel,,UniProt,afdb,,Q7V1N4.pdb,
+O27120,true_negative,,tim_barrel,,UniProt,afdb,,O27120.pdb,
+Q9HV51,true_negative,,tim_barrel,,UniProt,afdb,,Q9HV51.pdb,
+Q97VM8,true_negative,,tim_barrel,,UniProt,afdb,,Q97VM8.pdb,
+Q68ER2,true_negative,,rossmann_sdr,,UniProt,afdb,,Q68ER2.pdb,
+A0A0U5GHD4,true_negative,,rossmann_sdr,,UniProt,afdb,,A0A0U5GHD4.pdb,
+Q64591,true_negative,,rossmann_sdr,,UniProt,afdb,,Q64591.pdb,
+P9WGR1,true_negative,,rossmann_sdr,,UniProt,afdb,,P9WGR1.pdb,
+B0D8R3,true_negative,,rossmann_sdr,,UniProt,afdb,,B0D8R3.pdb,
+P22245,true_negative,,rossmann_sdr,,UniProt,afdb,,P22245.pdb,
+Q8IZV5,true_negative,,rossmann_sdr,,UniProt,afdb,,Q8IZV5.pdb,
+B6H060,true_negative,,rossmann_sdr,,UniProt,afdb,,B6H060.pdb,
+Q9EQ06,true_negative,,rossmann_sdr,,UniProt,afdb,,Q9EQ06.pdb,
+Q7T2D1,true_negative,,rossmann_sdr,,UniProt,afdb,,Q7T2D1.pdb,
+P0CG22,true_negative,,rossmann_sdr,,UniProt,afdb,,P0CG22.pdb,
+O49332,true_negative,,rossmann_sdr,,UniProt,afdb,,O49332.pdb,
+Q6CHP1,true_negative,,rossmann_sdr,,UniProt,afdb,,Q6CHP1.pdb,
+Q6IAN0,true_negative,,rossmann_sdr,,UniProt,afdb,,Q6IAN0.pdb,
+Q6H5J0,true_negative,,rossmann_sdr,,UniProt,afdb,,Q6H5J0.pdb,
+Q5BE65,true_negative,,rossmann_sdr,,UniProt,afdb,,Q5BE65.pdb,
+A0A4P8DJW8,true_negative,,rossmann_sdr,,UniProt,afdb,,A0A4P8DJW8.pdb,
+O67610,true_negative,,rossmann_sdr,,UniProt,afdb,,O67610.pdb,
+Q6QLL4,true_negative,,rossmann_sdr,,UniProt,afdb,,Q6QLL4.pdb,
+Q8CEE7,true_negative,,rossmann_sdr,,UniProt,afdb,,Q8CEE7.pdb,
+Q75KH3,true_negative,,rossmann_sdr,,UniProt,afdb,,Q75KH3.pdb,
+E3VWI6,true_negative,,rossmann_sdr,,UniProt,afdb,,E3VWI6.pdb,
+Q6P3L6,true_negative,,rossmann_sdr,,UniProt,afdb,,Q6P3L6.pdb,
+P0AFS4,true_negative,,rossmann_sdr,,UniProt,afdb,,P0AFS4.pdb,
+Q7SYS6,true_negative,,rossmann_sdr,,UniProt,afdb,,Q7SYS6.pdb,
+P07160,true_negative,,rossmann_sdr,,UniProt,afdb,,P07160.pdb,
+A4QTE3,true_negative,,rossmann_sdr,,UniProt,afdb,,A4QTE3.pdb,
+P9WGP9,true_negative,,rossmann_sdr,,UniProt,afdb,,P9WGP9.pdb,
+Q29608,true_negative,,rossmann_sdr,,UniProt,afdb,,Q29608.pdb,
+B1LNJ7,true_negative,,rossmann_sdr,,UniProt,afdb,,B1LNJ7.pdb,
+P39485,true_negative,,rossmann_sdr,,UniProt,afdb,,P39485.pdb,
+P58381,true_negative,,rossmann_sdr,,UniProt,afdb,,P58381.pdb,
+Q9PKF7,true_negative,,rossmann_sdr,,UniProt,afdb,,Q9PKF7.pdb,
+O77769,true_negative,,rossmann_sdr,,UniProt,afdb,,O77769.pdb,
+Q5RCF8,true_negative,,rossmann_sdr,,UniProt,afdb,,Q5RCF8.pdb,
+A0A5B8YU68,true_negative,,rossmann_sdr,,UniProt,afdb,,A0A5B8YU68.pdb,
+P57432,true_negative,,rossmann_sdr,,UniProt,afdb,,P57432.pdb,
+A0A8D5M6H6,true_negative,,rossmann_sdr,,UniProt,afdb,,A0A8D5M6H6.pdb,
+P9WGR2,true_negative,,rossmann_sdr,,UniProt,afdb,,P9WGR2.pdb,
+Q9A9Z0,true_negative,,rossmann_sdr,,UniProt,afdb,,Q9A9Z0.pdb,
+P06235,true_negative,,rossmann_sdr,,UniProt,afdb,,P06235.pdb,
+P39640,true_negative,,rossmann_sdr,,UniProt,afdb,,P39640.pdb,
+O42866,true_negative,,rossmann_sdr,,UniProt,afdb,,O42866.pdb,
+P26719,true_negative,,rossmann_sdr,,UniProt,afdb,,P26719.pdb,
+G2WRK0,true_negative,,rossmann_sdr,,UniProt,afdb,,G2WRK0.pdb,
+Q8FHB1,true_negative,,rossmann_sdr,,UniProt,afdb,,Q8FHB1.pdb,
+O07399,true_negative,,rossmann_sdr,,UniProt,afdb,,O07399.pdb,
+A0R518,true_negative,,rossmann_sdr,,UniProt,afdb,,A0R518.pdb,
+Q9LUE4,true_negative,,rossmann_sdr,,UniProt,afdb,,Q9LUE4.pdb,
+Q68VY7,true_negative,,rossmann_sdr,,UniProt,afdb,,Q68VY7.pdb,
+A0PNQ1,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A0PNQ1.pdb,
+P07383,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P07383.pdb,
+Q9XTR8,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q9XTR8.pdb,
+Q99369,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q99369.pdb,
+Q99685,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q99685.pdb,
+A9R0I6,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A9R0I6.pdb,
+P82597,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P82597.pdb,
+A0A061B0Q2,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A0A061B0Q2.pdb,
+P93732,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P93732.pdb,
+P23553,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P23553.pdb,
+Q0C8M2,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q0C8M2.pdb,
+Q1RGX6,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q1RGX6.pdb,
+Q4ZXS0,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q4ZXS0.pdb,
+Q54T49,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q54T49.pdb,
+C7PDD8,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,C7PDD8.pdb,
+Q5VXI9,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q5VXI9.pdb,
+Q1IGC6,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q1IGC6.pdb,
+Q12385,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q12385.pdb,
+C7CM33,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,C7CM33.pdb,
+Q7S1X0,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q7S1X0.pdb,
+A1DI08,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A1DI08.pdb,
+A8GKT5,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A8GKT5.pdb,
+B1IYB5,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B1IYB5.pdb,
+G9BY57,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,G9BY57.pdb,
+Q8MJJ1,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q8MJJ1.pdb,
+A0A242M8J4,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A0A242M8J4.pdb,
+Q51758,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q51758.pdb,
+A5I3F5,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A5I3F5.pdb,
+A7FH42,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A7FH42.pdb,
+B1XW69,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B1XW69.pdb,
+B7VH49,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B7VH49.pdb,
+P76049,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P76049.pdb,
+P0DSI2,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P0DSI2.pdb,
+A0A109QYD3,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A0A109QYD3.pdb,
+B7NMH7,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B7NMH7.pdb,
+Q5NZF6,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q5NZF6.pdb,
+Q05861,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q05861.pdb,
+Q6GNY7,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q6GNY7.pdb,
+A0A2P1GIW2,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,A0A2P1GIW2.pdb,
+Q8U671,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q8U671.pdb,
+Q8FK82,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q8FK82.pdb,
+B1JHZ5,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B1JHZ5.pdb,
+Q9KNL4,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q9KNL4.pdb,
+B5FK97,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B5FK97.pdb,
+Q6DRD9,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q6DRD9.pdb,
+Q9SMN0,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q9SMN0.pdb,
+Q9W0H3,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,Q9W0H3.pdb,
+P14686,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P14686.pdb,
+B8NCM8,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,B8NCM8.pdb,
+P75092,true_negative,,alpha_beta_hydrolase,,UniProt,afdb,,P75092.pdb,
+A0A6J4B5J2,true_negative,,thioredoxin_fold,,UniProt,afdb,,A0A6J4B5J2.pdb,
+Q7WDP8,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q7WDP8.pdb,
+P51781,true_negative,,thioredoxin_fold,,UniProt,afdb,,P51781.pdb,
+Q9VSL3,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9VSL3.pdb,
+Q08392,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q08392.pdb,
+Q9Z339,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9Z339.pdb,
+P18035,true_negative,,thioredoxin_fold,,UniProt,afdb,,P18035.pdb,
+P0A4L6,true_negative,,thioredoxin_fold,,UniProt,afdb,,P0A4L6.pdb,
+A0A5C1DUY5,true_negative,,thioredoxin_fold,,UniProt,afdb,,A0A5C1DUY5.pdb,
+Q6IRC8,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q6IRC8.pdb,
+P30102,true_negative,,thioredoxin_fold,,UniProt,afdb,,P30102.pdb,
+Q9KQE9,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9KQE9.pdb,
+O74887,true_negative,,thioredoxin_fold,,UniProt,afdb,,O74887.pdb,
+Q86SX6,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q86SX6.pdb,
+P91252,true_negative,,thioredoxin_fold,,UniProt,afdb,,P91252.pdb,
+P0A252,true_negative,,thioredoxin_fold,,UniProt,afdb,,P0A252.pdb,
+Q8C0L0,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q8C0L0.pdb,
+P34345,true_negative,,thioredoxin_fold,,UniProt,afdb,,P34345.pdb,
+Q8IFW4,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q8IFW4.pdb,
+Q0J3L4,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q0J3L4.pdb,
+P80031,true_negative,,thioredoxin_fold,,UniProt,afdb,,P80031.pdb,
+Q9HJL3,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9HJL3.pdb,
+P46425,true_negative,,thioredoxin_fold,,UniProt,afdb,,P46425.pdb,
+P0AC60,true_negative,,thioredoxin_fold,,UniProt,afdb,,P0AC60.pdb,
+Q923X4,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q923X4.pdb,
+P9WLE6,true_negative,,thioredoxin_fold,,UniProt,afdb,,P9WLE6.pdb,
+Q99N89,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q99N89.pdb,
+P45207,true_negative,,thioredoxin_fold,,UniProt,afdb,,P45207.pdb,
+O02621,true_negative,,thioredoxin_fold,,UniProt,afdb,,O02621.pdb,
+Q9VG95,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9VG95.pdb,
+O81332,true_negative,,thioredoxin_fold,,UniProt,afdb,,O81332.pdb,
+Q7VLK4,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q7VLK4.pdb,
+Q6DFS0,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q6DFS0.pdb,
+Q11183,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q11183.pdb,
+P56598,true_negative,,thioredoxin_fold,,UniProt,afdb,,P56598.pdb,
+P0ACA1,true_negative,,thioredoxin_fold,,UniProt,afdb,,P0ACA1.pdb,
+Q4WQZ2,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q4WQZ2.pdb,
+Q9ZEB4,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q9ZEB4.pdb,
+B3LLK7,true_negative,,thioredoxin_fold,,UniProt,afdb,,B3LLK7.pdb,
+Q06398,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q06398.pdb,
+Q7RTV5,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q7RTV5.pdb,
+O08368,true_negative,,thioredoxin_fold,,UniProt,afdb,,O08368.pdb,
+Q8K581,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q8K581.pdb,
+Q8TB36,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q8TB36.pdb,
+Q96468,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q96468.pdb,
+Q5RC63,true_negative,,thioredoxin_fold,,UniProt,afdb,,Q5RC63.pdb,
+P40581,true_negative,,thioredoxin_fold,,UniProt,afdb,,P40581.pdb,
+P45111,true_negative,,thioredoxin_fold,,UniProt,afdb,,P45111.pdb,
+O04986,true_negative,,globin_fold,,UniProt,afdb,,O04986.pdb,
+P30562,true_negative,,globin_fold,,UniProt,afdb,,P30562.pdb,
+P11343,true_negative,,globin_fold,,UniProt,afdb,,P11343.pdb,
+A2XE99,true_negative,,globin_fold,,UniProt,afdb,,A2XE99.pdb,
+P24232,true_negative,,globin_fold,,UniProt,afdb,,P24232.pdb,
+Q9KMY3,true_negative,,globin_fold,,UniProt,afdb,,Q9KMY3.pdb,
+Q7LZM2,true_negative,,globin_fold,,UniProt,afdb,,Q7LZM2.pdb,
+P02192,true_negative,,globin_fold,,UniProt,afdb,,P02192.pdb,
+P02145,true_negative,,globin_fold,,UniProt,afdb,,P02145.pdb,
+P04247,true_negative,,globin_fold,,UniProt,afdb,,P04247.pdb,
+Q42665,true_negative,,globin_fold,,UniProt,afdb,,Q42665.pdb,
+I1LJI1,true_negative,,globin_fold,,UniProt,afdb,,I1LJI1.pdb,
+P84297,true_negative,,globin_fold,,UniProt,afdb,,P84297.pdb,
+P02178,true_negative,,globin_fold,,UniProt,afdb,,P02178.pdb,
+Q09240,true_negative,,globin_fold,,UniProt,afdb,,Q09240.pdb,
+P68084,true_negative,,globin_fold,,UniProt,afdb,,P68084.pdb,
+P02148,true_negative,,globin_fold,,UniProt,afdb,,P02148.pdb,
+P02161,true_negative,,globin_fold,,UniProt,afdb,,P02161.pdb,
+Q88PP0,true_negative,,globin_fold,,UniProt,afdb,,Q88PP0.pdb,
+P62734,true_negative,,globin_fold,,UniProt,afdb,,P62734.pdb,
+C0HKB7,true_negative,,globin_fold,,UniProt,afdb,,C0HKB7.pdb,
+P80018,true_negative,,globin_fold,,UniProt,afdb,,P80018.pdb,
+Q42831,true_negative,,globin_fold,,UniProt,afdb,,Q42831.pdb,
+P02207,true_negative,,globin_fold,,UniProt,afdb,,P02207.pdb,
+Q0KIY6,true_negative,,globin_fold,,UniProt,afdb,,Q0KIY6.pdb,
+Q0KIY9,true_negative,,globin_fold,,UniProt,afdb,,Q0KIY9.pdb,
+Q18086,true_negative,,globin_fold,,UniProt,afdb,,Q18086.pdb,
+P41261,true_negative,,globin_fold,,UniProt,afdb,,P41261.pdb,
+P02151,true_negative,,globin_fold,,UniProt,afdb,,P02151.pdb,
+P12548,true_negative,,globin_fold,,UniProt,afdb,,P12548.pdb,
+P25165,true_negative,,globin_fold,,UniProt,afdb,,P25165.pdb,
+P15161,true_negative,,globin_fold,,UniProt,afdb,,P15161.pdb,
+P02229,true_negative,,globin_fold,,UniProt,afdb,,P02229.pdb,
+Q9NPG2,true_negative,,globin_fold,,UniProt,afdb,,Q9NPG2.pdb,
+P68169,true_negative,,globin_fold,,UniProt,afdb,,P68169.pdb,
+P86881,true_negative,,globin_fold,,UniProt,afdb,,P86881.pdb,
+Q7MH09,true_negative,,globin_fold,,UniProt,afdb,,Q7MH09.pdb,
+P08054,true_negative,,globin_fold,,UniProt,afdb,,P08054.pdb,
+P02184,true_negative,,globin_fold,,UniProt,afdb,,P02184.pdb,
+P04250,true_negative,,globin_fold,,UniProt,afdb,,P04250.pdb,
+P02239,true_negative,,globin_fold,,UniProt,afdb,,P02239.pdb,
+P02208,true_negative,,globin_fold,,UniProt,afdb,,P02208.pdb,
+P02185,true_negative,,globin_fold,,UniProt,afdb,,P02185.pdb,
+Q8DCU2,true_negative,,globin_fold,,UniProt,afdb,,Q8DCU2.pdb,
+Q7M419,true_negative,,globin_fold,,UniProt,afdb,,Q7M419.pdb,
+Q7M413,true_negative,,globin_fold,,UniProt,afdb,,Q7M413.pdb,
+P29245,true_negative,,globin_fold,,UniProt,afdb,,P29245.pdb,
+P02203,true_negative,,globin_fold,,UniProt,afdb,,P02203.pdb,
+P00714,true_negative,,lysozyme_like,,UniProt,afdb,,P00714.pdb,
+Q8IXA5,true_negative,,lysozyme_like,,UniProt,afdb,,Q8IXA5.pdb,
+Q9D9X8,true_negative,,lysozyme_like,,UniProt,afdb,,Q9D9X8.pdb,
+C1IIX1,true_negative,,lysozyme_like,,UniProt,afdb,,C1IIX1.pdb,
+A2AE20,true_negative,,lysozyme_like,,UniProt,afdb,,A2AE20.pdb,
+A6QQ77,true_negative,,lysozyme_like,,UniProt,afdb,,A6QQ77.pdb,
+B6VH75,true_negative,,lysozyme_like,,UniProt,afdb,,B6VH75.pdb,
+B6VH76,true_negative,,lysozyme_like,,UniProt,afdb,,B6VH76.pdb,
+B6VH77,true_negative,,lysozyme_like,,UniProt,afdb,,B6VH77.pdb,
+B6VH79,true_negative,,lysozyme_like,,UniProt,afdb,,B6VH79.pdb,
+Q32PD6,true_negative,,lysozyme_like,,UniProt,afdb,,Q32PD6.pdb,
+Q96QH8,true_negative,,lysozyme_like,,UniProt,afdb,,Q96QH8.pdb,
+Q54F36,true_negative,,lysozyme_like,,UniProt,afdb,,Q54F36.pdb,

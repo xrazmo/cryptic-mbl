@@ -102,8 +102,9 @@ def validate_manifest(rows: list[ManifestRow]) -> list[str]:
 
         if r.label == "positive" and r.subclass is None:
             problems.append(
-                f"{r.structure_id}: positive with no subclass — needed for "
-                "leave-one-subclass-out splitting (spec §7)."
+                f"{r.structure_id}: positive with no subclass — subclass isn't "
+                "used for splitting (see clustering_split.py) but is kept as "
+                "metadata for stratified reporting/plots; fill it in if known."
             )
     return problems
 

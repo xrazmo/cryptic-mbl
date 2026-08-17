@@ -1,0 +1,16 @@
+structure_id,source_uri,label,tier,subclass,is_predicted,is_reference_bank
+NDM-1,pdb:3SPU,positive,1,B1,false,true
+VIM-2,pdb:1KO3,positive,1,B1,false,true
+IMP-1,pdb:1DD6,positive,1,B1,false,true
+CphA,pdb:1X8G,positive,1,B2,false,true
+Sfh-I,pdb:2QDS,positive,1,B2,false,true
+L1,pdb:1SML,positive,1,B3,false,true
+FEZ-1,pdb:1K07,positive,1,B3,false,true
+AMM-1,local:/data/raw/AMM-1.pdb,positive,3,environmental,true,false
+SZM-1,local:/data/raw/SZM-1.pdb,positive,3,environmental,true,false
+CAM-2,local:/data/raw/CAM-2.pdb,positive,3,environmental,true,false
+RNase_example1,pdb:XXXX,hard_negative,2,,false,false
+Glyoxalase_example1,pdb:XXXX,hard_negative,2,,false,false
+Lactonase_example1,pdb:XXXX,hard_negative,2,,false,false
+Phosphodiesterase_example1,pdb:XXXX,hard_negative,2,,false,false
+UnrelatedFold_example1,pdb:XXXX,easy_negative,2,,false,false
