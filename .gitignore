@@ -8,6 +8,10 @@ assets/
 final_structures/
 data/
 
+# Training checkpoints/eval outputs (regenerate via train.py / evaluate.py)
+models/
+results/
+
 # Unrelated
 files/
 files.zip
