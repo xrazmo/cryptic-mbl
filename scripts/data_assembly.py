@@ -38,11 +38,13 @@ import csv
 import json
 import shutil
 import subprocess
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from utils import get_logger, CONFIDENCE_TIERS
+from utils import get_logger, CONFIDENCE_TIERS, PocketSubgraph
 import pocket_extraction
 
 log = get_logger(__name__)
@@ -137,7 +139,57 @@ def resolve_structure(uri: str, structure_id: str, raw_dir: Path) -> Path:
     raise ValueError(f"{structure_id}: unrecognized source_uri scheme in '{uri}'")
 
 
-def assemble(manifest_path: Path, raw_dir: Path, pocket_out_dir: Path, report_out: Path):
+def _already_processed(out_path: Path, row: ManifestRow) -> bool:
+    """
+    True if out_path holds a pocket that doesn't need (re)extraction: for
+    non-predicted (crystal) structures existence is enough; for predicted
+    structures we additionally require mean_pocket_plddt to be populated,
+    since older runs (before the b_factor loader fix) always left it None —
+    this lets a re-run resume without redoing already-fixed work.
+    """
+    if not out_path.exists():
+        return False
+    if not row.is_predicted:
+        return True
+    try:
+        pocket = PocketSubgraph.load(out_path)
+    except Exception:
+        return False
+    return pocket.metadata.mean_pocket_plddt is not None
+
+
+def _process_row(row: ManifestRow, raw_dir: Path, pocket_out_dir: Path) -> tuple[str, dict]:
+    """Runs one manifest row end-to-end. Returns ("ok"|"failed", info_dict)."""
+    try:
+        structure_path = resolve_structure(row.source_uri, row.structure_id, raw_dir)
+        pocket = pocket_extraction.extract_pocket(
+            structure_path=structure_path,
+            structure_id=row.structure_id,
+            label=row.label,
+            confidence_tier=row.tier,
+            subclass=row.subclass,
+            is_predicted=row.is_predicted,
+        )
+        out_path = pocket_out_dir / f"{row.structure_id}.npz"
+        pocket.save(out_path)
+        return "ok", {
+            "structure_id": row.structure_id,
+            "pocket_path": str(out_path),
+            "pocket_source": pocket.metadata.pocket_source,
+            "is_reference_bank": row.is_reference_bank,
+        }
+    except Exception as e:
+        return "failed", {"structure_id": row.structure_id, "error": str(e)}
+
+
+def assemble(
+    manifest_path: Path,
+    raw_dir: Path,
+    pocket_out_dir: Path,
+    report_out: Path,
+    n_workers: int = 1,
+    resume: bool = False,
+):
     rows = read_manifest(manifest_path)
     problems = validate_manifest(rows)
     if problems:
@@ -145,32 +197,33 @@ def assemble(manifest_path: Path, raw_dir: Path, pocket_out_dir: Path, report_ou
         for p in problems:
             log.warning(f"  - {p}")
 
+    pocket_out_dir.mkdir(parents=True, exist_ok=True)
     report = {"n_rows": len(rows), "problems": problems, "processed": [], "failed": []}
+    lock = threading.Lock()
 
-    for row in rows:
-        try:
-            structure_path = resolve_structure(row.source_uri, row.structure_id, raw_dir)
-            pocket = pocket_extraction.extract_pocket(
-                structure_path=structure_path,
-                structure_id=row.structure_id,
-                label=row.label,
-                confidence_tier=row.tier,
-                subclass=row.subclass,
-                is_predicted=row.is_predicted,
-            )
-            pocket_out_dir.mkdir(parents=True, exist_ok=True)
-            out_path = pocket_out_dir / f"{row.structure_id}.npz"
-            pocket.save(out_path)
-            report["processed"].append({
-                "structure_id": row.structure_id,
-                "pocket_path": str(out_path),
-                "pocket_source": pocket.metadata.pocket_source,
-                "is_reference_bank": row.is_reference_bank,
-            })
-            log.info(f"OK: {row.structure_id}")
-        except Exception as e:
-            log.error(f"FAILED: {row.structure_id} — {e}")
-            report["failed"].append({"structure_id": row.structure_id, "error": str(e)})
+    todo = rows
+    if resume:
+        todo = [r for r in rows if not _already_processed(pocket_out_dir / f"{r.structure_id}.npz", r)]
+        log.info(f"Resume: {len(rows) - len(todo)} already done, {len(todo)} remaining.")
+
+    def run(row: ManifestRow):
+        status, info = _process_row(row, raw_dir, pocket_out_dir)
+        with lock:
+            if status == "ok":
+                report["processed"].append(info)
+                log.info(f"OK: {info['structure_id']}")
+            else:
+                report["failed"].append(info)
+                log.error(f"FAILED: {info['structure_id']} — {info['error']}")
+
+    if n_workers <= 1:
+        for row in todo:
+            run(row)
+    else:
+        with ThreadPoolExecutor(max_workers=n_workers) as pool:
+            futures = [pool.submit(run, row) for row in todo]
+            for f in as_completed(futures):
+                f.result()  # re-raise any unexpected exception from run()
 
     report_out.parent.mkdir(parents=True, exist_ok=True)
     report_out.write_text(json.dumps(report, indent=2))
@@ -186,8 +239,17 @@ def main():
     p.add_argument("--raw-dir", required=True, type=Path)
     p.add_argument("--pocket-out-dir", required=True, type=Path)
     p.add_argument("--report-out", required=True, type=Path)
+    p.add_argument("--n-workers", type=int, default=1,
+                    help="Run this many rows concurrently (thread pool). Each row shells out to "
+                         "Metal3D/fpocket as a subprocess, so this is I/O-bound, not GIL-bound; "
+                         "10 is a reasonable default on a GPU with headroom.")
+    p.add_argument("--resume", action="store_true",
+                    help="Skip rows whose pocket .npz already exists and was produced by the "
+                         "current pocket_extraction code (checked via mean_pocket_plddt for "
+                         "predicted structures).")
     args = p.parse_args()
-    assemble(args.manifest, args.raw_dir, args.pocket_out_dir, args.report_out)
+    assemble(args.manifest, args.raw_dir, args.pocket_out_dir, args.report_out,
+              n_workers=args.n_workers, resume=args.resume)
 
 
 if __name__ == "__main__":
