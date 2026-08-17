@@ -76,9 +76,18 @@ def load_structure(path: str | Path) -> struc.AtomArray:
     """
     Load a PDB / mmCIF / AlphaFold-output structure into a biotite AtomArray.
     Returns the first model only (AtomArray, not AtomArrayStack).
+
+    Requests the b_factor extra field explicitly — biotite does not load it
+    by default, and AF-predicted structures store per-residue pLDDT there
+    (see get_per_residue_confidence). Without it, arr.b_factor doesn't exist
+    at all and pLDDT-based QC silently never fires.
     """
     path = Path(path)
-    arr = strucio.load_structure(str(path))
+    try:
+        arr = strucio.load_structure(str(path), extra_fields=["b_factor"])
+    except TypeError:
+        # some formats and biotite versions do not accept extra_fields
+        arr = strucio.load_structure(str(path))
     if isinstance(arr, struc.AtomArrayStack):
         arr = arr[0]
     return arr
