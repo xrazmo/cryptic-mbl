@@ -38,12 +38,24 @@ from model import PocketEncoder, SiameseTripletModel
 log = get_logger(__name__)
 
 
-def load_ensemble(ensemble_dir: Path, in_dim: int, device: str) -> list[SiameseTripletModel]:
+def load_ensemble(
+    ensemble_dir: Path, in_dim: int, device: str,
+    ablate_distance_to_metal: bool = False,
+) -> list[SiameseTripletModel]:
     models = []
     for seed_dir in sorted(ensemble_dir.glob("seed_*")):
         ckpt = seed_dir / "best.pt"
         if not ckpt.exists():
             continue
+        config_path = seed_dir / "config.json"
+        if config_path.exists():
+            config = json.loads(config_path.read_text())
+            trained_ablation = bool(config.get("ablate_distance_to_metal", False))
+            if trained_ablation != ablate_distance_to_metal:
+                raise ValueError(
+                    f"{seed_dir} ablation={trained_ablation}, but evaluation "
+                    f"ablation={ablate_distance_to_metal}"
+                )
         encoder = PocketEncoder(in_dim=in_dim).to(device)
         model = SiameseTripletModel(encoder).to(device)
         model.load_state_dict(torch.load(ckpt, map_location=device))
@@ -64,16 +76,26 @@ def ensemble_embed(models: list[SiameseTripletModel], data, device: str):
     return embs.mean(axis=0), float(embs.var(axis=0).mean())
 
 
-def load_graphs(pockets_dir: Path, ids: list[str]) -> dict:
+def load_graphs(
+    pockets_dir: Path, ids: list[str], ablate_distance_to_metal: bool = False,
+) -> dict:
     graphs = {}
     for sid in ids:
         p = pockets_dir / f"{sid}.npz"
         pocket = PocketSubgraph.load(p)
-        graphs[sid] = (pocket_to_pyg_data(pocket), pocket.metadata)
+        graphs[sid] = (
+            pocket_to_pyg_data(
+                pocket, ablate_distance_to_metal=ablate_distance_to_metal,
+            ),
+            pocket.metadata,
+        )
     return graphs
 
 
-def knn_accuracy(query_embs: dict, reference_embs: dict, reference_labels: dict, k: int = 5) -> float:
+def knn_accuracy(
+    query_embs: dict, query_labels: dict, reference_embs: dict,
+    reference_labels: dict, k: int = 5,
+) -> float:
     ref_ids = list(reference_embs.keys())
     ref_matrix = np.stack([reference_embs[i] for i in ref_ids])
     correct = 0
@@ -82,11 +104,43 @@ def knn_accuracy(query_embs: dict, reference_embs: dict, reference_labels: dict,
         nn_idx = np.argsort(dists)[:k]
         votes = Counter(reference_labels[ref_ids[i]] for i in nn_idx)
         pred = votes.most_common(1)[0][0]
-        # ground truth for a query positive is "positive"; queries here are
-        # assumed to be test-set positives being checked against the bank.
-        if pred == "positive":
+        if pred == query_labels[qid]:
             correct += 1
     return correct / max(len(query_embs), 1)
+
+
+def knn_classification_metrics(
+    query_embs: dict, query_labels: dict, reference_embs: dict,
+    reference_labels: dict, k: int = 5,
+) -> dict:
+    """Binary held-out metrics, including class-balanced performance."""
+    ref_ids = list(reference_embs)
+    ref_matrix = np.stack([reference_embs[i] for i in ref_ids])
+    counts = {"tp": 0, "tn": 0, "fp": 0, "fn": 0}
+    for qid, qemb in query_embs.items():
+        dists = np.linalg.norm(ref_matrix - qemb[None, :], axis=1)
+        neighbors = np.argsort(dists)[:min(k, len(ref_ids))]
+        votes = Counter(reference_labels[ref_ids[i]] for i in neighbors)
+        pred = votes.most_common(1)[0][0]
+        truth = query_labels[qid]
+        if truth == "positive" and pred == "positive":
+            counts["tp"] += 1
+        elif truth == "negative" and pred == "negative":
+            counts["tn"] += 1
+        elif truth == "negative":
+            counts["fp"] += 1
+        else:
+            counts["fn"] += 1
+    sensitivity = counts["tp"] / max(counts["tp"] + counts["fn"], 1)
+    specificity = counts["tn"] / max(counts["tn"] + counts["fp"], 1)
+    accuracy = (counts["tp"] + counts["tn"]) / max(len(query_embs), 1)
+    return {
+        "accuracy": accuracy,
+        "balanced_accuracy": (sensitivity + specificity) / 2,
+        "sensitivity": sensitivity,
+        "specificity": specificity,
+        "confusion": counts,
+    }
 
 
 def recall_at_k(positive_embs: dict, negative_embs: dict, k_values=(1, 5, 10, 20)) -> dict:
@@ -129,12 +183,30 @@ def external_validation_ranks(external_embs: dict, negative_embs: dict, positive
     return out
 
 
+def reference_bank_leave_one_out_ranks(
+    reference_embs: dict, negative_embs: dict,
+) -> dict:
+    """Rank each reference against a prototype that does not contain itself."""
+    if len(reference_embs) < 2:
+        raise ValueError("Leave-one-out reference validation needs at least two references")
+    out = {}
+    for sid, emb in reference_embs.items():
+        prototype = np.mean(
+            [other for oid, other in reference_embs.items() if oid != sid], axis=0,
+        )
+        out[sid] = external_validation_ranks(
+            {sid: emb}, negative_embs, prototype,
+        )[sid]
+    return out
+
+
 def plot_embedding_space(embeddings: dict, labels: dict, subclasses: dict, out_path: Path):
     try:
         import umap
         reducer = umap.UMAP(n_components=2, random_state=0)
         method = "UMAP"
-    except ImportError:
+    except Exception as exc:
+        log.warning(f"UMAP unavailable ({exc}); falling back to PCA.")
         from sklearn.decomposition import PCA
         reducer = PCA(n_components=2)
         method = "PCA"
@@ -176,20 +248,34 @@ def main():
     p.add_argument("--pockets-dir", required=True, type=Path)
     p.add_argument("--ensemble-dir", required=True, type=Path)
     p.add_argument("--reference-bank-ids", nargs="+", required=True)
-    p.add_argument("--external-ids", nargs="+", required=True)
+    p.add_argument("--external-ids", nargs="*", default=[])
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--k", type=int, default=5)
+    p.add_argument("--ablate-distance-to-metal", action="store_true")
     args = p.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     folds = json.loads(args.fold_json.read_text())["folds"]
     fold = next(f for f in folds if f["fold_id"] == args.fold_id)
 
-    all_needed_ids = fold["test"] + args.reference_bank_ids + args.external_ids
-    graphs = load_graphs(args.pockets_dir, sorted(set(all_needed_ids)))
+    overlap = set(args.reference_bank_ids) & set(args.external_ids)
+    if overlap:
+        raise ValueError(
+            "--external-ids must be independent of --reference-bank-ids; overlap: "
+            + ", ".join(sorted(overlap))
+        )
+
+    all_needed_ids = fold["train"] + fold["test"] + args.reference_bank_ids + args.external_ids
+    graphs = load_graphs(
+        args.pockets_dir, sorted(set(all_needed_ids)),
+        ablate_distance_to_metal=args.ablate_distance_to_metal,
+    )
 
     in_dim = next(iter(graphs.values()))[0].x.shape[1]
-    models = load_ensemble(args.ensemble_dir, in_dim, device)
+    models = load_ensemble(
+        args.ensemble_dir, in_dim, device,
+        ablate_distance_to_metal=args.ablate_distance_to_metal,
+    )
 
     embeddings, variances, labels, subclasses, tiers = {}, {}, {}, {}, {}
     for sid, (data, meta) in graphs.items():
@@ -201,11 +287,20 @@ def main():
         tiers[sid] = meta.confidence_tier
 
     ref_embs = {sid: embeddings[sid] for sid in args.reference_bank_ids}
-    ref_labels = {sid: "positive" for sid in args.reference_bank_ids}  # reference bank is all-positive by construction
+    train_embs = {sid: embeddings[sid] for sid in fold["train"]}
+    train_labels = {
+        sid: "positive" if labels[sid] == "positive" else "negative"
+        for sid in fold["train"]
+    }
     test_pos_ids = [sid for sid in fold["test"] if labels[sid] == "positive"]
     test_neg_ids = [sid for sid in fold["test"] if labels[sid] in ("hard_negative", "easy_negative")]
 
-    knn_acc = knn_accuracy({sid: embeddings[sid] for sid in test_pos_ids}, ref_embs, ref_labels, k=args.k)
+    test_ids = test_pos_ids + test_neg_ids
+    test_labels = {sid: "positive" if sid in test_pos_ids else "negative" for sid in test_ids}
+    knn_metrics = knn_classification_metrics(
+        {sid: embeddings[sid] for sid in test_ids}, test_labels,
+        train_embs, train_labels, k=args.k,
+    )
     recall = recall_at_k(
         {sid: embeddings[sid] for sid in test_pos_ids},
         {sid: embeddings[sid] for sid in test_neg_ids},
@@ -216,12 +311,18 @@ def main():
         {sid: embeddings[sid] for sid in test_neg_ids},
         prototype,
     )
+    reference_loo = reference_bank_leave_one_out_ranks(
+        ref_embs, {sid: embeddings[sid] for sid in test_neg_ids},
+    )
 
     results = {
         "fold_id": args.fold_id,
-        "knn_accuracy": knn_acc,
+        "knn_accuracy": knn_metrics["accuracy"],
+        "knn": knn_metrics,
         "recall_at_k": recall,
         "external_validation": external,
+        "reference_bank_leave_one_out": reference_loo,
+        "ablate_distance_to_metal": args.ablate_distance_to_metal,
         "mean_ensemble_variance": {
             "test_positives": float(np.mean([variances[s] for s in test_pos_ids])) if test_pos_ids else None,
             "test_negatives": float(np.mean([variances[s] for s in test_neg_ids])) if test_neg_ids else None,

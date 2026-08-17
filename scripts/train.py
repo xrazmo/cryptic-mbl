@@ -38,27 +38,33 @@ from triplet_sampling import random_triplets, semi_hard_triplets
 log = get_logger(__name__)
 
 
-def load_fold_graphs(pockets_dir: Path, ids: list[str]) -> dict[str, object]:
+def load_fold_graphs(
+    pockets_dir: Path, ids: list[str], ablate_distance_to_metal: bool = False,
+) -> dict[str, object]:
     graphs = {}
     for sid in ids:
         npz_path = pockets_dir / f"{sid}.npz"
         pocket = PocketSubgraph.load(npz_path)
-        graphs[sid] = pocket_to_pyg_data(pocket)
+        graph = pocket_to_pyg_data(
+            pocket, ablate_distance_to_metal=ablate_distance_to_metal,
+        )
+        # Preserve the original class, rather than losing hard/easy negative
+        # identity when it is converted to the binary tensor target.
+        graph.label_name = pocket.metadata.label
+        graphs[sid] = graph
     return graphs
 
 
 def partition_by_label(ids: list[str], graphs: dict) -> dict[str, list[str]]:
     buckets = {"positive": [], "hard": [], "easy": []}
     for sid in ids:
-        y = graphs[sid].y.item()
-        # label metadata isn't preserved on the Data object beyond y (1/0/-1);
-        # negative "hard vs easy" distinction must come from the manifest.
-        # Re-derive here from pocket_source / a side lookup passed in by caller
-        # in the real pipeline; placeholder groups all y==0 as "hard".
-        if y == 1:
+        label = graphs[sid].label_name
+        if label == "positive":
             buckets["positive"].append(sid)
-        elif y == 0:
+        elif label == "hard_negative":
             buckets["hard"].append(sid)
+        elif label == "easy_negative":
+            buckets["easy"].append(sid)
     return buckets
 
 
@@ -100,13 +106,17 @@ def train_one_model(
     margin: float = 0.3,
     lr: float = 1e-4,
     remine_every_n_epochs: int = 3,
+    ablate_distance_to_metal: bool = False,
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ):
     set_seed(seed)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     all_ids = train_ids + val_ids
-    graphs = load_fold_graphs(pockets_dir, all_ids)
+    graphs = load_fold_graphs(
+        pockets_dir, all_ids,
+        ablate_distance_to_metal=ablate_distance_to_metal,
+    )
     buckets = partition_by_label(train_ids, graphs)
     val_buckets = partition_by_label(val_ids, graphs)
 
@@ -163,6 +173,7 @@ def train_one_model(
     (out_dir / "config.json").write_text(json.dumps({
         "seed": seed, "margin": margin, "n_epochs": n_epochs, "in_dim": in_dim,
         "best_val_loss": best_val_loss,
+        "ablate_distance_to_metal": ablate_distance_to_metal,
     }, indent=2))
     return out_dir / "best.pt"
 
@@ -202,16 +213,20 @@ def main():
     p.add_argument("--ensemble", action="store_true")
     p.add_argument("--n-seeds", type=int, default=8)
     p.add_argument("--n-epochs", type=int, default=60)
+    p.add_argument("--ablate-distance-to-metal", action="store_true",
+                   help="Zero the metal-distance node feature while preserving model shape.")
     args = p.parse_args()
 
     if args.ensemble:
         run_ensemble(args.fold_json, args.fold_id, args.pockets_dir, args.out_dir,
-                     n_seeds=args.n_seeds, n_epochs=args.n_epochs)
+                     n_seeds=args.n_seeds, n_epochs=args.n_epochs,
+                     ablate_distance_to_metal=args.ablate_distance_to_metal)
     else:
         folds = json.loads(args.fold_json.read_text())["folds"]
         fold = next(f for f in folds if f["fold_id"] == args.fold_id)
         train_one_model(fold["train"], fold["val"], args.pockets_dir, args.out_dir,
-                         seed=args.seed, n_epochs=args.n_epochs)
+                         seed=args.seed, n_epochs=args.n_epochs,
+                         ablate_distance_to_metal=args.ablate_distance_to_metal)
 
 
 if __name__ == "__main__":

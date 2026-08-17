@@ -137,6 +137,7 @@ def pocket_to_pyg_data(
     pocket: PocketSubgraph,
     esm2_embeddings: Optional[np.ndarray] = None,
     edge_cutoff: float = EDGE_CUTOFF_DEFAULT,
+    ablate_distance_to_metal: bool = False,
 ):
     """
     Returns a torch_geometric.data.Data object. Imports torch/PyG lazily so
@@ -148,6 +149,11 @@ def pocket_to_pyg_data(
 
     residue_level = collapse_to_residue_level(pocket)
     x = build_node_features(residue_level, pocket.metal_coord, esm2_embeddings)
+    if ablate_distance_to_metal:
+        # Feature layout is AA[0:20], sidechain[20], metal distance[21], ESM2[22:].
+        # Preserve the input dimensionality so ablated and baseline models have
+        # exactly the same parameter count and differ only in this information.
+        x[:, 21] = 0.0
     edge_index, edge_attr = build_edges(residue_level["centroids"], cutoff=edge_cutoff)
 
     label_map = {"positive": 1, "hard_negative": 0, "easy_negative": 0, "unlabeled": -1}
@@ -173,6 +179,7 @@ def main():
     p.add_argument("--esm2-embeddings", type=Path, default=None,
                     help="Optional .npy file, pre-aligned to residue order, shape (n_res, ESM2_DIM).")
     p.add_argument("--edge-cutoff", type=float, default=EDGE_CUTOFF_DEFAULT)
+    p.add_argument("--ablate-distance-to-metal", action="store_true")
     p.add_argument("--out", required=True, type=Path)
     args = p.parse_args()
 
@@ -180,7 +187,10 @@ def main():
 
     pocket = PocketSubgraph.load(args.pocket)
     esm2 = np.load(args.esm2_embeddings) if args.esm2_embeddings else None
-    data = pocket_to_pyg_data(pocket, esm2_embeddings=esm2, edge_cutoff=args.edge_cutoff)
+    data = pocket_to_pyg_data(
+        pocket, esm2_embeddings=esm2, edge_cutoff=args.edge_cutoff,
+        ablate_distance_to_metal=args.ablate_distance_to_metal,
+    )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     torch.save(data, args.out)
     log.info(f"Saved graph -> {args.out} ({data.num_nodes} nodes, {data.num_edges} edges)")
