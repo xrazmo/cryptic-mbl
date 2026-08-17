@@ -12,8 +12,35 @@ Node features (concatenated, in this order):
              coordinating residues is added separately (see
              `metal_coordinating_mask` and `--atom-level-metal-shell`).
     [21]     distance to nearest predicted metal ion (Å), 0 if no metal
-             (cavity_fallback instances)
-    [22:22+D_ESM]  optional frozen ESM2 per-residue embedding (zeros if disabled)
+             (cavity_fallback instances) — CA-centroid based; see [30:32]
+             for a ligand-atom-specific version of this same idea.
+    [22:30]  physicochemical descriptors (see AA_PROPERTIES): hydrophobicity,
+             charge, polarity, side-chain volume, aromaticity, H-bond donor
+             count, H-bond acceptor count, canonical-Zn-ligand-capable flag
+             (His/Asp/Glu/Cys). Continuous and chemistry-based rather than
+             categorical, so e.g. Asp<->Glu sit close in feature space
+             instead of being orthogonal one-hot categories — added
+             alongside (not replacing) the AA one-hot so the two encodings
+             can be ablated against each other the way distance_to_metal was.
+    [30]     min distance from this residue's actual ligand-capable atom(s)
+             (His Nδ1/Nε2, Asp Oδ1/Oδ2, Glu Oε1/Oε2, Cys Sγ) to the
+             predicted metal center, 0 if no metal or non-ligand-capable
+             residue. Unlike [21] (CA centroid), this targets the specific
+             side-chain atom that would actually coordinate a real Zn site.
+    [31]     binary flag: is [30] within a plausible Zn-coordination bond
+             length (<= 2.8 Å)
+    [32:36]  backbone dihedral geometry: (sin phi, cos phi, sin psi, cos psi),
+             computed only when both flanking residues (res_id-1, res_id+1)
+             are present in this pocket with valid N/CA/C atoms — pockets are
+             a spatial, not sequential, subset of the chain, so this is often
+             unavailable; 0s (not a real angle) mark "undefined" rather than
+             silently emitting a spurious 0 rad angle.
+    [36]     per-residue SASA (Å², /100), computed on the isolated pocket
+             substructure — solvent exposure of the truncated boundary is
+             overestimated relative to the full chain, but the *relative*
+             ordering of buried-vs-exposed residues within one pocket is
+             still informative.
+    [37:37+D_ESM]  optional frozen ESM2 per-residue embedding (zeros if disabled)
 
 Edges: all residue pairs within `edge_cutoff` Å (default 10 Å) of each
 other's centroid, edge_attr = pairwise distance (single scalar; the
@@ -47,6 +74,50 @@ AA_TO_IDX = {aa: i for i, aa in enumerate(AMINO_ACIDS)}
 EDGE_CUTOFF_DEFAULT = 10.0
 ESM2_DIM = 1280  # esm2_t33_650M_UR50D per-residue embedding dim; adjust to chosen checkpoint
 
+# Physicochemical descriptors per residue, in the order documented above:
+#   [hydrophobicity (Kyte-Doolittle), charge, polarity (0/1), side-chain
+#    volume (A^3 / 100, Zamyatnin), aromaticity (0/1), H-bond donor count,
+#    H-bond acceptor count, canonical Zn-ligand-capable (0/1)]
+# Continuous/chemistry-based, deliberately NOT a one-hot, so chemically
+# similar residues (e.g. Asp/Glu, both carboxylate Zn-ligands) sit close in
+# feature space instead of being orthogonal categories -- meant to reduce
+# how much the model has to rely on exact sequence identity to recognize
+# "this position does Zn-ligand chemistry", which matters for generalizing
+# to sequence-divergent cryptic homologs (see project README).
+AA_PROPERTIES = {
+    "ALA": (1.8, 0, 0, 0.88, 0, 0, 0, 0),
+    "ARG": (-4.5, 1, 1, 1.73, 0, 5, 0, 0),
+    "ASN": (-3.5, 0, 1, 1.14, 0, 2, 2, 0),
+    "ASP": (-3.5, -1, 1, 1.11, 0, 1, 3, 1),
+    "CYS": (2.5, 0, 0, 1.08, 0, 1, 0, 1),
+    "GLN": (-3.5, 0, 1, 1.44, 0, 2, 2, 0),
+    "GLU": (-3.5, -1, 1, 1.38, 0, 1, 3, 1),
+    "GLY": (-0.4, 0, 0, 0.60, 0, 0, 0, 0),
+    "HIS": (-3.2, 0, 1, 1.53, 1, 2, 1, 1),
+    "ILE": (4.5, 0, 0, 1.67, 0, 0, 0, 0),
+    "LEU": (3.8, 0, 0, 1.67, 0, 0, 0, 0),
+    "LYS": (-3.9, 1, 1, 1.69, 0, 3, 0, 0),
+    "MET": (1.9, 0, 0, 1.62, 0, 0, 0, 0),
+    "PHE": (2.8, 0, 0, 1.89, 1, 0, 0, 0),
+    "PRO": (-1.6, 0, 0, 1.13, 0, 0, 0, 0),
+    "SER": (-0.8, 0, 1, 0.89, 0, 1, 1, 0),
+    "THR": (-0.7, 0, 1, 1.16, 0, 1, 1, 0),
+    "TRP": (-0.9, 0, 1, 2.28, 1, 1, 0, 0),
+    "TYR": (-1.3, 0, 1, 1.94, 1, 1, 1, 0),
+    "VAL": (4.2, 0, 0, 1.40, 0, 0, 0, 0),
+}
+N_CHEM_PROPS = 8
+
+# Side-chain atom(s) that actually coordinate a Zn ion in canonical MBL
+# active sites (3H, DCH, and related B1/B2/B3 coordination schemes).
+LIGAND_ATOMS = {
+    "HIS": ("ND1", "NE2"),
+    "ASP": ("OD1", "OD2"),
+    "GLU": ("OE1", "OE2"),
+    "CYS": ("SG",),
+}
+ZN_BOND_CUTOFF = 2.8  # Angstrom; generous upper bound on Zn-N/O/S bond lengths
+
 
 def _one_hot_aa(res_name: str) -> np.ndarray:
     v = np.zeros(len(AMINO_ACIDS), dtype=np.float32)
@@ -57,6 +128,13 @@ def _one_hot_aa(res_name: str) -> np.ndarray:
     # through) get an all-zero one-hot rather than crashing the pipeline;
     # this is a data-quality signal to check upstream, not silently ignore.
     return v
+
+
+def _chem_properties(res_name: str) -> np.ndarray:
+    props = AA_PROPERTIES.get(res_name)
+    if props is None:
+        return np.zeros(N_CHEM_PROPS, dtype=np.float32)
+    return np.array(props, dtype=np.float32)
 
 
 def collapse_to_residue_level(pocket: PocketSubgraph) -> dict:
@@ -88,7 +166,109 @@ def collapse_to_residue_level(pocket: PocketSubgraph) -> dict:
     }
 
 
+def compute_ligand_geometry(
+    pocket: PocketSubgraph, residue_level: dict, metal_coord: Optional[np.ndarray],
+) -> np.ndarray:
+    """
+    Returns (n, 2): [min distance from this residue's actual ligand-capable
+    atom(s) to the metal center, binary flag that the distance is within a
+    plausible Zn bond length]. Both 0 if no metal, or the residue has no
+    canonical ligand atoms (LIGAND_ATOMS) present.
+    """
+    n = len(residue_level["res_ids"])
+    out = np.zeros((n, 2), dtype=np.float32)
+    if metal_coord is None:
+        return out
+    for i, rid in enumerate(residue_level["res_ids"]):
+        ligand_names = LIGAND_ATOMS.get(residue_level["res_names"][i])
+        if not ligand_names:
+            continue
+        mask = (pocket.res_ids == rid) & np.isin(pocket.atom_names, ligand_names)
+        if not mask.any():
+            continue
+        min_dist = float(np.linalg.norm(pocket.coords[mask] - metal_coord[None, :], axis=1).min())
+        out[i, 0] = min_dist
+        out[i, 1] = 1.0 if min_dist <= ZN_BOND_CUTOFF else 0.0
+    return out
+
+
+def _dihedral_angle(p0: np.ndarray, p1: np.ndarray, p2: np.ndarray, p3: np.ndarray) -> float:
+    """Praxeolitic dihedral formula; returns radians."""
+    b0, b1, b2 = p0 - p1, p2 - p1, p3 - p2
+    b1 = b1 / (np.linalg.norm(b1) + 1e-8)
+    v = b0 - np.dot(b0, b1) * b1
+    w = b2 - np.dot(b2, b1) * b1
+    return float(np.arctan2(np.dot(np.cross(b1, v), w), np.dot(v, w)))
+
+
+def compute_backbone_dihedrals(pocket: PocketSubgraph, residue_level: dict) -> np.ndarray:
+    """
+    Returns (n, 4): [sin(phi), cos(phi), sin(psi), cos(psi)] (sin/cos, not
+    raw radians, so the feature doesn't have a spurious discontinuity at
+    +-pi). Only computed when both flanking residues (res_id-1, res_id+1)
+    are present in this pocket with valid backbone atoms -- pockets are a
+    spatial, not sequential, subset of the chain, so this is frequently
+    unavailable; left as (0,0,0,0) ("undefined") rather than a fabricated angle.
+    """
+    n = len(residue_level["res_ids"])
+    out = np.zeros((n, 4), dtype=np.float32)
+    rid_set = set(residue_level["res_ids"].tolist())
+
+    def backbone_atom(rid: int, name: str) -> Optional[np.ndarray]:
+        mask = (pocket.res_ids == rid) & (pocket.atom_names == name)
+        return pocket.coords[mask][0] if mask.any() else None
+
+    for i, rid in enumerate(residue_level["res_ids"]):
+        prev_rid, next_rid = int(rid) - 1, int(rid) + 1
+        if prev_rid not in rid_set or next_rid not in rid_set:
+            continue
+        atoms = (
+            backbone_atom(prev_rid, "C"), backbone_atom(rid, "N"), backbone_atom(rid, "CA"),
+            backbone_atom(rid, "C"), backbone_atom(next_rid, "N"),
+        )
+        if any(a is None for a in atoms):
+            continue
+        c_prev, n_curr, ca_curr, c_curr, n_next = atoms
+        phi = _dihedral_angle(c_prev, n_curr, ca_curr, c_curr)
+        psi = _dihedral_angle(n_curr, ca_curr, c_curr, n_next)
+        out[i] = [np.sin(phi), np.cos(phi), np.sin(psi), np.cos(psi)]
+    return out
+
+
+def compute_sasa(pocket: PocketSubgraph, residue_level: dict) -> np.ndarray:
+    """
+    Per-residue SASA (Angstrom^2 / 100), computed on the isolated pocket
+    substructure. Solvent exposure at the pocket's truncated boundary is
+    overestimated relative to the full chain (neighboring atoms that would
+    normally block access are missing), but the *relative* buried-vs-exposed
+    ordering within one pocket is still informative. Falls back to zeros if
+    the SASA calculation errors (e.g. unrecognized elements) rather than
+    failing graph construction for the whole pocket.
+    """
+    import biotite.structure as bstruc
+
+    n = len(residue_level["res_ids"])
+    try:
+        arr = bstruc.AtomArray(len(pocket.res_ids))
+        arr.coord = pocket.coords
+        arr.res_id = pocket.res_ids
+        arr.res_name = pocket.res_names
+        arr.atom_name = pocket.atom_names
+        arr.element = pocket.elements
+        arr.chain_id = np.full(len(pocket.res_ids), "A")
+        atom_sasa = np.nan_to_num(bstruc.sasa(arr), nan=0.0)
+    except Exception as exc:
+        log.warning(f"SASA computation failed ({exc}); defaulting SASA feature to 0.")
+        return np.zeros((n, 1), dtype=np.float32)
+
+    out = np.zeros((n, 1), dtype=np.float32)
+    for i, rid in enumerate(residue_level["res_ids"]):
+        out[i, 0] = float(np.sum(atom_sasa[pocket.res_ids == rid])) / 100.0
+    return out
+
+
 def build_node_features(
+    pocket: PocketSubgraph,
     residue_level: dict,
     metal_coord: Optional[np.ndarray],
     esm2_embeddings: Optional[np.ndarray] = None,
@@ -103,6 +283,7 @@ def build_node_features(
     n = len(residue_level["res_ids"])
     aa_onehot = np.stack([_one_hot_aa(rn) for rn in residue_level["res_names"]])
     sidechain_flag = residue_level["has_sidechain"].reshape(-1, 1)
+    chem_props = np.stack([_chem_properties(rn) for rn in residue_level["res_names"]])
 
     if metal_coord is not None:
         dist_to_metal = np.linalg.norm(
@@ -110,6 +291,10 @@ def build_node_features(
         ).reshape(-1, 1).astype(np.float32)
     else:
         dist_to_metal = np.zeros((n, 1), dtype=np.float32)
+
+    ligand_geometry = compute_ligand_geometry(pocket, residue_level, metal_coord)
+    dihedrals = compute_backbone_dihedrals(pocket, residue_level)
+    sasa = compute_sasa(pocket, residue_level)
 
     if esm2_embeddings is not None:
         assert esm2_embeddings.shape == (n, ESM2_DIM), (
@@ -119,7 +304,10 @@ def build_node_features(
     else:
         esm_block = np.zeros((n, ESM2_DIM), dtype=np.float32)
 
-    return np.concatenate([aa_onehot, sidechain_flag, dist_to_metal, esm_block], axis=1)
+    return np.concatenate([
+        aa_onehot, sidechain_flag, dist_to_metal, chem_props,
+        ligand_geometry, dihedrals, sasa, esm_block,
+    ], axis=1)
 
 
 def build_edges(centroids: np.ndarray, cutoff: float = EDGE_CUTOFF_DEFAULT):
@@ -148,11 +336,11 @@ def pocket_to_pyg_data(
     from torch_geometric.data import Data
 
     residue_level = collapse_to_residue_level(pocket)
-    x = build_node_features(residue_level, pocket.metal_coord, esm2_embeddings)
+    x = build_node_features(pocket, residue_level, pocket.metal_coord, esm2_embeddings)
     if ablate_distance_to_metal:
-        # Feature layout is AA[0:20], sidechain[20], metal distance[21], ESM2[22:].
-        # Preserve the input dimensionality so ablated and baseline models have
-        # exactly the same parameter count and differ only in this information.
+        # Feature layout: see module docstring. Preserve the input
+        # dimensionality so ablated and baseline models have exactly the
+        # same parameter count and differ only in this one feature.
         x[:, 21] = 0.0
     edge_index, edge_attr = build_edges(residue_level["centroids"], cutoff=edge_cutoff)
 
