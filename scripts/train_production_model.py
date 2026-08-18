@@ -42,6 +42,9 @@ def main():
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--n-seeds", type=int, default=8)
     p.add_argument("--n-epochs", type=int, default=60)
+    p.add_argument("--start-seed", type=int, default=0,
+                    help="Resume from this seed (e.g. after an interrupted run); "
+                         "seeds before it are left untouched.")
     args = p.parse_args()
 
     all_ids = sorted(f.stem for f in args.pockets_dir.glob("*.npz"))
@@ -53,8 +56,11 @@ def main():
     log.info("No validation carve (val_ids=[]) -- best.pt will not be written (NaN val loss guard), "
               "final.pt is the single artifact per seed, as intended.")
 
-    for seed in range(args.n_seeds):
+    for seed in range(args.start_seed, args.n_seeds):
         seed_dir = args.out_dir / f"seed_{seed}"
+        if (seed_dir / "final.pt").exists():
+            log.info(f"seed={seed}: final.pt already exists at {seed_dir}, skipping (resume-safe).")
+            continue
         log.info(f"Training production seed={seed} -> {seed_dir}")
         train_one_model(
             train_ids=all_ids, val_ids=[], pockets_dir=args.pockets_dir, out_dir=seed_dir,
