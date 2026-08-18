@@ -42,6 +42,7 @@ log = get_logger(__name__)
 def load_fold_graphs(
     pockets_dir: Path, ids: list[str], ablate_distance_to_metal: bool = False,
     esm2_dir: Optional[Path] = None,
+    ablate_aa_identity: bool = False, ablate_structural: bool = False, ablate_esm2: bool = False,
 ) -> dict[str, object]:
     graphs = {}
     for sid in ids:
@@ -51,6 +52,8 @@ def load_fold_graphs(
         esm2_emb = load_esm2_embedding(esm2_dir, sid, n_residues)
         graph = pocket_to_pyg_data(
             pocket, esm2_embeddings=esm2_emb, ablate_distance_to_metal=ablate_distance_to_metal,
+            ablate_aa_identity=ablate_aa_identity, ablate_structural=ablate_structural,
+            ablate_esm2=ablate_esm2,
         )
         # Preserve the original class, rather than losing hard/easy negative
         # identity when it is converted to the binary tensor target.
@@ -112,6 +115,7 @@ def train_one_model(
     remine_every_n_epochs: int = 3,
     ablate_distance_to_metal: bool = False,
     esm2_dir: Optional[Path] = None,
+    ablate_aa_identity: bool = False, ablate_structural: bool = False, ablate_esm2: bool = False,
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ):
     set_seed(seed)
@@ -121,6 +125,8 @@ def train_one_model(
     graphs = load_fold_graphs(
         pockets_dir, all_ids,
         ablate_distance_to_metal=ablate_distance_to_metal, esm2_dir=esm2_dir,
+        ablate_aa_identity=ablate_aa_identity, ablate_structural=ablate_structural,
+        ablate_esm2=ablate_esm2,
     )
     buckets = partition_by_label(train_ids, graphs)
     val_buckets = partition_by_label(val_ids, graphs)
@@ -180,6 +186,8 @@ def train_one_model(
         "best_val_loss": best_val_loss,
         "ablate_distance_to_metal": ablate_distance_to_metal,
         "esm2_dir": str(esm2_dir) if esm2_dir is not None else None,
+        "ablate_aa_identity": ablate_aa_identity, "ablate_structural": ablate_structural,
+        "ablate_esm2": ablate_esm2,
     }, indent=2))
     return out_dir / "best.pt"
 
@@ -223,18 +231,27 @@ def main():
                    help="Zero the metal-distance node feature while preserving model shape.")
     p.add_argument("--esm2-dir", type=Path, default=None,
                    help="Directory of esm2_embed.py .npy outputs; omit to use zeros (default).")
+    p.add_argument("--ablate-aa-identity", action="store_true",
+                   help="Zero the 20-dim amino-acid one-hot block.")
+    p.add_argument("--ablate-structural", action="store_true",
+                   help="Zero the 17-dim chemistry/geometry block.")
+    p.add_argument("--ablate-esm2", action="store_true",
+                   help="Zero the ESM2 embedding block.")
     args = p.parse_args()
 
+    ablation_kwargs = dict(
+        ablate_distance_to_metal=args.ablate_distance_to_metal, esm2_dir=args.esm2_dir,
+        ablate_aa_identity=args.ablate_aa_identity, ablate_structural=args.ablate_structural,
+        ablate_esm2=args.ablate_esm2,
+    )
     if args.ensemble:
         run_ensemble(args.fold_json, args.fold_id, args.pockets_dir, args.out_dir,
-                     n_seeds=args.n_seeds, n_epochs=args.n_epochs,
-                     ablate_distance_to_metal=args.ablate_distance_to_metal, esm2_dir=args.esm2_dir)
+                     n_seeds=args.n_seeds, n_epochs=args.n_epochs, **ablation_kwargs)
     else:
         folds = json.loads(args.fold_json.read_text())["folds"]
         fold = next(f for f in folds if f["fold_id"] == args.fold_id)
         train_one_model(fold["train"], fold["val"], args.pockets_dir, args.out_dir,
-                         seed=args.seed, n_epochs=args.n_epochs,
-                         ablate_distance_to_metal=args.ablate_distance_to_metal, esm2_dir=args.esm2_dir)
+                         seed=args.seed, n_epochs=args.n_epochs, **ablation_kwargs)
 
 
 if __name__ == "__main__":
