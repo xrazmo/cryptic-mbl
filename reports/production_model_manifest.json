@@ -1,0 +1,53 @@
+{
+  "model_name": "new_graph_flat_production",
+  "decision": "Flat architecture (PocketEncoder) over the Stage-2 graph (sequence-adjacency edges + radial-shell feature), no ESM2/structural branch separation. Selected over the branched fusion model: most balanced trained architecture, improves the B1/B2 floor without the branched model's remote-outlier regression, and the branched model's advantage was not consistent enough across seeds to justify production complexity (see evaluate_per_seed.py's per-seed voted results). The structural branch (BranchedPocketEncoder) is kept as supporting research evidence of real structure-only signal on B3, not a second production model.",
+  "git_commit": "0465636a744fb0d4f367c6fe9e24ddcbcdd3fa4c",
+  "git_dirty_at_freeze_time": false,
+  "input_manifest": {
+    "catalog_path": "full_structure_catalog.csv",
+    "catalog_sha256": "459c590beb566412e5fd31969f348ac2900b029ce323b52305b6218ffd62f47b"
+  },
+  "esm2_checkpoint": "esm2_t33_650M_UR50D",
+  "feature_config": {
+    "architecture": "flat",
+    "in_dim": 1320,
+    "ablate_distance_to_metal": false,
+    "ablate_aa_identity": false,
+    "ablate_structural": false,
+    "ablate_esm2": false,
+    "esm2_dir": "data/esm2_embeddings"
+  },
+  "training": {
+    "n_epochs": 60,
+    "margin": 0.3,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "n_seeds": 8,
+    "validation_carve": null,
+    "checkpoint_selection": "final.pt only, unconditionally saved (no best.pt -- no validation to select on)",
+    "trained_on": "full labeled pool (146 positive / 931 negative, all 1077 structures), no held-out test set"
+  },
+  "reference_bank": {
+    "path": "data/production/reference_bank",
+    "files": {
+      "mean_esm2.npz": "f1dc8fd00f514e7a0e625003325ff6a31cf0c8b2350d37a4a5bf3895bae5f2ab",
+      "seed_0.npz": "f8a46fc68aca40e5ecdc0182e773400b31eac5da27d13a06ea7ab336809797cb",
+      "seed_1.npz": "737c4437b143b7f500428d63137cdd3c80c91559f6748e223785cfbdab001e0f",
+      "seed_2.npz": "7961937c0086a534ad409e72ad2b4d4673d1cf9806a9fa5a478762b9be02669b",
+      "seed_3.npz": "5b0ac0a8e00f2f4d42ca30d773df02bd27aaf848fb1f72d056328cdad4d76748",
+      "seed_4.npz": "3077f5fa1e80b3f4cf83632f966e34866eb67c6a958ec44a50918497d4477dc1",
+      "seed_5.npz": "6b4e43d1a61a80cc0ce7ba287c3e98322d9afface7a1bae298865d921a03a1fa",
+      "seed_6.npz": "7e926338885f3b5c6d719b971fc7a5e385e0c4bf29a010f5880ea322aa5f4b2d",
+      "seed_7.npz": "d05d1270eb1ab69a2466b8ec545f68ade7abae769117e47e927fd1e1625c9b22"
+    }
+  },
+  "scoring_rule": "Per candidate: for each of the n_seeds GNN models, embed the candidate in that seed's own space and take k=5 nearest neighbors (Euclidean) against that SAME seed's reference-bank embeddings -- one predicted label + one positive-neighbor fraction per seed. Aggregate across seeds by majority vote (label) and by averaging the positive-neighbor fraction (a scalar score, not a coordinate). Latent embedding coordinates are never averaged across seeds (see evaluate_per_seed.py's docstring for why that was invalid). The training-free mean-pooled-ESM2 k-NN score is reported as a separate auxiliary signal, not fused into the GNN ensemble result. See score_candidate.py."
+}
