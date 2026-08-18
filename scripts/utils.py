@@ -106,6 +106,29 @@ def get_per_residue_confidence(arr: struc.AtomArray) -> np.ndarray:
     return np.full(arr.array_length(), np.nan)
 
 
+def load_esm2_embedding(esm2_dir: Optional[Path], structure_id: str, n_residues: int) -> Optional[np.ndarray]:
+    """
+    Loads a precomputed esm2_embed.py .npy for this structure, falling back
+    to None (-> zeros in graph_construction.build_node_features) if missing
+    or if its residue count doesn't match this pocket (e.g. pocket_extraction
+    was re-run with different radii after embeddings were computed).
+    Shared by train.py and evaluate.py so both stay consistent.
+    """
+    if esm2_dir is None:
+        return None
+    path = Path(esm2_dir) / f"{structure_id}.npy"
+    if not path.exists():
+        return None
+    emb = np.load(path)
+    if emb.shape[0] != n_residues:
+        get_logger(__name__).warning(
+            f"{structure_id}: esm2 embedding has {emb.shape[0]} residues, pocket has "
+            f"{n_residues} -- ignoring (falling back to zeros)."
+        )
+        return None
+    return emb
+
+
 # --------------------------------------------------------------------------- #
 # Geometry helpers
 # --------------------------------------------------------------------------- #

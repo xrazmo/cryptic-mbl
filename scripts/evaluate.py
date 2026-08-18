@@ -31,7 +31,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from utils import get_logger, PocketSubgraph
+from utils import get_logger, PocketSubgraph, load_esm2_embedding
 from graph_construction import pocket_to_pyg_data
 from model import PocketEncoder, SiameseTripletModel
 
@@ -78,14 +78,17 @@ def ensemble_embed(models: list[SiameseTripletModel], data, device: str):
 
 def load_graphs(
     pockets_dir: Path, ids: list[str], ablate_distance_to_metal: bool = False,
+    esm2_dir: Path = None,
 ) -> dict:
     graphs = {}
     for sid in ids:
         p = pockets_dir / f"{sid}.npz"
         pocket = PocketSubgraph.load(p)
+        n_residues = len(np.unique(pocket.res_ids))
+        esm2_emb = load_esm2_embedding(esm2_dir, sid, n_residues)
         graphs[sid] = (
             pocket_to_pyg_data(
-                pocket, ablate_distance_to_metal=ablate_distance_to_metal,
+                pocket, esm2_embeddings=esm2_emb, ablate_distance_to_metal=ablate_distance_to_metal,
             ),
             pocket.metadata,
         )
@@ -252,6 +255,8 @@ def main():
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--k", type=int, default=5)
     p.add_argument("--ablate-distance-to-metal", action="store_true")
+    p.add_argument("--esm2-dir", type=Path, default=None,
+                    help="Directory of esm2_embed.py .npy outputs; omit to use zeros (default).")
     args = p.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -268,7 +273,7 @@ def main():
     all_needed_ids = fold["train"] + fold["test"] + args.reference_bank_ids + args.external_ids
     graphs = load_graphs(
         args.pockets_dir, sorted(set(all_needed_ids)),
-        ablate_distance_to_metal=args.ablate_distance_to_metal,
+        ablate_distance_to_metal=args.ablate_distance_to_metal, esm2_dir=args.esm2_dir,
     )
 
     in_dim = next(iter(graphs.values()))[0].x.shape[1]
