@@ -132,7 +132,17 @@ def main():
     p.add_argument("--n-seeds", type=int, default=8)
     p.add_argument("--n-epochs", type=int, default=60)
     p.add_argument("--val-frac", type=float, default=0.15)
+    p.add_argument("--ablate-aa-identity", action="store_true",
+                    help="Zero the 20-dim amino-acid one-hot block, in both training and evaluation graphs.")
+    p.add_argument("--ablate-structural", action="store_true",
+                    help="Zero the 17-dim chemistry/geometry block, in both training and evaluation graphs.")
+    p.add_argument("--ablate-esm2", action="store_true",
+                    help="Zero the ESM2 embedding block, in both training and evaluation graphs.")
     args = p.parse_args()
+    ablation_kwargs = dict(
+        ablate_aa_identity=args.ablate_aa_identity, ablate_structural=args.ablate_structural,
+        ablate_esm2=args.ablate_esm2,
+    )
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     challenge = json.loads(args.challenge_splits.read_text())
@@ -159,6 +169,7 @@ def main():
             train_one_model(
                 train_ids, val_ids, args.pockets_dir, seed_dir, seed=seed,
                 n_epochs=args.n_epochs, esm2_dir=args.esm2_dir, device=device,
+                **ablation_kwargs,
             )
 
         # load ensemble, embed train+test, evaluate via k-NN against train
@@ -168,7 +179,7 @@ def main():
             pocket = PocketSubgraph.load(args.pockets_dir / f"{sid}.npz")
             esm2_path = args.esm2_dir / f"{sid}.npy"
             esm2_emb = np.load(esm2_path) if esm2_path.exists() else None
-            graphs[sid] = pocket_to_pyg_data(pocket, esm2_embeddings=esm2_emb)
+            graphs[sid] = pocket_to_pyg_data(pocket, esm2_embeddings=esm2_emb, **ablation_kwargs)
         in_dim = next(iter(graphs.values())).x.shape[1]
 
         models = []
@@ -203,8 +214,9 @@ def main():
         }
         log.info(f"[{panel_name}] RESULT: {eval_result}")
 
+    output = {"ablation_config": ablation_kwargs, "panels": results}
     args.results_out.parent.mkdir(parents=True, exist_ok=True)
-    args.results_out.write_text(json.dumps(results, indent=2))
+    args.results_out.write_text(json.dumps(output, indent=2))
     log.info(f"Wrote challenge training results -> {args.results_out}")
 
 
