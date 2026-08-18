@@ -40,13 +40,28 @@ Node features (concatenated, in this order):
              overestimated relative to the full chain, but the *relative*
              ordering of buried-vs-exposed residues within one pocket is
              still informative.
-    [37:37+D_ESM]  optional frozen ESM2 per-residue embedding (zeros if disabled)
+    [37:40]  radial shell one-hot: (coordination shell <=5A, pocket core
+             5-9A, outer boundary 9A-edge of pocket) by centroid distance
+             to the predicted metal (same distance as [21]); all-zero if
+             no metal. This bins *within* the existing pocket extraction
+             radius (12A max, see pocket_extraction.py) rather than a
+             true wider outer-loop shell -- extending the actual
+             extraction radius (e.g. to 16A) would require re-running
+             pocket extraction, which this does not do.
+    [40:40+D_ESM]  optional frozen ESM2 per-residue embedding (zeros if disabled)
 
-Edges: all residue pairs within `edge_cutoff` Å (default 10 Å) of each
-other's centroid, edge_attr = pairwise distance (single scalar; the
-SE(3)-equivariant layers consume raw coordinates directly for geometry,
-so this is only a coarse gate + auxiliary feature, not a hand-engineered
-interaction feature).
+Edges: the union of (a) all residue pairs within `edge_cutoff` Å (default
+10 Å) of each other's centroid, and (b) explicit sequence-adjacency pairs
+(res_id, res_id +/- 1) when both are present in the pocket -- pockets are
+a spatial, not sequential, subset of the chain, so a loop's own backbone
+neighbors are otherwise only connected when they happen to also be
+spatially close, i.e. never signaled as "this is the same loop" per se.
+edge_attr = (distance, is_sequence_adjacent flag); the flag is consumed
+by the message-passing layer (see model.py) so backbone-adjacency and
+spatial-contact edges can be weighted differently, not just recorded as
+metadata. The SE(3)-equivariant layers this is a placeholder for consume
+raw coordinates directly for geometry, so distance itself remains only a
+coarse gate + auxiliary feature.
 
 Coordinates are stored as `data.pos` (PyG convention) for consumption by
 SE(3)-equivariant layers (e3nn / EZSpecificity backbone), which operate on
@@ -109,14 +124,22 @@ AA_PROPERTIES = {
 N_CHEM_PROPS = 8
 
 # Named slices over the node-feature layout documented in the module
-# docstring, for modality-ablation experiments (see --ablate-* flags below):
-# zero out a whole block while preserving in_dim, so ablated and full models
-# stay directly comparable (same pattern as --ablate-distance-to-metal).
+# docstring, for modality-ablation experiments (see --ablate-* flags below)
+# and for model.py's branched encoder (which needs to split structural vs
+# ESM2 columns): zero out / slice a whole block while preserving in_dim, so
+# ablated and full models stay directly comparable (same pattern as
+# --ablate-distance-to-metal).
 N_AA_IDENTITY = 20  # aa_onehot
-N_STRUCTURAL = 1 + 1 + N_CHEM_PROPS + 2 + 4 + 1  # sidechain, dist_to_metal, chem_props, ligand_geometry, dihedrals, sasa = 17
+N_RADIAL_SHELL = 3  # coordination shell / pocket core / outer boundary, one-hot
+N_STRUCTURAL = 1 + 1 + N_CHEM_PROPS + 2 + 4 + 1 + N_RADIAL_SHELL  # sidechain, dist_to_metal, chem_props, ligand_geometry, dihedrals, sasa, radial_shell = 20
 AA_IDENTITY_SLICE = slice(0, N_AA_IDENTITY)
 STRUCTURAL_SLICE = slice(N_AA_IDENTITY, N_AA_IDENTITY + N_STRUCTURAL)
 ESM2_SLICE = slice(N_AA_IDENTITY + N_STRUCTURAL, N_AA_IDENTITY + N_STRUCTURAL + ESM2_DIM)
+
+# Radial shell bin edges (Angstrom, centroid distance to predicted metal):
+# [0, 5) -> coordination shell, [5, 9) -> pocket core, [9, inf) -> outer
+# boundary (bounded in practice by the 12A pocket-extraction radius).
+RADIAL_SHELL_BOUNDARIES = (5.0, 9.0)
 
 # Side-chain atom(s) that actually coordinate a Zn ion in canonical MBL
 # active sites (3H, DCH, and related B1/B2/B3 coordination schemes).
@@ -245,6 +268,26 @@ def compute_backbone_dihedrals(pocket: PocketSubgraph, residue_level: dict) -> n
     return out
 
 
+def compute_radial_shell(dist_to_metal: np.ndarray, has_metal: bool) -> np.ndarray:
+    """
+    One-hot (n, N_RADIAL_SHELL) bin of each residue's centroid distance to
+    the metal (same values as the dist_to_metal feature) into coordination
+    shell / pocket core / outer boundary, per RADIAL_SHELL_BOUNDARIES.
+    All-zero when there's no metal (cavity_fallback instances), matching
+    dist_to_metal's own convention for that case.
+    """
+    n = dist_to_metal.shape[0]
+    out = np.zeros((n, N_RADIAL_SHELL), dtype=np.float32)
+    if not has_metal:
+        return out
+    d = dist_to_metal.reshape(-1)
+    inner, outer = RADIAL_SHELL_BOUNDARIES
+    out[d < inner, 0] = 1.0
+    out[(d >= inner) & (d < outer), 1] = 1.0
+    out[d >= outer, 2] = 1.0
+    return out
+
+
 def compute_sasa(pocket: PocketSubgraph, residue_level: dict) -> np.ndarray:
     """
     Per-residue SASA (Angstrom^2 / 100), computed on the isolated pocket
@@ -305,6 +348,7 @@ def build_node_features(
     ligand_geometry = compute_ligand_geometry(pocket, residue_level, metal_coord)
     dihedrals = compute_backbone_dihedrals(pocket, residue_level)
     sasa = compute_sasa(pocket, residue_level)
+    radial_shell = compute_radial_shell(dist_to_metal, has_metal=metal_coord is not None)
 
     if esm2_embeddings is not None:
         assert esm2_embeddings.shape == (n, ESM2_DIM), (
@@ -316,18 +360,37 @@ def build_node_features(
 
     return np.concatenate([
         aa_onehot, sidechain_flag, dist_to_metal, chem_props,
-        ligand_geometry, dihedrals, sasa, esm_block,
+        ligand_geometry, dihedrals, sasa, radial_shell, esm_block,
     ], axis=1)
 
 
-def build_edges(centroids: np.ndarray, cutoff: float = EDGE_CUTOFF_DEFAULT):
-    """Returns (edge_index [2, E], edge_attr [E, 1]) for all pairs within cutoff."""
+def build_edges(centroids: np.ndarray, res_ids: np.ndarray, cutoff: float = EDGE_CUTOFF_DEFAULT):
+    """
+    Returns (edge_index [2, E], edge_attr [E, 2]) for the union of (a) all
+    residue pairs within `cutoff` of each other's centroid and (b) explicit
+    sequence-adjacency pairs (res_id +/- 1), deduplicated so a pair that
+    qualifies both ways isn't double-counted in the mean aggregation.
+    edge_attr columns: [pairwise distance, is_sequence_adjacent flag].
+    """
     n = centroids.shape[0]
     diff = centroids[:, None, :] - centroids[None, :, :]
     dist = np.linalg.norm(diff, axis=-1)
-    src, dst = np.where((dist <= cutoff) & (~np.eye(n, dtype=bool)))
+    spatial_mask = (dist <= cutoff) & (~np.eye(n, dtype=bool))
+
+    rid_to_idx = {int(rid): i for i, rid in enumerate(res_ids)}
+    seq_mask = np.zeros((n, n), dtype=bool)
+    for i, rid in enumerate(res_ids):
+        for neighbor_rid in (int(rid) - 1, int(rid) + 1):
+            j = rid_to_idx.get(neighbor_rid)
+            if j is not None:
+                seq_mask[i, j] = True
+
+    combined_mask = spatial_mask | seq_mask
+    src, dst = np.where(combined_mask)
     edge_index = np.stack([src, dst], axis=0)
-    edge_attr = dist[src, dst].reshape(-1, 1).astype(np.float32)
+    edge_attr = np.stack(
+        [dist[src, dst], seq_mask[src, dst].astype(np.float32)], axis=1
+    ).astype(np.float32)
     return edge_index, edge_attr
 
 
@@ -367,7 +430,7 @@ def pocket_to_pyg_data(
         x[:, STRUCTURAL_SLICE] = 0.0
     if ablate_esm2:
         x[:, ESM2_SLICE] = 0.0
-    edge_index, edge_attr = build_edges(residue_level["centroids"], cutoff=edge_cutoff)
+    edge_index, edge_attr = build_edges(residue_level["centroids"], residue_level["res_ids"], cutoff=edge_cutoff)
 
     label_map = {"positive": 1, "hard_negative": 0, "easy_negative": 0, "unlabeled": -1}
 
