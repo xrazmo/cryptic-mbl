@@ -125,7 +125,11 @@ def run_mmseqs_search(fasta_path: Path, work_dir: Path, max_seqs: int = DEFAULT_
             str(out_tsv), str(tmp),
             "--format-output", "query,target,pident,alnlen,qcov,tcov,evalue",
             "-e", "1000", "--min-seq-id", "0.0", "-c", "0", "--cov-mode", "0",
-            "--max-seqs", str(max_seqs), "-s", "7.5",  # max sensitivity -- n=1077 is small, full sensitivity is cheap
+            "--max-seqs", str(max_seqs), "-s", "7.5",
+            "--exhaustive-search", "1",  # bypass the prefilter entirely, not just raise sensitivity --
+                                          # -s 7.5 alone still only searches prefilter candidates, so zero
+                                          # cap hits proves no result-list truncation, not the absence of
+                                          # missed prefilter candidates. n=1077 is small enough this is cheap.
         ],
         check=True, capture_output=True, timeout=3600,
     )
@@ -165,10 +169,11 @@ def run_foldseek_domain_search(domain_pdb_dir: Path, work_dir: Path, max_seqs: i
             "-e", "1000",
             "--format-output", "query,target,pident,alnlen,qcov,tcov,qtmscore,ttmscore,evalue",
             "--max-seqs", str(max_seqs),
-            "--exhaustive-search", "1",  # bypass the prefilter entirely -- every pair gets a real TM-align,
-                                          # not just prefiltered candidates. Slower, but this is what the
-                                          # connected-components grouping edges are built from, so borderline
-                                          # near-threshold pairs need exact scores, not prefilter approximations.
+            "--exhaustive-search", "1",  # bypass the prefilter entirely -- every pair gets an alignment,
+                                          # not just prefiltered candidates.
+            "--exact-tmscore", "1",      # default TM-score is an approximation; these edges drive connected
+                                          # components, so borderline near-threshold pairs need the exact
+                                          # (slower) computation, not the fast approximation.
         ],
         check=True, capture_output=True, timeout=7200,
     )

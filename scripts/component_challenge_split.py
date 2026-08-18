@@ -195,15 +195,38 @@ def main():
         {"structure_id": m, "component_id": cid} for cid, m in zip(singleton_ids, singleton_members)
     ]
 
-    # leave-one-negative-family-out (independent of the 3 panels above)
+    # leave-one-negative-family-out (independent of the 3 panels above).
+    # "Negative-family OOD false-positive challenges": test sets contain NO
+    # positives, so these measure specificity/FPR only, never balanced
+    # accuracy. A component is held out if it contains ANY member of the
+    # target family (not just a majority) -- selecting by dominant family
+    # alone left e.g. one RNase-Z protein in train during the RNase-Z LONO
+    # (its component's majority was phosphodiesterase), and vice versa. This
+    # guarantees zero target-family examples survive in train; the price is
+    # that a held-out component's other, non-target-family members ("collateral")
+    # also leave train, reported explicitly per family below.
     lono = {}
     for fam in NEGATIVE_FAMILIES_FOR_LONO:
-        held_out_comp_ids = {cid for cid, m in neg_components.items() if dominant_neg_family(m, meta) == fam}
+        held_out_comp_ids = {
+            cid for cid, m in neg_components.items()
+            if fam in {meta.get(s, {}).get("neg_family", "") for s in m}
+        }
         test_ids = sorted(sid for cid in held_out_comp_ids for sid in neg_components[cid])
         train_ids = sorted(
             sid for cid, members in comps.items() if cid not in held_out_comp_ids for sid in members
         )
-        lono[fam] = {"n_test": len(test_ids), "test_ids": test_ids, "train_ids": train_ids}
+        test_family_counts = Counter(meta.get(s, {}).get("neg_family", "") for s in test_ids)
+        lono[fam] = {
+            "n_test": len(test_ids),
+            "n_target_family_in_test": test_family_counts.get(fam, 0),
+            "collateral_family_counts_in_test": {k: v for k, v in test_family_counts.items() if k != fam},
+            "n_target_family_in_train": sum(
+                1 for sid in train_ids if meta.get(sid, {}).get("neg_family", "") == fam
+            ),
+            "test_ids": test_ids,
+            "train_ids": train_ids,
+        }
+        assert lono[fam]["n_target_family_in_train"] == 0, f"{fam} LONO leaked target-family examples into train"
 
     # operational reference-anchored retrieval: same split as remote_outlier,
     # reported separately -- see module docstring.
@@ -216,19 +239,47 @@ def main():
         "train_ids": panels["remote_outlier"]["train_ids"],
     }
 
-    # audit: every negative component tested exactly once; no component split across a panel's train/test
+    # audit: every negative component tested exactly once; no component has
+    # ANY member split between a panel's train and test (a subset-based check
+    # -- "is this component entirely inside test" / "entirely inside train" --
+    # would silently pass a component with, say, 3 members in test and 2 in
+    # train, since neither subset condition holds for it either way; this
+    # checks intersection with both sides directly instead).
     neg_test_counts = Counter(neg_assignment.values())
-    all_comp_ids = set(comps.keys())
     for panel_name, panel in panels.items():
-        test_comp_ids = {cid for cid, m in comps.items() if set(m) <= set(panel["test_ids"])}
-        overlap = test_comp_ids & {cid for cid, m in comps.items() if set(m) <= set(panel["train_ids"])}
-        assert not overlap, f"{panel_name}: component(s) {overlap} appear in both train and test"
+        train_set, test_set = set(panel["train_ids"]), set(panel["test_ids"])
+        assert not (train_set & test_set), f"{panel_name}: train/test id overlap: {train_set & test_set}"
+        for cid, members in comps.items():
+            in_train = any(m in train_set for m in members)
+            in_test = any(m in test_set for m in members)
+            assert not (in_train and in_test), f"{panel_name}: component {cid} has members split across train/test"
+    for fam, cfg in lono.items():
+        train_set, test_set = set(cfg["train_ids"]), set(cfg["test_ids"])
+        assert not (train_set & test_set), f"LONO {fam}: train/test id overlap: {train_set & test_set}"
+        for cid, members in comps.items():
+            in_train = any(m in train_set for m in members)
+            in_test = any(m in test_set for m in members)
+            assert not (in_train and in_test), f"LONO {fam}: component {cid} has members split across train/test"
 
     output = {
         "regime": "sequence_components (identity>=0.3, coverage>=0.8) -- see build_split_graph.py thresholds",
         "reference_bank_ids": sorted(REFERENCE_BANK_IDS),
         "panels": panels,
+        "panels_note": "Each panel confounds two axes: (1) can the model recognize the held-out POSITIVE "
+                        "component, and (2) can it reject whichever monolithic NEGATIVE family/component "
+                        "happened to land in that panel via distribute_negative_components (e.g. B1_B2_transfer "
+                        "carries the entire glyoxalase_ii component, B3_transfer carries almost all rnase_z). "
+                        "Do NOT compare panel-level balanced accuracy across panels as though negative difficulty "
+                        "were matched -- report positive sensitivity per held-out positive component, and "
+                        "negative specificity/FPR pooled across panels AND stratified by negative family/component, "
+                        "as separate axes.",
         "leave_one_negative_family_out": lono,
+        "leave_one_negative_family_out_note": "Negative-family OOD false-positive challenges: test sets contain "
+                                               "NO positives, so these measure specificity/FPR only, not balanced "
+                                               "accuracy. Every component containing ANY member of the target "
+                                               "family is held out entirely (not just majority-family components), "
+                                               "so n_target_family_in_train is always 0; collateral_family_counts_in_test "
+                                               "reports which other families got swept out of train as a side effect.",
         "operational_reference_anchored_retrieval": operational,
         "audit": {
             "n_positive_components": len(pos_components),

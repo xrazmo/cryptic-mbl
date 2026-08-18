@@ -1,0 +1,304 @@
+{
+  "input_hashes": {
+    "challenge_splits_json": "b551c4e1f1522e51bed91c319e3a507a7597274dc3d4b833b9948d484b25c703",
+    "split_graph_json": "e5a295e884ee71e0aca748b28386d902a7d4674f22cb85f26dbc2d30c2a30287"
+  },
+  "regime": "sequence_components (identity>=0.3, coverage>=0.8) -- see build_split_graph.py thresholds",
+  "reference_bank_policy": "The reference bank is a deployment-time retrieval anchor set, NOT an independent validation set: 5/7 (NDM-1, VIM-2, IMP-1, CphA, Sfh-I) sit inside the 116-member B1/B2 sequence component, 2/7 (FEZ-1, L1) inside the 26-member B3 component. In the 3 main panels, references travel with their natural component and become unavailable as anchors whenever that component is held out (mechanism/generalization protocol). operational_reference_anchored_retrieval is a SEPARATE, explicitly-labeled protocol where the reference bank stays in train as anchors and only the 4 reference-free singleton positives are evaluated -- report those as individual discovery case studies, not a population sensitivity estimate. evaluate.py's reference_bank_leave_one_out_ranks measures near-duplicate retrieval, not external generalization, on this dataset -- see its docstring.",
+  "panels": {
+    "B1_B2_transfer": {
+      "test_positive_component_ids": [
+        "Sfh-I"
+      ],
+      "test": {
+        "n": 526,
+        "label_counts": {
+          "easy_negative": 64,
+          "hard_negative": 346,
+          "positive": 116
+        },
+        "positive_subclass_counts": {
+          "B1": 110,
+          "UNCLASSIFIED": 3,
+          "B2": 3
+        },
+        "neg_family_counts": {
+          "alpha_beta_hydrolase": 16,
+          "phosphodiesterase": 35,
+          "lactonase": 21,
+          "thioredoxin_fold": 16,
+          "glyoxalase_ii": 286,
+          "rossmann_sdr": 14,
+          "lysozyme_like": 3,
+          "globin_fold": 14,
+          "rnase_z": 4,
+          "tim_barrel": 1
+        },
+        "reference_bank_present": [
+          "CphA",
+          "IMP-1",
+          "NDM-1",
+          "Sfh-I",
+          "VIM-2"
+        ]
+      },
+      "train": {
+        "n": 551,
+        "label_counts": {
+          "hard_negative": 326,
+          "easy_negative": 195,
+          "positive": 30
+        },
+        "positive_subclass_counts": {
+          "B1": 2,
+          "B3": 27,
+          "UNCLASSIFIED": 1
+        },
+        "neg_family_counts": {
+          "phosphodiesterase": 88,
+          "lactonase": 80,
+          "rossmann_sdr": 36,
+          "alpha_beta_hydrolase": 34,
+          "thioredoxin_fold": 32,
+          "rnase_z": 158,
+          "tim_barrel": 49,
+          "lysozyme_like": 10,
+          "globin_fold": 34
+        },
+        "reference_bank_present": [
+          "FEZ-1",
+          "L1"
+        ]
+      }
+    },
+    "B3_transfer": {
+      "test_positive_component_ids": [
+        "AJP77057.1"
+      ],
+      "test": {
+        "n": 314,
+        "label_counts": {
+          "hard_negative": 216,
+          "easy_negative": 72,
+          "positive": 26
+        },
+        "positive_subclass_counts": {
+          "B3": 26
+        },
+        "neg_family_counts": {
+          "phosphodiesterase": 40,
+          "lactonase": 21,
+          "alpha_beta_hydrolase": 17,
+          "rossmann_sdr": 15,
+          "rnase_z": 155,
+          "globin_fold": 15,
+          "tim_barrel": 6,
+          "lysozyme_like": 3,
+          "thioredoxin_fold": 16
+        },
+        "reference_bank_present": [
+          "FEZ-1",
+          "L1"
+        ]
+      },
+      "train": {
+        "n": 763,
+        "label_counts": {
+          "easy_negative": 187,
+          "hard_negative": 456,
+          "positive": 120
+        },
+        "positive_subclass_counts": {
+          "B1": 112,
+          "UNCLASSIFIED": 4,
+          "B3": 1,
+          "B2": 3
+        },
+        "neg_family_counts": {
+          "alpha_beta_hydrolase": 33,
+          "phosphodiesterase": 83,
+          "lactonase": 80,
+          "rossmann_sdr": 35,
+          "thioredoxin_fold": 32,
+          "glyoxalase_ii": 286,
+          "tim_barrel": 44,
+          "lysozyme_like": 10,
+          "globin_fold": 33,
+          "rnase_z": 7
+        },
+        "reference_bank_present": [
+          "CphA",
+          "IMP-1",
+          "NDM-1",
+          "Sfh-I",
+          "VIM-2"
+        ]
+      }
+    },
+    "remote_outlier": {
+      "test_positive_component_ids": [
+        "AAF94716.1",
+        "AGH88989.1",
+        "AWN09461.1",
+        "MBS5055441.1"
+      ],
+      "test": {
+        "n": 237,
+        "label_counts": {
+          "hard_negative": 110,
+          "easy_negative": 123,
+          "positive": 4
+        },
+        "positive_subclass_counts": {
+          "B1": 2,
+          "UNCLASSIFIED": 1,
+          "B3": 1
+        },
+        "neg_family_counts": {
+          "lactonase": 59,
+          "phosphodiesterase": 48,
+          "rossmann_sdr": 21,
+          "thioredoxin_fold": 16,
+          "alpha_beta_hydrolase": 17,
+          "tim_barrel": 43,
+          "lysozyme_like": 7,
+          "globin_fold": 19,
+          "rnase_z": 3
+        },
+        "reference_bank_present": []
+      },
+      "train": {
+        "n": 840,
+        "label_counts": {
+          "hard_negative": 562,
+          "easy_negative": 136,
+          "positive": 142
+        },
+        "positive_subclass_counts": {
+          "B1": 110,
+          "B3": 26,
+          "UNCLASSIFIED": 3,
+          "B2": 3
+        },
+        "neg_family_counts": {
+          "phosphodiesterase": 75,
+          "alpha_beta_hydrolase": 33,
+          "lactonase": 42,
+          "rossmann_sdr": 29,
+          "thioredoxin_fold": 32,
+          "glyoxalase_ii": 286,
+          "rnase_z": 159,
+          "globin_fold": 29,
+          "tim_barrel": 7,
+          "lysozyme_like": 6
+        },
+        "reference_bank_present": [
+          "CphA",
+          "FEZ-1",
+          "IMP-1",
+          "L1",
+          "NDM-1",
+          "Sfh-I",
+          "VIM-2"
+        ]
+      }
+    }
+  },
+  "leave_one_negative_family_out": {
+    "rnase_z": {
+      "n_target_family_in_test": 162,
+      "n_target_family_in_train": 0,
+      "collateral_family_counts_in_test": {
+        "phosphodiesterase": 10
+      },
+      "test": {
+        "n": 172,
+        "label_counts": {
+          "hard_negative": 172
+        },
+        "positive_subclass_counts": {},
+        "neg_family_counts": {
+          "phosphodiesterase": 10,
+          "rnase_z": 162
+        },
+        "reference_bank_present": []
+      }
+    },
+    "glyoxalase_ii": {
+      "n_target_family_in_test": 286,
+      "n_target_family_in_train": 0,
+      "collateral_family_counts_in_test": {},
+      "test": {
+        "n": 286,
+        "label_counts": {
+          "hard_negative": 286
+        },
+        "positive_subclass_counts": {},
+        "neg_family_counts": {
+          "glyoxalase_ii": 286
+        },
+        "reference_bank_present": []
+      }
+    },
+    "lactonase": {
+      "n_target_family_in_test": 101,
+      "n_target_family_in_train": 0,
+      "collateral_family_counts_in_test": {},
+      "test": {
+        "n": 101,
+        "label_counts": {
+          "hard_negative": 101
+        },
+        "positive_subclass_counts": {},
+        "neg_family_counts": {
+          "lactonase": 101
+        },
+        "reference_bank_present": []
+      }
+    },
+    "phosphodiesterase": {
+      "n_target_family_in_test": 123,
+      "n_target_family_in_train": 0,
+      "collateral_family_counts_in_test": {
+        "rnase_z": 156
+      },
+      "test": {
+        "n": 279,
+        "label_counts": {
+          "hard_negative": 279
+        },
+        "positive_subclass_counts": {},
+        "neg_family_counts": {
+          "phosphodiesterase": 123,
+          "rnase_z": 156
+        },
+        "reference_bank_present": []
+      }
+    }
+  },
+  "operational_reference_anchored_retrieval": {
+    "test": {
+      "n": 4,
+      "label_counts": {
+        "positive": 4
+      },
+      "positive_subclass_counts": {
+        "B1": 2,
+        "UNCLASSIFIED": 1,
+        "B3": 1
+      },
+      "neg_family_counts": {},
+      "reference_bank_present": []
+    }
+  },
+  "audit": {
+    "n_positive_components": 6,
+    "n_negative_components": 150,
+    "n_negative_components_per_panel": {
+      "B1_B2_transfer": 68,
+      "B3_transfer": 50,
+      "remote_outlier": 32
+    },
+    "every_negative_component_tested_exactly_once": true
+  }
+}

@@ -29,8 +29,8 @@
   "search_completeness": {
     "sequence_search": {
       "n_queries_with_any_hit": 1077,
-      "min_hits": 10,
-      "max_hits": 740,
+      "min_hits": 9,
+      "max_hits": 755,
       "mean_hits": 414.9,
       "n_queries_at_or_above_max_seqs": 0
     },
@@ -55,11 +55,11 @@
       "largest_component": 286
     },
     "structure_components_foldremote": {
-      "n_components": 38,
+      "n_components": 39,
       "largest_component": 799
     },
     "structure_components_redundancy": {
-      "n_components": 60,
+      "n_components": 66,
       "largest_component": 506
     }
   }
