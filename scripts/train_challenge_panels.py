@@ -36,8 +36,8 @@ import numpy as np
 import torch
 
 from utils import get_logger, PocketSubgraph
-from graph_construction import pocket_to_pyg_data
-from model import PocketEncoder, SiameseTripletModel
+from graph_construction import pocket_to_pyg_data, ESM2_SLICE
+from model import PocketEncoder, BranchedPocketEncoder, SiameseTripletModel
 from train import train_one_model
 
 log = get_logger(__name__)
@@ -138,10 +138,17 @@ def main():
                     help="Zero the 17-dim chemistry/geometry block, in both training and evaluation graphs.")
     p.add_argument("--ablate-esm2", action="store_true",
                     help="Zero the ESM2 embedding block, in both training and evaluation graphs.")
+    p.add_argument("--architecture", choices=["flat", "branched"], default="flat")
+    p.add_argument("--esm-dropout-prob", type=float, default=0.4)
+    p.add_argument("--structural-aux-loss-weight", type=float, default=0.3)
     args = p.parse_args()
     ablation_kwargs = dict(
         ablate_aa_identity=args.ablate_aa_identity, ablate_structural=args.ablate_structural,
         ablate_esm2=args.ablate_esm2,
+    )
+    architecture_kwargs = dict(
+        architecture=args.architecture, esm_dropout_prob=args.esm_dropout_prob,
+        structural_aux_loss_weight=args.structural_aux_loss_weight,
     )
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -169,7 +176,7 @@ def main():
             train_one_model(
                 train_ids, val_ids, args.pockets_dir, seed_dir, seed=seed,
                 n_epochs=args.n_epochs, esm2_dir=args.esm2_dir, device=device,
-                **ablation_kwargs,
+                **ablation_kwargs, **architecture_kwargs,
             )
 
         # load ensemble, embed train+test, evaluate via k-NN against train
@@ -196,7 +203,12 @@ def main():
                 n_used_final_fallback += 1
             if not ckpt.exists():
                 continue
-            encoder = PocketEncoder(in_dim=in_dim).to(device)
+            if args.architecture == "branched":
+                encoder = BranchedPocketEncoder(
+                    structural_dim=ESM2_SLICE.start, esm_dropout_prob=args.esm_dropout_prob,
+                ).to(device)
+            else:
+                encoder = PocketEncoder(in_dim=in_dim).to(device)
             m = SiameseTripletModel(encoder).to(device)
             m.load_state_dict(torch.load(ckpt, map_location=device))
             m.eval()
@@ -214,7 +226,7 @@ def main():
         }
         log.info(f"[{panel_name}] RESULT: {eval_result}")
 
-    output = {"ablation_config": ablation_kwargs, "panels": results}
+    output = {"ablation_config": ablation_kwargs, "architecture_config": architecture_kwargs, "panels": results}
     args.results_out.parent.mkdir(parents=True, exist_ok=True)
     args.results_out.write_text(json.dumps(output, indent=2))
     log.info(f"Wrote challenge training results -> {args.results_out}")
