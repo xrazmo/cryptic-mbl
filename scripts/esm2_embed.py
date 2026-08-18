@@ -44,6 +44,7 @@ log = get_logger(__name__)
 MODEL_NAME = "esm2_t33_650M_UR50D"
 REPR_LAYER = 33
 ESM2_DIM = 1280
+MAX_LENGTH_DEFAULT = 1022  # ESM2 positional embedding limit is 1024 incl. BOS/EOS
 
 THREE_TO_ONE = {
     "ALA": "A", "ARG": "R", "ASN": "N", "ASP": "D", "CYS": "C", "GLN": "Q",
@@ -127,6 +128,41 @@ def resolve_pocket_residues(
     return resolution
 
 
+def resolve_dominant_chain(
+    structure_path: Path, pocket: PocketSubgraph, max_length: int = MAX_LENGTH_DEFAULT,
+) -> tuple[str, np.ndarray, str]:
+    """
+    Returns (chain_id, res_ids, sequence) for the chain that resolves the
+    most of this pocket's residues, truncated to max_length exactly the way
+    main()'s embedding loop truncates before calling ESM2 -- so every
+    consumer of "the sequence for this structure" (sequence export for
+    clustering, domain-structure export, and the embedding itself) sees
+    identical ESM-visible content. Before this was centralized, the
+    exporters wrote the FULL untruncated chain while embed_sequence() only
+    ever saw the first max_length residues -- for the 2 structures over the
+    limit (Q8MM62, A0A0V1L202), sequence-based clustering was grouping by
+    residues ESM2 never actually embedded (and the corresponding pocket
+    residues silently got all-zero embeddings past the cutoff).
+
+    Only meaningful for the common case where the pocket resolves cleanly
+    to one chain; the true per-residue-multi-chain resolution stays in
+    resolve_pocket_residues (used directly by the real embedding loop in
+    main()), since a pocket occasionally legitimately spans residues
+    resolved to different chains.
+    """
+    chains = chain_sequences(structure_path)
+    residue_level = collapse_to_residue_level(pocket)
+    resolution = resolve_pocket_residues(residue_level["res_ids"], residue_level["centroids"], chains)
+    if not resolution:
+        raise ValueError("no chain resolved for any pocket residue")
+    dominant_chain = max(resolution, key=lambda c: len(resolution[c]))
+    res_ids, _ca, sequence = chains[dominant_chain]
+    if len(sequence) > max_length:
+        sequence = sequence[:max_length]
+        res_ids = res_ids[:max_length]
+    return dominant_chain, res_ids, sequence
+
+
 @torch.no_grad()
 def embed_sequence(model, batch_converter, device: str, sequence: str) -> np.ndarray:
     """Returns (len(sequence), ESM2_DIM) per-residue embedding."""
@@ -143,7 +179,7 @@ def main():
     p.add_argument("--raw-dir", required=True, type=Path)
     p.add_argument("--pockets-dir", required=True, type=Path)
     p.add_argument("--out-dir", required=True, type=Path)
-    p.add_argument("--max-length", type=int, default=1022,
+    p.add_argument("--max-length", type=int, default=MAX_LENGTH_DEFAULT,
                     help="ESM2 positional embedding limit is 1024 incl. BOS/EOS.")
     args = p.parse_args()
 
