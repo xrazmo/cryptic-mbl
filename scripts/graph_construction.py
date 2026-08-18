@@ -108,6 +108,16 @@ AA_PROPERTIES = {
 }
 N_CHEM_PROPS = 8
 
+# Named slices over the node-feature layout documented in the module
+# docstring, for modality-ablation experiments (see --ablate-* flags below):
+# zero out a whole block while preserving in_dim, so ablated and full models
+# stay directly comparable (same pattern as --ablate-distance-to-metal).
+N_AA_IDENTITY = 20  # aa_onehot
+N_STRUCTURAL = 1 + 1 + N_CHEM_PROPS + 2 + 4 + 1  # sidechain, dist_to_metal, chem_props, ligand_geometry, dihedrals, sasa = 17
+AA_IDENTITY_SLICE = slice(0, N_AA_IDENTITY)
+STRUCTURAL_SLICE = slice(N_AA_IDENTITY, N_AA_IDENTITY + N_STRUCTURAL)
+ESM2_SLICE = slice(N_AA_IDENTITY + N_STRUCTURAL, N_AA_IDENTITY + N_STRUCTURAL + ESM2_DIM)
+
 # Side-chain atom(s) that actually coordinate a Zn ion in canonical MBL
 # active sites (3H, DCH, and related B1/B2/B3 coordination schemes).
 LIGAND_ATOMS = {
@@ -326,11 +336,20 @@ def pocket_to_pyg_data(
     esm2_embeddings: Optional[np.ndarray] = None,
     edge_cutoff: float = EDGE_CUTOFF_DEFAULT,
     ablate_distance_to_metal: bool = False,
+    ablate_aa_identity: bool = False,
+    ablate_structural: bool = False,
+    ablate_esm2: bool = False,
 ):
     """
     Returns a torch_geometric.data.Data object. Imports torch/PyG lazily so
     this module can be introspected/tested without those (heavy, GPU-linked)
     dependencies installed.
+
+    The three ablate_* block flags (aa_identity, structural, esm2) zero out
+    whole feature blocks -- see AA_IDENTITY_SLICE/STRUCTURAL_SLICE/ESM2_SLICE
+    -- to build the matched modality-comparison models (structure-only,
+    identity-reduced structure, ESM-only) without changing in_dim, so all
+    variants stay directly comparable in parameter count.
     """
     import torch
     from torch_geometric.data import Data
@@ -342,6 +361,12 @@ def pocket_to_pyg_data(
         # dimensionality so ablated and baseline models have exactly the
         # same parameter count and differ only in this one feature.
         x[:, 21] = 0.0
+    if ablate_aa_identity:
+        x[:, AA_IDENTITY_SLICE] = 0.0
+    if ablate_structural:
+        x[:, STRUCTURAL_SLICE] = 0.0
+    if ablate_esm2:
+        x[:, ESM2_SLICE] = 0.0
     edge_index, edge_attr = build_edges(residue_level["centroids"], cutoff=edge_cutoff)
 
     label_map = {"positive": 1, "hard_negative": 0, "easy_negative": 0, "unlabeled": -1}
@@ -368,6 +393,12 @@ def main():
                     help="Optional .npy file, pre-aligned to residue order, shape (n_res, ESM2_DIM).")
     p.add_argument("--edge-cutoff", type=float, default=EDGE_CUTOFF_DEFAULT)
     p.add_argument("--ablate-distance-to-metal", action="store_true")
+    p.add_argument("--ablate-aa-identity", action="store_true",
+                    help="Zero the 20-dim amino-acid one-hot block.")
+    p.add_argument("--ablate-structural", action="store_true",
+                    help="Zero the 17-dim chemistry/geometry block (sidechain flag through SASA).")
+    p.add_argument("--ablate-esm2", action="store_true",
+                    help="Zero the ESM2 embedding block.")
     p.add_argument("--out", required=True, type=Path)
     args = p.parse_args()
 
@@ -378,6 +409,9 @@ def main():
     data = pocket_to_pyg_data(
         pocket, esm2_embeddings=esm2, edge_cutoff=args.edge_cutoff,
         ablate_distance_to_metal=args.ablate_distance_to_metal,
+        ablate_aa_identity=args.ablate_aa_identity,
+        ablate_structural=args.ablate_structural,
+        ablate_esm2=args.ablate_esm2,
     )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     torch.save(data, args.out)
