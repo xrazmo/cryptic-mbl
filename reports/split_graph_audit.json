@@ -1,0 +1,66 @@
+{
+  "generated_from": "data/split_graph.json",
+  "thresholds": {
+    "sequence_identity_threshold": 0.3,
+    "sequence_coverage_threshold": 0.8,
+    "tm_threshold_fold_remote": 0.5,
+    "tm_threshold_redundancy": 0.65,
+    "struct_coverage_threshold": 0.8,
+    "max_seqs": 5000
+  },
+  "tool_versions": {
+    "foldseek": "10.941cd33",
+    "mmseqs": "18.8cc5c"
+  },
+  "input_hashes": {
+    "manifest_csv": "8cbe79eec63ba459ab37d30a8cf1ab48ff664549cc0f75de3d67a055e3ca4cad",
+    "sequences_fasta": "b589bf1f3168b154d45a5612c47d8e98e897e5d09261bf507cedc73f2c15ad06",
+    "domain_pdb_dir": {
+      "n_files": 1077,
+      "total_size_bytes": 185738832,
+      "combined_sha256": "09489fbaed4840f990b8474c00d271bec53edb485ff7b82a68ccaebc39e4c90b"
+    },
+    "pocket_pdb_dir": {
+      "n_files": 1077,
+      "total_size_bytes": 30968892,
+      "combined_sha256": "7678dd49d30281edb2fd7d19300f333133377329e1498ca686556d2e30f055c6"
+    }
+  },
+  "search_completeness": {
+    "sequence_search": {
+      "n_queries_with_any_hit": 1077,
+      "min_hits": 10,
+      "max_hits": 740,
+      "mean_hits": 414.9,
+      "n_queries_at_or_above_max_seqs": 0
+    },
+    "domain_full_chain_search": {
+      "n_queries_with_any_hit": 1077,
+      "min_hits": 1077,
+      "max_hits": 1077,
+      "mean_hits": 1077.0,
+      "n_queries_at_or_above_max_seqs": 0
+    },
+    "pocket_search_diagnostic_only": {
+      "n_queries_with_any_hit": 1076,
+      "min_hits": 1076,
+      "max_hits": 1076,
+      "mean_hits": 1076.0,
+      "n_queries_at_or_above_max_seqs": 0
+    }
+  },
+  "component_summary": {
+    "sequence_components": {
+      "n_components": 156,
+      "largest_component": 286
+    },
+    "structure_components_foldremote": {
+      "n_components": 38,
+      "largest_component": 799
+    },
+    "structure_components_redundancy": {
+      "n_components": 60,
+      "largest_component": 506
+    }
+  }
+}

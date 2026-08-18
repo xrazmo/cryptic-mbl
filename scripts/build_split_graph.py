@@ -125,9 +125,9 @@ def run_mmseqs_search(fasta_path: Path, work_dir: Path, max_seqs: int = DEFAULT_
             str(out_tsv), str(tmp),
             "--format-output", "query,target,pident,alnlen,qcov,tcov,evalue",
             "-e", "1000", "--min-seq-id", "0.0", "-c", "0", "--cov-mode", "0",
-            "--max-seqs", str(max_seqs),
+            "--max-seqs", str(max_seqs), "-s", "7.5",  # max sensitivity -- n=1077 is small, full sensitivity is cheap
         ],
-        check=True, capture_output=True, timeout=1800,
+        check=True, capture_output=True, timeout=3600,
     )
     return out_tsv
 
@@ -165,8 +165,12 @@ def run_foldseek_domain_search(domain_pdb_dir: Path, work_dir: Path, max_seqs: i
             "-e", "1000",
             "--format-output", "query,target,pident,alnlen,qcov,tcov,qtmscore,ttmscore,evalue",
             "--max-seqs", str(max_seqs),
+            "--exhaustive-search", "1",  # bypass the prefilter entirely -- every pair gets a real TM-align,
+                                          # not just prefiltered candidates. Slower, but this is what the
+                                          # connected-components grouping edges are built from, so borderline
+                                          # near-threshold pairs need exact scores, not prefilter approximations.
         ],
-        check=True, capture_output=True, timeout=1800,
+        check=True, capture_output=True, timeout=7200,
     )
     return out_tsv
 
@@ -205,8 +209,9 @@ def run_foldseek_pocket_search(pocket_pdb_dir: Path, work_dir: Path, max_seqs: i
             "-e", "1000",
             "--format-output", "query,target,pident,alnlen,rmsd,qcov,tcov,qtmscore,ttmscore,evalue",
             "--max-seqs", str(max_seqs),
+            "--exhaustive-search", "1",
         ],
-        check=True, capture_output=True, timeout=1800,
+        check=True, capture_output=True, timeout=7200,
     )
     return out_tsv
 
