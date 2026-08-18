@@ -32,8 +32,8 @@ import torch
 from torch_geometric.loader import DataLoader as PyGDataLoader
 
 from utils import get_logger, set_seed, PocketSubgraph, TIER_LOSS_WEIGHTS, load_esm2_embedding
-from graph_construction import pocket_to_pyg_data
-from model import PocketEncoder, SiameseTripletModel, triplet_loss
+from graph_construction import pocket_to_pyg_data, ESM2_SLICE
+from model import PocketEncoder, BranchedPocketEncoder, SiameseTripletModel, triplet_loss
 from triplet_sampling import random_triplets, semi_hard_triplets
 
 log = get_logger(__name__)
@@ -116,6 +116,9 @@ def train_one_model(
     ablate_distance_to_metal: bool = False,
     esm2_dir: Optional[Path] = None,
     ablate_aa_identity: bool = False, ablate_structural: bool = False, ablate_esm2: bool = False,
+    architecture: str = "flat",
+    esm_dropout_prob: float = 0.4,
+    structural_aux_loss_weight: float = 0.3,
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ):
     set_seed(seed)
@@ -132,7 +135,14 @@ def train_one_model(
     val_buckets = partition_by_label(val_ids, graphs)
 
     in_dim = graphs[all_ids[0]].x.shape[1]
-    encoder = PocketEncoder(in_dim=in_dim).to(device)
+    if architecture == "branched":
+        encoder = BranchedPocketEncoder(
+            structural_dim=ESM2_SLICE.start, esm_dropout_prob=esm_dropout_prob,
+        ).to(device)
+    elif architecture == "flat":
+        encoder = PocketEncoder(in_dim=in_dim).to(device)
+    else:
+        raise ValueError(f"Unknown architecture: {architecture!r} (expected 'flat' or 'branched')")
     model = SiameseTripletModel(encoder).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=n_epochs)
@@ -159,8 +169,17 @@ def train_one_model(
         for i in range(0, len(triplets), batch_size):
             batch_triplets = triplets[i:i + batch_size]
             anchors, positives, negatives, weights = collate_triplet_batch(batch_triplets, graphs, device)
-            a_emb, p_emb, n_emb = model(anchors, positives, negatives)
-            loss = triplet_loss(a_emb, p_emb, n_emb, margin=margin, sample_weight=weights)
+            if architecture == "branched":
+                (a_emb, p_emb, n_emb), (a_struct, p_struct, n_struct) = model(
+                    anchors, positives, negatives, return_components=True,
+                )
+                loss = triplet_loss(a_emb, p_emb, n_emb, margin=margin, sample_weight=weights)
+                loss = loss + structural_aux_loss_weight * triplet_loss(
+                    a_struct, p_struct, n_struct, margin=margin, sample_weight=weights,
+                )
+            else:
+                a_emb, p_emb, n_emb = model(anchors, positives, negatives)
+                loss = triplet_loss(a_emb, p_emb, n_emb, margin=margin, sample_weight=weights)
 
             optimizer.zero_grad()
             loss.backward()
@@ -188,6 +207,8 @@ def train_one_model(
         "esm2_dir": str(esm2_dir) if esm2_dir is not None else None,
         "ablate_aa_identity": ablate_aa_identity, "ablate_structural": ablate_structural,
         "ablate_esm2": ablate_esm2,
+        "architecture": architecture, "esm_dropout_prob": esm_dropout_prob,
+        "structural_aux_loss_weight": structural_aux_loss_weight,
     }, indent=2))
     return out_dir / "best.pt"
 
@@ -237,12 +258,22 @@ def main():
                    help="Zero the 17-dim chemistry/geometry block.")
     p.add_argument("--ablate-esm2", action="store_true",
                    help="Zero the ESM2 embedding block.")
+    p.add_argument("--architecture", choices=["flat", "branched"], default="flat",
+                   help="'flat': single GNN over concatenated features (default). "
+                        "'branched': separate structural/ESM2 branches + fusion (see model.py).")
+    p.add_argument("--esm-dropout-prob", type=float, default=0.4,
+                   help="branched only: probability of zeroing a graph's projected ESM2 "
+                        "embedding before fusion, during training.")
+    p.add_argument("--structural-aux-loss-weight", type=float, default=0.3,
+                   help="branched only: weight of the auxiliary structure-only triplet loss.")
     args = p.parse_args()
 
     ablation_kwargs = dict(
         ablate_distance_to_metal=args.ablate_distance_to_metal, esm2_dir=args.esm2_dir,
         ablate_aa_identity=args.ablate_aa_identity, ablate_structural=args.ablate_structural,
         ablate_esm2=args.ablate_esm2,
+        architecture=args.architecture, esm_dropout_prob=args.esm_dropout_prob,
+        structural_aux_loss_weight=args.structural_aux_loss_weight,
     )
     if args.ensemble:
         run_ensemble(args.fold_json, args.fold_id, args.pockets_dir, args.out_dir,
