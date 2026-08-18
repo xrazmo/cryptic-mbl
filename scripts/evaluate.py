@@ -189,7 +189,19 @@ def external_validation_ranks(external_embs: dict, negative_embs: dict, positive
 def reference_bank_leave_one_out_ranks(
     reference_embs: dict, negative_embs: dict,
 ) -> dict:
-    """Rank each reference against a prototype that does not contain itself."""
+    """
+    Rank each reference against a prototype that does not contain itself.
+
+    CAVEAT (see feasibility_report.py / component_challenge_split.py):
+    honest sequence-remote clustering found 5/7 and 2/7 of the reference
+    bank sitting inside this dataset's two largest positive sequence
+    components (116 and 26 members respectively, 98-100% identity matches
+    for NDM-1/VIM-2/IMP-1 specifically). This metric is therefore a
+    near-identical-homolog retrieval sanity check ("does the embedding
+    space at least separate obvious near-duplicates"), NOT a measure of
+    generalization to sequence-remote or structurally novel MBLs. Use
+    component_challenge_split.py's panels for the latter.
+    """
     if len(reference_embs) < 2:
         raise ValueError("Leave-one-out reference validation needs at least two references")
     out = {}
