@@ -2,7 +2,7 @@
   "scoring_regime": "v2_asymmetric",
   "supersedes": null,
   "coexists_with": "v1 (models/production/, reports/production_model_manifest.json), accessible only as legacy_gnn_v1 via score_candidate_v2.py --include-legacy-gnn-v1, disabled by default, excluded from the triage decision -- trained on pre-fix corrupted pockets.",
-  "git_commit": "e2b7cbe83092c399f263546dc183e8c98bbdd8d8",
+  "git_commit": "85c5add930f84cea980b4e51209bd077af5e2e6b",
   "git_dirty_at_freeze_time": true,
   "input_manifest": {
     "catalog_path": "full_structure_catalog.csv",
