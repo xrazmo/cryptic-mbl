@@ -64,7 +64,7 @@ from pathlib import Path
 import numpy as np
 
 from utils import get_logger, PocketSubgraph, load_structure, residue_centroids
-from graph_construction import AA_PROPERTIES, N_CHEM_PROPS
+from graph_construction import AA_PROPERTIES, N_CHEM_PROPS, LIGAND_ATOMS
 
 log = get_logger(__name__)
 
@@ -80,6 +80,24 @@ def load_embeddings(path: Path):
 def residues_within(centroids: np.ndarray, res_ids: np.ndarray, metal_coords: np.ndarray, radius: float) -> set[int]:
     dists = np.min(np.stack([np.linalg.norm(centroids - c[None, :], axis=1) for c in metal_coords]), axis=0)
     return set(res_ids[dists <= radius].tolist())
+
+
+def first_shell_residues(arr, metal_coords: np.ndarray, radius: float) -> set[int]:
+    """Unlike residues_within (CA-centroid distance, fine for the wide 16A
+    outer-pocket net), a true coordinating residue's CA is never within
+    ~2.8A of the metal -- the donor atom (e.g. a His imidazole nitrogen)
+    sticks out from CA via the sidechain. Checks distance from each
+    candidate donor ATOM (graph_construction.LIGAND_ATOMS), matching
+    coordination_fingerprint.py's methodology, not residue centroids."""
+    ids = set()
+    for i in range(arr.array_length()):
+        ligand_names = LIGAND_ATOMS.get(arr.res_name[i])
+        if not ligand_names or arr.atom_name[i] not in ligand_names:
+            continue
+        d = float(np.min(np.linalg.norm(metal_coords - arr.coord[i][None, :], axis=1)))
+        if d <= radius:
+            ids.add(int(arr.res_id[i]))
+    return ids
 
 
 def chem_vector(res_names: list[str]) -> np.ndarray:
@@ -103,7 +121,7 @@ def pool_structure(sid: str, embeddings_dir: Path, pockets_dir: Path, domain_pdb
     res_ids_struct, centroids = residue_centroids(arr)
 
     outer_ids = residues_within(centroids, res_ids_struct, pocket.metal_coords, OUTER_POCKET_RADIUS)
-    shell_ids = residues_within(centroids, res_ids_struct, pocket.metal_coords, FIRST_SHELL_RADIUS)
+    shell_ids = first_shell_residues(arr, pocket.metal_coords, FIRST_SHELL_RADIUS)
 
     def pooled(ids: set[int]) -> tuple[np.ndarray, np.ndarray] | None:
         rows = [row_of[rid] for rid in ids if rid in row_of]
@@ -159,9 +177,12 @@ def score(preds, labels) -> dict:
         else:
             counts["fn"] += 1
     n = sum(counts.values())
-    sens = counts["tp"] / max(counts["tp"] + counts["fn"], 1)
+    n_pos = counts["tp"] + counts["fn"]
+    sens = (counts["tp"] / n_pos) if n_pos > 0 else None  # None, not 0.0 -- LONO configs have zero positives by
+    # design (pure negative-family FPR tests); reporting sens=0.0 there would misleadingly read as "missed everything"
     spec = counts["tn"] / max(counts["tn"] + counts["fp"], 1)
-    return {"n_test": n, "confusion": counts, "sensitivity": sens, "specificity": spec, "balanced_accuracy": (sens + spec) / 2}
+    bal_acc = ((sens + spec) / 2) if sens is not None else None
+    return {"n_test": n, "confusion": counts, "sensitivity": sens, "specificity": spec, "balanced_accuracy": bal_acc}
 
 
 def main():
@@ -251,11 +272,12 @@ def main():
                 }
 
             report[config_name][variant_name] = result
+            sens_str = "n/a (0 positives)" if result["sensitivity"] is None else f"{result['sensitivity']:.3f}"
+            bal_str = "n/a" if result["balanced_accuracy"] is None else f"{result['balanced_accuracy']:.3f}"
+            recover_str = f" recovers_esm2_misses={result.get('recovers_esm2_misses')}/{result.get('esm2_misses')}" if "esm2_misses" in result else ""
             log.info(
                 f"{config_name} / {variant_name}: n_test={result['n_test']} "
-                f"sens={result['sensitivity']:.3f} spec={result['specificity']:.3f} "
-                f"bal_acc={result['balanced_accuracy']:.3f}"
-                + (f" recovers_esm2_misses={result.get('recovers_esm2_misses')}/{result.get('esm2_misses')}" if "esm2_misses" in result else "")
+                f"sens={sens_str} spec={result['specificity']:.3f} bal_acc={bal_str}{recover_str}"
             )
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
