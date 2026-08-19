@@ -30,6 +30,38 @@ metal_coords (1-2 sites) + metal_probabilities instead of one averaged
 point, which is also what makes the metal-metal distance feature below
 possible for the first time.
 
+RESULT (see reports/coordination_fingerprint_findings.md for full detail):
+corrected first-shell coordination features strongly identify canonical
+DCH-containing B1/B2 MBLs (donor_s_count >= 1: 0.948 sens / 0.983 spec on
+the B1_B2_transfer held-out panel -- beats every other method tried in
+this project), but contain NO useful information for separating B3 MBLs
+from the tested metallo-hydrolase hard negatives (every one of the 24
+features is statistically indistinguishable between B3 positives and
+each hard-negative family). This is a real structural/biological ceiling,
+not unfinished feature engineering: B3 and its closest hard-negative
+relatives (glyoxalase-II, RNase Z, phosphodiesterase, lactonase) share a
+common metallo-hydrolase-fold zinc-binding scaffold and near-identical
+first-shell chemistry; their functional differences live in substrate-
+pocket shape and second-shell residues, which this fingerprint does not
+measure. B3 discrimination requires structural context beyond the
+coordination shell (see model.py's planned outer-pocket encoder branch).
+
+Two qualifications on the B1/B2 result, not to be lost in the headline
+number: (1) donor_s_count>=1 was selected by inspecting the complete
+labeled corpus, not validated on a held-out split the way a trained
+classifier would be -- it misses both nominal B1 positives in the
+remote_outlier panel, and its specificity falls to 0.880 on that
+phosphodiesterase-heavy panel; prospective (Atlas) validation is still
+required before treating it as solved. (2) angles/template-deviation
+features pool donors from EITHER accepted metal site by nearest-distance
+but always compute angles at the PRIMARY site's vertex (see compute_fingerprint) --
+so a real dinuclear site's second-shell geometry is never separately
+resolved. The B3 null result is about this specific global fingerprint,
+not a proof that no site-resolved angular feature could ever help; the
+biological overlap on every other feature is convincing enough that
+repairing this just to keep hunting for first-shell B3 signal isn't
+judged worthwhile.
+
 Feature vector (23 dims, see FEATURE_NAMES), computed per structure from:
   - coordination shell: canonical donor atoms (His ND1/NE2, Asp OD1/OD2,
     Glu OE1/OE2, Cys SG -- graph_construction.LIGAND_ATOMS) within
