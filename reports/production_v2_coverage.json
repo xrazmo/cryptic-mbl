@@ -1,0 +1,24 @@
+{
+  "overall": {
+    "supported": 150,
+    "not_supported": 778,
+    "unavailable": 149
+  },
+  "by_panel": {
+    "B1_B2_transfer": {
+      "n_test": 526,
+      "dch_unavailable": 42,
+      "dch_unavailable_fraction": 0.0798
+    },
+    "B3_transfer": {
+      "n_test": 314,
+      "dch_unavailable": 41,
+      "dch_unavailable_fraction": 0.1306
+    },
+    "remote_outlier": {
+      "n_test": 237,
+      "dch_unavailable": 66,
+      "dch_unavailable_fraction": 0.2785
+    }
+  }
+}
