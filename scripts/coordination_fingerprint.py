@@ -71,18 +71,16 @@ from graph_construction import LIGAND_ATOMS
 
 log = get_logger(__name__)
 
-# Donor-shell search radius: NOT graph_construction.ZN_BOND_CUTOFF (2.8A, the
-# textbook Zn-N/O/S bond length). Checked empirically across all 145 labeled
-# positives with a predicted metal: at 2.8A only 59/145 (41%) have ANY
-# canonical donor atom that close -- these are ML-predicted apo structures
-# with a Metal3D-predicted probable site, not refined experimental metal
-# coordinates, so real positional slop is expected. 5.0A captures 113/145
-# (78%). This is a practical widening for finding the candidate coordinating
-# shell on imprecise predictions, not a claim that true Zn-donor bonds are
-# this long -- the existing ZN_BOND_CUTOFF=2.8 elsewhere in the codebase
-# (graph_construction.py's ligand_geometry bond-length flag) has the same
-# miscalibration and was not fixed here; out of scope for this script.
-DONOR_SHELL_RADIUS = 5.0
+# Donor-shell search radius. Originally widened to 5.0A to compensate for
+# the metal-site corruption bug (see pocket_extraction.py's fix commit) --
+# with that fixed, re-measured across all 144 labeled positives with a
+# predicted metal on the corrected pockets: median nearest-donor distance
+# is now 1.79A (was 3.17A), and 144/144 (100%) fall within 2.8A (was
+# 59/145, 41%). Tightened back to 2.8A, matching
+# graph_construction.ZN_BOND_CUTOFF's original (and, it turns out,
+# correct) value -- the earlier note that 2.8A was "miscalibrated" was
+# a symptom of corrupted metal coordinates, not a wrong constant.
+DONOR_SHELL_RADIUS = 2.8
 
 # Generic biological Zn2+ bond-valence parameters (R0 in Angstrom, universal B=0.37).
 BVS_R0 = {"N": 1.77, "O": 1.70, "S": 2.01}
