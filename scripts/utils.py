@@ -93,6 +93,28 @@ def load_structure(path: str | Path) -> struc.AtomArray:
     return arr
 
 
+def load_probe_structure(path: str | Path) -> struc.AtomArray:
+    """
+    Like load_structure, but also requests the occupancy extra field --
+    biotite does not load it by default either (same reason as b_factor
+    above). Metal3D's find_unique_sites() writes each candidate site's max
+    cluster probability into the occupancy column of its probe PDB (see
+    assets/metal-site-prediction/Metal3D/utils/helpers.py); without this,
+    arr.occupancy doesn't exist and probe probabilities are unreadable.
+    Only pocket_extraction.py's probe-parsing needs this -- kept separate
+    from load_structure rather than adding occupancy there, to not change
+    behavior for the 1077 real structure loads that don't need it.
+    """
+    path = Path(path)
+    try:
+        arr = strucio.load_structure(str(path), extra_fields=["occupancy"])
+    except TypeError:
+        arr = strucio.load_structure(str(path))
+    if isinstance(arr, struc.AtomArrayStack):
+        arr = arr[0]
+    return arr
+
+
 def get_per_residue_confidence(arr: struc.AtomArray) -> np.ndarray:
     """
     Extract per-atom confidence (pLDDT for AF/ESMFold outputs, stored in the
@@ -137,7 +159,29 @@ def residue_centroids(arr: struc.AtomArray) -> tuple[np.ndarray, np.ndarray]:
     """
     Returns (res_ids, centroids) — one 3D centroid per residue (CA-based if
     present, else mean of all atoms in the residue).
+
+    Groups by bare res_id, NOT (chain_id, res_id, ins_code) -- deliberately
+    relies on the caller (pocket_extraction.extract_pocket) passing an
+    already single-chain AtomArray, which eliminates the catastrophic case
+    (residue 120 in chain A silently merged with residue 120 in chain B --
+    this collapsed NDM-1's true ~230-residue single-chain pocket into an
+    8724-atom, 5-chain contaminated one before this fix). Insertion codes
+    remain a theoretical residual risk within one chain; checked empirically
+    across 200 single-chain exports and found zero real collisions, so this
+    asserts loudly instead of silently merging rather than building the
+    full composite-key schema change that would require touching
+    PocketSubgraph's storage format and every downstream consumer.
     """
+    if arr.ins_code is not None and np.any(arr.ins_code != ""):
+        counts: dict[int, set] = {}
+        for rid, ic in zip(arr.res_id, arr.ins_code):
+            counts.setdefault(int(rid), set()).add(ic)
+        colliding = {rid: codes for rid, codes in counts.items() if len(codes) > 1}
+        assert not colliding, (
+            f"residue_centroids: res_id(s) with multiple insertion codes would be silently "
+            f"merged: {colliding} -- residue keying here is bare res_id only, by design; "
+            f"see this function's docstring."
+        )
     res_ids = np.unique(arr.res_id)
     centroids = np.zeros((len(res_ids), 3))
     for i, rid in enumerate(res_ids):
@@ -182,11 +226,23 @@ class PocketSubgraph:
     atom_names: np.ndarray
     elements: np.ndarray
     is_sidechain: np.ndarray       # bool
-    metal_coord: Optional[np.ndarray]   # (3,) or None for cavity_fallback with no metal
+    metal_coords: Optional[np.ndarray]        # (n_sites, 3), n_sites in {0,1,2}; None/(0,3) for cavity_fallback
+    metal_probabilities: Optional[np.ndarray]  # (n_sites,), Metal3D cluster max-probability per site
     metadata: PocketMetadata
+
+    @property
+    def metal_coord(self) -> Optional[np.ndarray]:
+        """Primary (highest-probability) site, (3,) or None -- for the many
+        existing consumers (dist_to_metal, radial shell, etc.) that only
+        need one point. Prefer metal_coords directly for anything that
+        should consider a possible second (dinuclear) site."""
+        if self.metal_coords is None or len(self.metal_coords) == 0:
+            return None
+        return self.metal_coords[0]
 
     def save(self, out_path: str | Path) -> None:
         out_path = Path(out_path)
+        empty = np.zeros((0, 3))
         np.savez_compressed(
             out_path,
             res_ids=self.res_ids,
@@ -195,7 +251,8 @@ class PocketSubgraph:
             atom_names=self.atom_names,
             elements=self.elements,
             is_sidechain=self.is_sidechain,
-            metal_coord=self.metal_coord if self.metal_coord is not None else np.array([]),
+            metal_coords=self.metal_coords if self.metal_coords is not None else empty,
+            metal_probabilities=self.metal_probabilities if self.metal_probabilities is not None else np.zeros((0,)),
             metadata_json=self.metadata.to_json(),
         )
 
@@ -204,8 +261,20 @@ class PocketSubgraph:
         d = np.load(path, allow_pickle=False)
         meta_dict = json.loads(str(d["metadata_json"]))
         metadata = PocketMetadata(**meta_dict)
-        metal_coord = d["metal_coord"]
-        metal_coord = None if metal_coord.size == 0 else metal_coord
+        if "metal_coords" in d:
+            metal_coords = d["metal_coords"]
+            metal_coords = None if metal_coords.size == 0 else metal_coords
+            metal_probabilities = d["metal_probabilities"]
+            metal_probabilities = None if metal_probabilities.size == 0 else metal_probabilities
+        else:
+            # Backward compat: pockets saved before this fix (see
+            # pocket_extraction.py's coordination-fingerprint fix commit)
+            # stored a single averaged, potentially-corrupted metal_coord.
+            # Still loadable during the staged rollout -- only regenerated
+            # pockets get real metal_coords/metal_probabilities.
+            legacy = d["metal_coord"]
+            metal_coords = None if legacy.size == 0 else legacy.reshape(1, 3)
+            metal_probabilities = None if legacy.size == 0 else np.array([metadata.metal_confidence or 0.7])
         return PocketSubgraph(
             res_ids=d["res_ids"],
             res_names=d["res_names"],
@@ -213,6 +282,7 @@ class PocketSubgraph:
             atom_names=d["atom_names"],
             elements=d["elements"],
             is_sidechain=d["is_sidechain"],
-            metal_coord=metal_coord,
+            metal_coords=metal_coords,
+            metal_probabilities=metal_probabilities,
             metadata=metadata,
         )

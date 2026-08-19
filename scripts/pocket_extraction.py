@@ -41,6 +41,7 @@ from utils import (
     PocketSubgraph,
     get_logger,
     load_structure,
+    load_probe_structure,
     get_per_residue_confidence,
     residue_centroids,
     min_distance_to_point,
@@ -52,6 +53,8 @@ RADIUS_MIN_DEFAULT = 8.0
 RADIUS_MAX_DEFAULT = 12.0
 PLDDT_QC_THRESHOLD = 70.0
 METAL3D_CONFIDENCE_THRESHOLD = 0.5  # below this, use cavity fallback
+SITE_CLUSTER_RADIUS = 5.0  # Angstrom: a second probe within this of the top site is kept as a candidate dinuclear partner
+MAX_METAL_SITES = 2  # mononuclear or dinuclear; never keep more
 
 
 # --------------------------------------------------------------------------- #
@@ -59,24 +62,35 @@ METAL3D_CONFIDENCE_THRESHOLD = 0.5  # below this, use cavity fallback
 # fpocket calls. Kept as isolated functions so integration is a one-file edit.
 # --------------------------------------------------------------------------- #
 
-def run_metal3d(structure_path: Path) -> Optional[dict]:
+def run_metal3d(structure_path: Path) -> Optional[list[tuple[np.ndarray, float]]]:
     """Call Metal3D CLI to predict metal binding sites.
-    
+
     Uses conda run to execute Metal3D in the metal3d environment
     while staying in the cryptic-mbl environment.
+
+    Returns every candidate site Metal3D's clustering (find_unique_sites in
+    the vendored Metal3D/utils/helpers.py) found, as (coord, probability) --
+    NOT a single averaged point. --maxp was previously passed here on the
+    (incorrect) assumption it would restrict --probefile to the top site;
+    it does not -- it triggers a completely separate maxprobability() call
+    that writes its own file, which this code never read. --probefile
+    always contains every clustered site regardless of --maxp, so the old
+    `metal_pdb.coord.mean(axis=0)` was averaging every candidate site
+    (including low-probability noise clusters) into one point -- on a
+    multichain crystal structure this can land tens of Angstroms from any
+    real metal (verified directly: NDM-1/3SPU, 30 probe sites, two within
+    <1A of the real dinuclear Zn pair, averaged centroid ~24A from both).
+    Site selection now happens explicitly in select_metal_sites().
     """
     import subprocess
     import tempfile
-    
-    # Get the directory where pocket_extraction.py is located
+
     metal3d_wrapper = (Path(__file__).parent.parent / 'run_metal3d.sh').resolve()
-    
-    
+
     with tempfile.NamedTemporaryFile(suffix='.pdb', delete=False) as tmp:
         tmp_output = tmp.name
-    
+
     try:
-        # Run Metal3D via conda wrapper (handles environment switching)
         result = subprocess.run(
             [
                 metal3d_wrapper,
@@ -84,29 +98,29 @@ def run_metal3d(structure_path: Path) -> Optional[dict]:
                 '--metalbinding',
                 '--writeprobes',
                 '--probefile', tmp_output,
-                '--maxp',
             ],
             capture_output=True,
             text=True,
             timeout=300,
         )
-        
+
         if result.returncode != 0:
             log.warning(f"Metal3D failed: {result.stderr}")
             return None
-        
-        # Parse the output PDB file
-        metal_pdb = load_structure(tmp_output)
+
+        metal_pdb = load_probe_structure(tmp_output)
         if metal_pdb.array_length() == 0:
             return None
-        
-        metal_coord = metal_pdb.coord.mean(axis=0)
-        
-        return {
-            "coord": metal_coord,
-            "confidence": 0.7,
-        }
-    
+
+        # find_unique_sites() writes each site's max cluster probability into
+        # the occupancy column (see assets/.../helpers.py's HETATM line format).
+        probabilities = getattr(metal_pdb, "occupancy", None)
+        if probabilities is None:
+            log.warning(f"{structure_path.name}: probe PDB has no occupancy field, defaulting all site probabilities to 1.0")
+            probabilities = np.ones(metal_pdb.array_length())
+        sites = [(metal_pdb.coord[i].copy(), float(probabilities[i])) for i in range(metal_pdb.array_length())]
+        return sites
+
     except subprocess.TimeoutExpired:
         log.warning("Metal3D timed out after 300s")
         return None
@@ -118,6 +132,33 @@ def run_metal3d(structure_path: Path) -> Optional[dict]:
             Path(tmp_output).unlink()
         except:
             pass
+
+
+def select_metal_sites(
+    sites: list[tuple[np.ndarray, float]], cluster_radius: float = SITE_CLUSTER_RADIUS,
+) -> list[tuple[np.ndarray, float]]:
+    """
+    Deterministic primary-site selection, no label/subclass information used:
+      1. Highest-probability probe = primary site.
+      2. The next-highest-probability probe is also kept, IF it's within
+         cluster_radius of the primary (candidate second metal of a
+         dinuclear site) -- otherwise the primary is the only site kept.
+      3. Never more than MAX_METAL_SITES (2) sites survive.
+    A real dinuclear B1/B3 site's two Zn ions sit ~3.5-4A apart (verified
+    against this project's own reference bank: NDM-1 3.8A, L1/FEZ-1
+    similar); cluster_radius=5A gives headroom without accepting an
+    unrelated, more distant probe as a second site.
+    """
+    if not sites:
+        return []
+    ranked = sorted(sites, key=lambda s: s[1], reverse=True)
+    accepted = [ranked[0]]
+    for coord, prob in ranked[1:]:
+        if len(accepted) >= MAX_METAL_SITES:
+            break
+        if np.linalg.norm(coord - accepted[0][0]) <= cluster_radius:
+            accepted.append((coord, prob))
+    return accepted
 
 
 def run_pinmymetal(structure_path: Path) -> Optional[dict]:
@@ -178,22 +219,26 @@ def _parse_fpocket_top_score(info_file: Path) -> float:
 # --------------------------------------------------------------------------- #
 # Core extraction logic
 # --------------------------------------------------------------------------- #
-def determine_pocket_center(
+def determine_pocket_sites(
     structure_path: Path,
-) -> tuple[np.ndarray, str, Optional[float]]:
+) -> tuple[list[tuple[np.ndarray, float]], str]:
     """
-    Returns (center_coord, pocket_source, metal_confidence).
+    Returns (accepted_sites, pocket_source). accepted_sites is a list of
+    1-2 (coord, probability) tuples for "metal3d", or a single
+    (centroid, confidence=nan) for "cavity_fallback".
     Tries Metal3D first; falls back to fpocket cavity detection.
     PinMyMetal is skipped (Metal3D + fpocket are sufficient).
     """
     try:
-        metal3d_result = run_metal3d(structure_path)
+        raw_sites = run_metal3d(structure_path)
     except NotImplementedError:
         log.warning("Metal3D wrapper not implemented — using fpocket fallback directly.")
-        metal3d_result = None
+        raw_sites = None
 
-    if metal3d_result is not None and metal3d_result["confidence"] >= METAL3D_CONFIDENCE_THRESHOLD:
-        return metal3d_result["coord"], "metal3d", metal3d_result["confidence"]
+    if raw_sites:
+        accepted = select_metal_sites(raw_sites)
+        if accepted and accepted[0][1] >= METAL3D_CONFIDENCE_THRESHOLD:
+            return accepted, "metal3d"
 
     log.info(f"{structure_path.name}: low/no Metal3D confidence, falling back to fpocket.")
     fpocket_result = run_fpocket(structure_path)
@@ -202,7 +247,7 @@ def determine_pocket_center(
             f"{structure_path.name}: neither Metal3D nor fpocket produced a "
             "usable pocket center. Exclude this structure or inspect manually."
         )
-    return fpocket_result["centroid"], "cavity_fallback", None
+    return [(fpocket_result["centroid"], float("nan"))], "cavity_fallback"
 
 def extract_pocket(
     structure_path: Path,
@@ -215,10 +260,16 @@ def extract_pocket(
     radius_max: float = RADIUS_MAX_DEFAULT,
 ) -> PocketSubgraph:
     arr = load_structure(structure_path)
-    center, pocket_source, metal_confidence = determine_pocket_center(structure_path)
+    accepted_sites, pocket_source = determine_pocket_sites(structure_path)
+    metal_confidence = accepted_sites[0][1] if pocket_source == "metal3d" else None
 
     res_ids, centroids = residue_centroids(arr)
-    dists = min_distance_to_point(centroids, center)
+    # A residue qualifies if it's within radius_max of ANY accepted site
+    # (both sites of a dinuclear pair get their neighborhoods included, not
+    # just the top-probability one).
+    dists = np.min(
+        np.stack([min_distance_to_point(centroids, coord) for coord, _ in accepted_sites]), axis=0,
+    )
     # Use the wider radius as the inclusion boundary; radius_min is reserved
     # for future graded-weighting (e.g. core vs. periphery residues) rather
     # than a second hard cutoff.
@@ -255,6 +306,12 @@ def extract_pocket(
         subclass=subclass,
     )
 
+    if pocket_source == "metal3d":
+        metal_coords = np.stack([coord for coord, _ in accepted_sites])
+        metal_probabilities = np.array([prob for _, prob in accepted_sites])
+    else:
+        metal_coords, metal_probabilities = None, None
+
     return PocketSubgraph(
         res_ids=pocket_arr.res_id,
         res_names=pocket_arr.res_name,
@@ -262,7 +319,8 @@ def extract_pocket(
         atom_names=pocket_arr.atom_name,
         elements=pocket_arr.element,
         is_sidechain=is_sidechain,
-        metal_coord=(center if pocket_source == "metal3d" else None),
+        metal_coords=metal_coords,
+        metal_probabilities=metal_probabilities,
         metadata=metadata,
     )
 

@@ -16,23 +16,30 @@ encoder is structurally incapable of learning it regardless of training
 time -- this fingerprint is the fast, interpretable way to find out
 whether that signal exists before investing in a bigger encoder.
 
-Known limitation, not silently worked around: metal-metal distance for
-dinuclear sites is NOT computable from the current pipeline.
-pocket_extraction.py's Metal3D call uses --maxp (single top site) and
-then does `metal_pdb.coord.mean(axis=0)` -- collapsing whatever probe
-atoms Metal3D returns into ONE averaged point, so a real dinuclear B1
-site would already be corrupted into a single phantom midpoint before
-this script ever sees it, not just omitted. Recovering real dinuclear
-geometry would require re-running Metal3D without --maxp and changing
-pocket_extraction.py to keep discrete site clusters -- out of scope
-here; this fingerprint has no metal-metal-distance feature at all
-rather than a fabricated placeholder for one.
+pocket_extraction.py previously fed this a corrupted metal_coord: Metal3D's
+--maxp flag was assumed to restrict its probe output to the top site, but
+it actually triggers an unrelated, unused code path -- the real probe file
+always contains every clustered candidate site, which the old code
+averaged into one point (`metal_pdb.coord.mean(axis=0)`). On a multichain
+crystal structure this routinely landed tens of Angstroms from any real
+metal (verified: NDM-1/3SPU, 30 probes, two within <1A of the true
+dinuclear Zn pair, averaged centroid ~24A from both). Fixed in
+pocket_extraction.py (select_metal_sites: keep the top-probability probe,
+plus a second only if within 5A of it) -- PocketSubgraph now carries
+metal_coords (1-2 sites) + metal_probabilities instead of one averaged
+point, which is also what makes the metal-metal distance feature below
+possible for the first time.
 
-Feature vector (22 dims, see FEATURE_NAMES), computed per structure from:
+Feature vector (23 dims, see FEATURE_NAMES), computed per structure from:
   - coordination shell: canonical donor atoms (His ND1/NE2, Asp OD1/OD2,
     Glu OE1/OE2, Cys SG -- graph_construction.LIGAND_ATOMS) within
-    ZN_BOND_CUTOFF (2.8A) of the predicted metal center.
-  - donor-metal-donor angles, all pairs, at the metal vertex.
+    DONOR_SHELL_RADIUS of EITHER accepted metal site (nearest one wins
+    per donor atom).
+  - donor-metal-donor angles, all pairs, at the PRIMARY site's metal vertex
+    (dinuclear second-shell angles are not separately modeled here).
+  - metal-metal distance when a second site was accepted, else NaN (not 0
+    -- 0 would misleadingly read as "two metals on top of each other"
+    rather than "no second site found").
   - deviation from ideal tetrahedral/trigonal-bipyramidal/octahedral
     angle sets: NaN when the actual donor count doesn't match that
     template's ideal coordination number (not a fabricated penalty --
@@ -98,9 +105,11 @@ FEATURE_NAMES = [
     "bond_valence_sum", "bond_valence_deviation_from_2",
     "hbond_second_shell_count",
     "sasa_donor_residues_full_chain",
+    "metal_metal_distance",
+    "n_metal_sites",
     "has_metal",
 ]
-assert len(FEATURE_NAMES) == 22
+assert len(FEATURE_NAMES) == 24
 
 
 def _donor_atoms(pocket: PocketSubgraph) -> list[tuple[np.ndarray, str, int]]:
@@ -158,16 +167,21 @@ def _full_chain_sasa_for_residues(domain_pdb_path: Path, res_ids: set[int]) -> f
 
 def compute_fingerprint(pocket: PocketSubgraph, domain_pdb_path: Path) -> np.ndarray:
     x = np.full(len(FEATURE_NAMES), np.nan, dtype=np.float32)
-    if pocket.metal_coord is None:
+    if pocket.metal_coords is None or len(pocket.metal_coords) == 0:
         x[:] = 0.0
         x[FEATURE_NAMES.index("has_metal")] = 0.0
         return x
 
-    metal = pocket.metal_coord
+    sites = pocket.metal_coords  # (n_sites, 3), n_sites in {1, 2}
+    metal = sites[0]  # primary site: angles/templates computed at this vertex
+    x[FEATURE_NAMES.index("n_metal_sites")] = len(sites)
+    if len(sites) == 2:
+        x[FEATURE_NAMES.index("metal_metal_distance")] = float(np.linalg.norm(sites[0] - sites[1]))
+
     donors = _donor_atoms(pocket)
     donor_dists = []
     for coord, element, res_id in donors:
-        d = float(np.linalg.norm(coord - metal))
+        d = float(np.min(np.linalg.norm(sites - coord[None, :], axis=1)))  # nearest of the 1-2 accepted sites
         if d <= DONOR_SHELL_RADIUS:
             donor_dists.append((d, element, coord, res_id))
     donor_dists.sort(key=lambda t: t[0])
