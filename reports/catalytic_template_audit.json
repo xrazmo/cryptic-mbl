@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "config": "configs/catalytic_reaction_templates.json",
+  "config_sha256": "1cc7feb6221040b97bb11ed6069b31fea276fa90a87f6b16cbb6046a555bce8b",
+  "templates": [
+    {
+      "template_id": "B1_NDM1_hydrolyzed_meropenem_4EYL",
+      "pdb_id": "4EYL",
+      "subclass": "B1",
+      "pdb_sha256": "a4f64afd41c061e42f47bcc8d222d101bac6398dd211da153795acc586531b66",
+      "template_sha256": "f2fdfdd13f33daa77d36505887e781b3a068de5c40e987bb6903aca9cc716646",
+      "template_content_sha256": "abe220b7ac50e2051c515805e40c21aad23b1bf2c16cb2cf7660861e4a4743c8",
+      "n_metal_sites": 2,
+      "n_donors": 6,
+      "donor_elements": [
+        "N",
+        "N",
+        "O",
+        "N",
+        "S",
+        "N"
+      ],
+      "n_ligand_heavy_atoms": 27,
+      "source_url": "https://www.rcsb.org/structure/4EYL",
+      "citation_doi": "10.1021/ja303579d"
+    },
+    {
+      "template_id": "B2_CphA_biapenem_intermediate_1X8I",
+      "pdb_id": "1X8I",
+      "subclass": "B2",
+      "pdb_sha256": "de5de9e8f38df64002e950bca219405b800275186ffafb93bbeecdeec535f4e3",
+      "template_sha256": "9c3398676e6c62456d3d9196efd187e8f2a2445a26c285078bf2c3a8afdea1ff",
+      "template_content_sha256": "18909b05925c330b466241f772a6870c678175f59cf2d4a4be8dff7616e10492",
+      "n_metal_sites": 1,
+      "n_donors": 3,
+      "donor_elements": [
+        "O",
+        "S",
+        "N"
+      ],
+      "n_ligand_heavy_atoms": 25,
+      "source_url": "https://www.rcsb.org/structure/1X8I",
+      "citation_doi": "10.1016/j.jmb.2004.10.070"
+    },
+    {
+      "template_id": "B3_L1_hydrolyzed_moxalactam_2AIO",
+      "pdb_id": "2AIO",
+      "subclass": "B3",
+      "pdb_sha256": "b994d0ad9455617195775728a88b9a0eb87beab954c9eaa4c6652ae102de5fe5",
+      "template_sha256": "845eeda89cf7515adaec930e3952f457ce0adca7570252c20dc7e7fad27b83f3",
+      "template_content_sha256": "035b3ef4a42c502480a7f3e385b35ec2ecaa2db1552d776123907331fd7ad535",
+      "n_metal_sites": 2,
+      "n_donors": 6,
+      "donor_elements": [
+        "N",
+        "N",
+        "O",
+        "N",
+        "N",
+        "N"
+      ],
+      "n_ligand_heavy_atoms": 30,
+      "source_url": "https://www.rcsb.org/structure/2AIO",
+      "citation_doi": "10.1021/ja0536062"
+    },
+    {
+      "template_id": "B3_L1_hydrolyzed_penicillinG_6U0Z",
+      "pdb_id": "6U0Z",
+      "subclass": "B3",
+      "pdb_sha256": "3b106a1b4e14cb51728e02e0a4b0bf37869ce7cc2103337358a3d711a026d31a",
+      "template_sha256": "7496a234d76e001ec60e3aa3ba2bee6422c4c8b02afb38dfcb7ebebe8b9d4a97",
+      "template_content_sha256": "2cf8b35f68d0f73d2e9366681088502a904f43379671b6b98f26665ba2d607a1",
+      "n_metal_sites": 2,
+      "n_donors": 6,
+      "donor_elements": [
+        "N",
+        "N",
+        "O",
+        "N",
+        "N",
+        "N"
+      ],
+      "n_ligand_heavy_atoms": 16,
+      "source_url": "https://www.rcsb.org/structure/6U0Z",
+      "citation_doi": "10.1002/pro.3804"
+    }
+  ]
+}

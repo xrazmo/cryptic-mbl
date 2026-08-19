@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "purpose": "Experimental hydrolyzed beta-lactam reaction states for reference-independent catalytic-feasibility scoring. These are mechanistic coordinate templates, not positive-class prototypes.",
+  "download_base_url": "https://files.rcsb.org/download/{pdb_id}.pdb",
+  "templates": [
+    {
+      "template_id": "B1_NDM1_hydrolyzed_meropenem_4EYL",
+      "pdb_id": "4EYL",
+      "subclass": "B1",
+      "protein_chain": "A",
+      "ligand_resname": "0RV",
+      "substrate_class": "carbapenem",
+      "reaction_state": "hydrolyzed_product",
+      "resolution_angstrom": 1.9,
+      "citation_doi": "10.1021/ja303579d",
+      "source_url": "https://www.rcsb.org/structure/4EYL"
+    },
+    {
+      "template_id": "B2_CphA_biapenem_intermediate_1X8I",
+      "pdb_id": "1X8I",
+      "subclass": "B2",
+      "protein_chain": "A",
+      "ligand_resname": "BMH",
+      "substrate_class": "carbapenem",
+      "reaction_state": "trapped_reaction_intermediate",
+      "resolution_angstrom": 1.9,
+      "citation_doi": "10.1016/j.jmb.2004.10.070",
+      "source_url": "https://www.rcsb.org/structure/1X8I"
+    },
+    {
+      "template_id": "B3_L1_hydrolyzed_moxalactam_2AIO",
+      "pdb_id": "2AIO",
+      "subclass": "B3",
+      "protein_chain": "A",
+      "ligand_resname": "MX1",
+      "substrate_class": "oxacephem",
+      "reaction_state": "hydrolyzed_product",
+      "resolution_angstrom": 1.7,
+      "citation_doi": "10.1021/ja0536062",
+      "source_url": "https://www.rcsb.org/structure/2AIO"
+    },
+    {
+      "template_id": "B3_L1_hydrolyzed_penicillinG_6U0Z",
+      "pdb_id": "6U0Z",
+      "subclass": "B3",
+      "protein_chain": "A",
+      "ligand_resname": "PNK",
+      "substrate_class": "penicillin",
+      "reaction_state": "hydrolyzed_product",
+      "resolution_angstrom": 1.65,
+      "citation_doi": "10.1002/pro.3804",
+      "source_url": "https://www.rcsb.org/structure/6U0Z"
+    }
+  ]
+}
