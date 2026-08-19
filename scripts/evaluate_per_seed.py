@@ -295,6 +295,7 @@ def evaluate_config(
     return {
         "config": name, "n_seeds_used": len(ckpts),
         "vote_ensemble": vote_result,
+        "vote_preds": vote_preds,
         "per_seed_sensitivity": {"mean": float(np.mean(sens_list)), "std": float(np.std(sens_list)), "values": sens_list},
         "per_seed_specificity": {"mean": float(np.mean(spec_list)), "std": float(np.std(spec_list)), "values": spec_list},
         "per_seed_balanced_accuracy": {"mean": float(np.mean(bal_list)), "std": float(np.std(bal_list)), "values": bal_list},
