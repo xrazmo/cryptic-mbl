@@ -1,10 +1,11 @@
-"""Run the published fARGene B1/B2 HMM on a protein FASTA.
+"""Run a published fARGene full-protein HMM on a protein FASTA.
 
 This adapter calls HMMER directly rather than the legacy Python-2 fARGene
 front end.  It preserves its full-protein classifier: ``hmmsearch -E 1000
 --domE 1000`` followed by a positive call when any domain score (domtblout
-column 14) is greater than 127.  ``--sensitive`` adds HMMER ``--max``, matching
-fARGene's optional sensitive mode; it is off by default in the upstream CLI.
+column 14) exceeds the supplied model-specific threshold. ``--sensitive`` adds
+HMMER ``--max``, matching fARGene's optional sensitive mode; it is off by
+default in the upstream CLI.
 
 The fARGene model is supplied by path and is not copied into this repository.
 The output records the upstream revision and content hash when available.
@@ -81,12 +82,17 @@ def main() -> None:
     parser.add_argument("--hmmsearch", default="hmmsearch",
                         help="HMMER hmmsearch executable or absolute path")
     parser.add_argument("--threshold", type=float, default=DEFAULT_THRESHOLD)
+    parser.add_argument(
+        "--model-name",
+        help="Report label for the supplied HMM (default: HMM filename stem)",
+    )
     parser.add_argument("--sensitive", action="store_true",
                         help="Use fARGene's optional sensitive mode (HMMER --max)")
     parser.add_argument("--upstream-checkout", type=Path)
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--domtblout", type=Path)
     args = parser.parse_args()
+    model_name = args.model_name or args.hmm.stem
 
     ids = fasta_ids(args.fasta)
     if not ids:
@@ -113,13 +119,13 @@ def main() -> None:
     )
     output = {
         "schema_version": 1,
-        "method": "fARGene class_B_1_2 full-protein HMM",
+        "method": f"fARGene {model_name} full-protein HMM",
         "upstream_url": "https://github.com/fannyhb/fargene",
         "upstream_revision": git_revision(args.upstream_checkout) if args.upstream_checkout else None,
         "hmm_sha256": sha256(args.hmm),
         "fasta_sha256": sha256(args.fasta),
         "threshold": {"operator": ">", "domain_score": args.threshold,
-                      "source": "fargene_analysis.py predefined class_b_1_2 model"},
+                      "source": f"fargene_analysis.py predefined {model_name} model"},
         "sensitive_mode": args.sensitive,
         "command": command,
         "hmmsearch_version": hmm_version,

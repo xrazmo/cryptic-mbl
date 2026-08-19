@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "method": "fARGene class_B_1_2 full-protein HMM",
+  "upstream_url": "https://github.com/fannyhb/fargene",
+  "upstream_revision": "41e3386b7b8da4a4a742f08da6702cf5830a9f14",
+  "hmm_sha256": "34370eb914f014d92e4362be6ed8c35a90b4c4f243c77caf887461408887e778",
+  "fasta_sha256": "088e3bd899fe69c1fed4948b412a035adf904089043b4bdf3a2488f9ee4fc076",
+  "threshold": {
+    "operator": ">",
+    "domain_score": 127.0,
+    "source": "fargene_analysis.py predefined class_B_1_2 model"
+  },
+  "sensitive_mode": false,
+  "command": [
+    "/home/moraz/programs/miniconda3/bin/hmmsearch",
+    "-E",
+    "1000",
+    "--domE",
+    "1000",
+    "--domtblout",
+    "data/external_experimental_mbl/fargene.domtblout",
+    "/tmp/cryptic-mbl-b1-upstreams/fargene/fargene_analysis/models/class_B_1_2.hmm",
+    "data/external_experimental_mbl/sequences.fasta"
+  ],
+  "hmmsearch_version": "HMMER 3.4 (Aug 2023); http://hmmer.org/",
+  "n_sequences": 26,
+  "n_positive": 18,
+  "per_example": {
+    "1BMC": {
+      "best_domain_score": 276.9,
+      "best_domain": {
+        "domain_score": 276.9,
+        "domain_i_evalue": 2e-85,
+        "hmm_from": 25,
+        "hmm_to": 243,
+        "ali_from": 4,
+        "ali_to": 213
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1ZNB": {
+      "best_domain_score": 290.2,
+      "best_domain": {
+        "domain_score": 290.2,
+        "domain_i_evalue": 1.7e-89,
+        "hmm_from": 23,
+        "hmm_to": 245,
+        "ali_from": 3,
+        "ali_to": 223
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1M2X": {
+      "best_domain_score": 283.4,
+      "best_domain": {
+        "domain_score": 283.4,
+        "domain_i_evalue": 2e-87,
+        "hmm_from": 30,
+        "hmm_to": 247,
+        "ali_from": 1,
+        "ali_to": 217
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2FHX": {
+      "best_domain_score": 239.0,
+      "best_domain": {
+        "domain_score": 239.0,
+        "domain_i_evalue": 7.3e-74,
+        "hmm_from": 26,
+        "hmm_to": 245,
+        "ali_from": 4,
+        "ali_to": 239
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2WHG": {
+      "best_domain_score": 265.2,
+      "best_domain": {
+        "domain_score": 265.2,
+        "domain_i_evalue": 7e-82,
+        "hmm_from": 27,
+        "hmm_to": 246,
+        "ali_from": 9,
+        "ali_to": 229
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2Y87": {
+      "best_domain_score": 250.9,
+      "best_domain": {
+        "domain_score": 250.9,
+        "domain_i_evalue": 1.7e-77,
+        "hmm_from": 28,
+        "hmm_to": 243,
+        "ali_from": 10,
+        "ali_to": 226
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2YNT": {
+      "best_domain_score": 303.7,
+      "best_domain": {
+        "domain_score": 303.7,
+        "domain_i_evalue": 1.2e-93,
+        "hmm_from": 28,
+        "hmm_to": 246,
+        "ali_from": 4,
+        "ali_to": 220
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "3S0Z": {
+      "best_domain_score": 267.0,
+      "best_domain": {
+        "domain_score": 267.0,
+        "domain_i_evalue": 2e-82,
+        "hmm_from": 30,
+        "hmm_to": 244,
+        "ali_from": 2,
+        "ali_to": 218
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "4NQ2": {
+      "best_domain_score": 259.8,
+      "best_domain": {
+        "domain_score": 259.8,
+        "domain_i_evalue": 3.1e-80,
+        "hmm_from": 28,
+        "hmm_to": 245,
+        "ali_from": 10,
+        "ali_to": 228
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "4ZEJ": {
+      "best_domain_score": 309.6,
+      "best_domain": {
+        "domain_score": 309.6,
+        "domain_i_evalue": 1.9e-95,
+        "hmm_from": 27,
+        "hmm_to": 245,
+        "ali_from": 2,
+        "ali_to": 218
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "5EV6": {
+      "best_domain_score": 294.5,
+      "best_domain": {
+        "domain_score": 294.5,
+        "domain_i_evalue": 8.3e-91,
+        "hmm_from": 26,
+        "hmm_to": 245,
+        "ali_from": 4,
+        "ali_to": 218
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "5MMD": {
+      "best_domain_score": 308.1,
+      "best_domain": {
+        "domain_score": 308.1,
+        "domain_i_evalue": 5.8e-95,
+        "hmm_from": 29,
+        "hmm_to": 247,
+        "ali_from": 3,
+        "ali_to": 219
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6T5K": {
+      "best_domain_score": 278.0,
+      "best_domain": {
+        "domain_score": 278.0,
+        "domain_i_evalue": 9.1e-86,
+        "hmm_from": 22,
+        "hmm_to": 243,
+        "ali_from": 5,
+        "ali_to": 224
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6T5L": {
+      "best_domain_score": 283.0,
+      "best_domain": {
+        "domain_score": 283.0,
+        "domain_i_evalue": 2.6e-87,
+        "hmm_from": 24,
+        "hmm_to": 243,
+        "ali_from": 4,
+        "ali_to": 224
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6V3Q": {
+      "best_domain_score": 264.3,
+      "best_domain": {
+        "domain_score": 264.3,
+        "domain_i_evalue": 1.4e-81,
+        "hmm_from": 27,
+        "hmm_to": 245,
+        "ali_from": 4,
+        "ali_to": 223
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6CQS": {
+      "best_domain_score": 220.4,
+      "best_domain": {
+        "domain_score": 220.4,
+        "domain_i_evalue": 3.5e-68,
+        "hmm_from": 27,
+        "hmm_to": 242,
+        "ali_from": 6,
+        "ali_to": 241
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1X8G": {
+      "best_domain_score": 212.2,
+      "best_domain": {
+        "domain_score": 212.2,
+        "domain_i_evalue": 1.1e-65,
+        "hmm_from": 31,
+        "hmm_to": 245,
+        "ali_from": 3,
+        "ali_to": 224
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "5EW0": {
+      "best_domain_score": 201.8,
+      "best_domain": {
+        "domain_score": 201.8,
+        "domain_i_evalue": 1.6e-62,
+        "hmm_from": 30,
+        "hmm_to": 245,
+        "ali_from": 1,
+        "ali_to": 227
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "4AWZ": {
+      "best_domain_score": 19.8,
+      "best_domain": {
+        "domain_score": 19.8,
+        "domain_i_evalue": 5.9e-07,
+        "hmm_from": 54,
+        "hmm_to": 136,
+        "ali_from": 29,
+        "ali_to": 113
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "5K0W": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    },
+    "1K07": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    },
+    "5IQK": {
+      "best_domain_score": 15.0,
+      "best_domain": {
+        "domain_score": 15.0,
+        "domain_i_evalue": 1.8e-05,
+        "hmm_from": 59,
+        "hmm_to": 139,
+        "ali_from": 33,
+        "ali_to": 114
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "3VPE": {
+      "best_domain_score": 20.1,
+      "best_domain": {
+        "domain_score": 20.1,
+        "domain_i_evalue": 5e-07,
+        "hmm_from": 59,
+        "hmm_to": 132,
+        "ali_from": 26,
+        "ali_to": 101
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "2AIO": {
+      "best_domain_score": 17.1,
+      "best_domain": {
+        "domain_score": 17.1,
+        "domain_i_evalue": 4e-06,
+        "hmm_from": 58,
+        "hmm_to": 167,
+        "ali_from": 38,
+        "ali_to": 161
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "5NJW": {
+      "best_domain_score": 20.7,
+      "best_domain": {
+        "domain_score": 20.7,
+        "domain_i_evalue": 3.1e-07,
+        "hmm_from": 48,
+        "hmm_to": 131,
+        "ali_from": 23,
+        "ali_to": 111
+      },
+      "n_domains": 2,
+      "predicted_positive": false
+    },
+    "5AEB": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    }
+  }
+}

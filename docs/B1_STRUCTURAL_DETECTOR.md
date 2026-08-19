@@ -1,146 +1,221 @@
-# B1 catalytic-architecture detector
+# Reference-independent B1 structural detector
 
 ## Scientific question
 
-This branch asks a narrower and defensible question: can a candidate structure
-support the canonical dinuclear catalytic architecture of subclass B1
-metallo-beta-lactamases without using its sequence or comparing it with a panel
-of labeled proteins? It does not attempt to recognize B3, and it does not claim
-that a compatible structure confers antibiotic resistance.
+This branch tests a deliberately narrow hypothesis: can a protein structure
+support the canonical B1 metallo-beta-lactamase catalytic architecture without
+using its sequence or comparing it with a labeled reference panel?
 
-The distinction matters. The earlier mixed-subclass structural experiment was
-dominated by B3-like metallohydrolases, whose first-shell chemistry overlaps
-glyoxalase-II, RNase Z, phosphodiesterases, and lactonases. Canonical B1 has a
-more distinctive local architecture that can be tested separately.
+This is not a B2/B3 detector and it is not a claim of catalytic activity. B3
+MBLs share first-shell His/Asp/Glu zinc chemistry with several non-MBL
+metallohydrolases, whereas canonical B1 enzymes contain a more distinctive
+two-site architecture: a three-histidine site and an Asp-Cys-His site. Treating
+those biological problems separately avoids forcing one model to solve
+incompatible subclasses with very unequal training data.
 
-## Model
+## Model and information boundary
 
-`scripts/b1_structural_model.py` uses one provenance-tracked experimental
-reaction-state structure, NDM-1 with hydrolyzed meropenem (PDB 4EYL). It uses
-the structure only as a physical coordinate template, not as a nearest-neighbor
-reference. A candidate can have an unrelated sequence or global fold.
+The primary implementation is `scripts/metal_independent_b1.py`. It enumerates
+donor atoms directly from a complete single-chain structure:
 
-A full positive call requires all of the following:
+- a Zn1-like triad of three distinct histidine N donors;
+- a Zn2-like triad of Asp O, Cys S, and His N donors;
+- the relative three-dimensional arrangement of all six donor atoms.
 
-1. two predicted metal sites;
-2. the site-resolved 3-N and N/O/S protein-donor architecture, including the
-   canonical DCH cysteine ligand;
-3. a donor/metal pharmacophore RMSD no greater than the predeclared 1.25 A
-   physical-sanity gate;
-4. transfer of the hydrolyzed-carbapenem pose with no more than 10% hard
-   clashes and at least 50% pocket contact.
+Candidate donor sets are fitted to one provenance-tracked experimental
+reaction-state template: NDM-1 with hydrolyzed meropenem (PDB 4EYL). The final
+six-donor pharmacophore gate is RMSD <= 1.25 A. The frozen donor-pair
+enumeration tolerance is 1.50 A; it is a search prefilter, not the final match
+criterion. A transferred hydrolyzed-meropenem pose supplies separate clash and
+pocket-contact evidence.
 
-The output has four states. `supported` is the full structural call;
-`partial_support` means a coordinating cysteine is present but the complete
-architecture failed; `not_supported` means an evaluable dinuclear site lacks
-the architecture; and `unavailable` means the required metal-site input was
-not available. Missing input is never silently converted into biological
-absence.
+The scorer does **not** read:
 
-The implementation reads no sequence, ESM embedding, label, negative-family
-identity, class centroid, or trained weight.
+- primary sequence order, residue numbering, or motif regular expressions;
+- ESM embeddings, HMM scores, or sequence alignments;
+- labels, negative-family identities, centroids, or a reference bank;
+- predicted metal coordinates.
 
-## Frozen results
+Residue chemistry is necessarily used to define possible donor atoms. This is
+not the one-feature cysteine rule: the donor-inventory control has almost no
+specificity, and coordinate permutation destroys the useful signal.
 
-On the sequence-remote B1/B2 challenge panel, restricted to the 110 B1
-positives and the same 410 negatives:
+`scripts/b1_structural_model.py` is the earlier Metal3D-anchored version. It is
+retained for comparison but is no longer the preferred detector because a
+missed or displaced predicted metal site can make a known B1 unevaluable. The
+full-chain implementation removes that bottleneck.
+
+## Output interpretation
+
+The recommended primary channel is `six_donor_pharmacophore`, derived from the
+`pharmacophore_rmsd` gate. The transferred product-pose result should be used
+as a secondary rank or review flag. It is more specific to the NDM-derived
+template pocket and rejected a valid BlaB structure despite a tight six-donor
+fit.
+
+Some crystallographic structures encode the catalytic cysteine as an oxidized
+modified residue (`CSD`, `CSO`, or `OCS`). The scorer preserves its SG position
+for architecture recognition but emits `uses_modified_cysteine_donor` and
+separate native-thiolate calls. A modified-cysteine match supports conserved
+spatial architecture; it does not establish an intact catalytic thiolate in
+that experimental structure.
+
+A positive call means “compatible with the canonical B1 donor architecture.”
+It does not prove beta-lactam hydrolysis, antibiotic resistance, expression,
+or clinical relevance.
+
+## Frozen internal results
+
+The primary evaluation used the audited sequence-remote B1/B2 transfer panel,
+restricted to 110 B1 positives and the same 410 labeled negatives.
 
 | method | sensitivity | specificity | balanced accuracy |
 |---|---:|---:|---:|
-| DCH cysteine only | 0.945 (104/110) | 0.983 (403/410) | 0.964 |
-| Site-resolved pharmacophore | 0.864 (95/110) | 1.000 (410/410) | 0.932 |
-| Full B1 catalytic architecture | 0.855 (94/110) | 1.000 (410/410) | 0.927 |
+| Donor inventory only | 1.000 (110/110) | 0.059 (24/410) | 0.529 |
+| Within-site geometry | 0.991 (109/110) | 0.990 (406/410) | 0.991 |
+| **Six-donor B1 pharmacophore** | **0.991 (109/110)** | **1.000 (410/410)** | **0.995** |
+| Six-donor plus transferred-product pose | 0.982 (108/110) | 1.000 (410/410) | 0.991 |
 | Mean-ESM2 5-NN | 0.909 (100/110) | 0.998 (409/410) | 0.953 |
-| fARGene B1/B2 HMM | 1.000 (110/110) | 1.000 (410/410) | 1.000 |
-| PLM-ARG beta-lactam call | 1.000 (110/110) | 0.990 (406/410) | 0.995 |
+| fARGene B1-specific HMM | 1.000 (110/110) | 1.000 (410/410) | 1.000 |
+| PLM-ARG beta-lactam category | 1.000 (110/110) | 0.990 (406/410) | 0.995 |
 
-The full structural call also produced zero positive calls among all 931
-labeled negative structures. This is an observed result on the present curated
-corpus, not a universal specificity guarantee. In particular, 241/931
-negatives had an unavailable full-model input state (usually no acceptable
-dinuclear Metal3D prediction). The reported 1.000 is therefore operational
-positive-call specificity with abstentions treated as non-hits, not proof that
-all 931 negatives were geometrically evaluated and rejected.
+The six-donor model made zero positive calls among all 931 labeled negative
+structures and recovered all 10 B1 panel positives missed by mean-ESM2 5-NN.
+Among the 105 B1 panel positives with no MMseqs hit at the audited 80%-coverage
+criterion, it detected 104. Unlike the older metal-anchored model, every input
+was geometrically evaluated; absence of a Metal3D prediction is no longer
+treated as a negative call.
 
-Among 105 B1 panel positives with no MMseqs hit at the split's 80%-coverage
-criterion, the full structural model detected 90 (0.857). It recovered 8 of
-the 10 B1 examples missed by the panel-specific mean-ESM2 baseline. However,
-fARGene detected all of them. “No MMseqs hit at 80% coverage” is therefore not
-equivalent to “HMM-negative.”
+The result is not reducible to detecting cysteine. The donor-inventory rule
+called 386/410 panel negatives positive. Randomly permuting donor coordinates
+while preserving the number and chemical type of donor atoms reduced the
+six-donor result to 2/110 B1 detections and produced 15/410 false positives.
+Native role-specific 3D organization is therefore essential.
 
-Destroying donor directions while preserving donor-metal distances reduced
-the full model from 94/110 to 1/110 B1 detections and retained zero negative
-calls. The useful signal therefore depends on angular 3D organization, not
-only the presence of cysteine or the list of donor elements.
+The internal B1 misses are informative:
 
-## Honest conclusion
+- `MBS5055441.1` lacks a complete DCH plus three-His geometry;
+- `G09` contains DCH chemistry but lacks an acceptable three-His triad;
+- `AAF94716.1`, the sole fARGene-negative labeled B1, contains no cysteine
+  residue/SG atom in its supplied full-chain structure and cannot support the
+  canonical architecture as represented.
 
-This is now a real structural model and a strong orthogonal B1 confirmation
-channel. It is more specific than the cysteine-only rule and uses geometry in
-a falsifiable way. It has not yet demonstrated discovery beyond fARGene:
-fARGene recognized 111/112 B1 positives in the full labeled corpus, and the
-sole HMM-negative B1 (`AAF94716.1`) also failed the structural detector.
-The PLM-ARG compatibility run recognized all 112/112 B1 positives, with 9/931
-negative beta-lactam calls. Its released category checkpoint was loaded with
-the exact upstream XGBoost 1.6.1 but a newer scikit-learn runtime; the report
-records this version mismatch, so these PLM-ARG numbers are useful comparator
-evidence rather than a bit-for-bit legacy-environment certification.
+The model recovered 15 B1 examples that the Metal3D-anchored implementation
+missed, including VIM-2 and IMP-1. This demonstrates that predicted metal-site
+placement was a real technical bottleneck. It rejected all 30 known B2/B3
+positives in the internal corpus and called three of four unclassified
+positives (`UPP01678.1`, `AFV91534.1`, and `AVX51087.1`); those three are
+testable subclass-assignment hypotheses, not newly discovered enzymes.
 
-The missing validation resource is not another architecture. It is a
-prospective set of structures selected specifically because they fall below
-the frozen fARGene threshold, followed by biochemical testing. Until that set
-exists, the supported claim is “sequence-independent structural confirmation
-of canonical B1 architecture,” not “superior HMM-negative discovery.”
+## External experimental-structure panel
 
-No Atlas work is performed by this branch.
+`configs/external_experimental_mbl_panel.json` declares a literature-derived
+PDB panel before structural scoring: 15 canonical B1 enzymes, one
+noncanonical-B1 boundary case (SPS-1), two B2 controls, and eight B3 controls.
+The list is based on representative structures tabulated in
+[a modern MBL review](https://pmc.ncbi.nlm.nih.gov/articles/PMC8792953/) and
+[an earlier structure-function review](https://pmc.ncbi.nlm.nih.gov/articles/PMC3970115/).
 
-## External comparators
+At the frozen settings:
 
-`scripts/run_fargene_comparator.py` invokes the MIT-licensed fARGene B1/B2 HMM
-through HMMER and applies its published full-protein domain-score threshold of
-127. The run is pinned by upstream Git revision and model SHA-256 in
-`reports/fargene_b1_b2_comparator.json`.
+| method | canonical B1 sensitivity | B2/B3 control specificity |
+|---|---:|---:|
+| **Six-donor B1 pharmacophore** | **0.933 (14/15)** | **1.000 (10/10)** |
+| Native-thiolate six-donor call | 0.800 (12/15) | 1.000 (10/10) |
+| Six-donor plus product pose | 0.867 (13/15) | 1.000 (10/10) |
+| fARGene B1-specific HMM | 1.000 (15/15) | 1.000 (10/10) |
+| fARGene combined B1/B2 HMM | 1.000 (15/15) | 0.800 (8/10) |
+| PLM-ARG beta-lactam category | 1.000 (15/15) | 0.000 (0/10) |
 
-`scripts/run_plm_arg_comparator.py` adapts the released PLM-ARG ESM-1b and
-XGBoost checkpoints. PLM-ARG's upstream repository had no explicit license at
-the pinned revision, so its source and checkpoints are not redistributed;
-they must be supplied by path and are content-hashed in the result.
+This is an external experimental-structure portability panel, not an
+independent novel-family discovery set. Several entries are canonical families
+also represented in the project corpus, and the physical template itself is
+NDM-derived. It tests whether the coordinate rule survives across deposited
+experimental structures and excludes other MBL subclasses; it cannot establish
+prospective novelty.
+
+The combined-HMM and PLM-ARG specificity columns are not error rates for their
+intended tasks: B2/B3 MBLs are expected positives for those broader sequence
+models. They show that the structural output is specifically a canonical-B1
+architecture call rather than a generic beta-lactamase call.
+
+The primary external miss is NDM-1 PDB 3S0Z, whose three-His geometry is too
+distorted for the 1.50 A enumeration prefilter. BlaB-1 passes the six-donor
+architecture but fails only the transferred NDM-product clash gate. SPM-1 and
+FIM-1 pass using oxidized crystallographic cysteine residues and are explicitly
+flagged as modified-ligand architecture matches. SPS-1 and all B2/B3 controls
+are rejected, consistent with the declared canonical-B1 scope.
+
+## Threshold sensitivity
+
+The donor-pair prefilter was swept from 1.00 to 2.00 A without changing the
+fixed 1.25 A six-donor RMSD gate. The internal result remained exactly 109/110
+and 0/410 at every setting, with 0/931 calls among all labeled negatives. The
+external panel changed from 13/15 at 1.00-1.25 A, to 14/15 at the frozen 1.50 A,
+to 15/15 at 1.75-2.00 A; B2/B3 calls remained 0/10 throughout. Because the
+external miss motivated inspection of this margin, 1.75 A is reported only as
+a post-hoc sensitivity result and is not adopted as a new validated primary
+threshold.
+
+## Comparison with sequence methods and honest claim
+
+The structural model outperforms the panel-specific mean-ESM2 nearest-neighbor
+baseline on this B1 task and recovers all of that baseline's misses. It does
+not outperform fARGene's B1 HMM on the available known positives. The present
+dataset therefore establishes a strong sequence-independent and
+reference-independent structural detector, but not yet prospective discovery
+of a biochemically verified fARGene-negative B1 enzyme.
+
+That distinction is crucial. This method is not another HMM wrapper: its score
+cannot change when non-donor sequence residues are replaced while coordinates
+and donor chemistry remain fixed. It can in principle recognize a sequence
+outside an HMM boundary. The missing evidence is a real, correctly folded,
+HMM-negative candidate followed by biochemical validation—not another random
+train/test split of known families.
+
+No Atlas processing is performed on this branch.
 
 ## Reproduction
 
-Run these commands from the repository root in the `cryptic-mbl` Conda
-environment. Derived FASTA and HMMER tables are ignored under `data/`.
+Run from the repository root in the `cryptic-mbl` Conda environment. External
+raw PDB files and generated chain files are derived data under `data/`.
 
 ```bash
-python scripts/export_full_chain_sequences.py \
-  --manifest configs/manifest.csv --raw-dir data/raw \
-  --pockets-dir data/pockets_v2 \
-  --out data/b1_benchmark/full_chain_sequences.fasta \
-  --audit reports/b1_full_chain_sequence_audit.json
-
-python scripts/run_fargene_comparator.py \
-  --fasta data/b1_benchmark/full_chain_sequences.fasta \
-  --hmm /path/to/fargene/fargene_analysis/models/class_B_1_2.hmm \
-  --threshold 127 --upstream-checkout /path/to/fargene \
-  --out reports/fargene_b1_b2_comparator.json
-
-python scripts/run_plm_arg_comparator.py \
-  --fasta data/b1_benchmark/full_chain_sequences.fasta \
-  --esm1b-model /path/to/PLM-ARG/models/esm1b_t33_650M_UR50S.pt \
-  --arg-model /path/to/PLM-ARG/models/arg_model.pkl \
-  --category-model /path/to/PLM-ARG/models/cat_model.pkl \
-  --category-index /path/to/PLM-ARG/models/Category_Index.csv \
-  --upstream-checkout /path/to/PLM-ARG \
-  --out reports/plm_arg_comparator.json
-
-python scripts/evaluate_b1_structural_model.py \
-  --pockets-dir data/pockets_v2 \
+python scripts/evaluate_metal_independent_b1.py \
+  --structures-dir data/domain_pdbs \
   --template data/catalytic_templates/B1_NDM1_hydrolyzed_meropenem_4EYL.npz \
   --manifest configs/manifest.csv --catalog full_structure_catalog.csv \
   --splits data/challenge_splits.json \
   --similarity-audit data/similarity_audit.json \
   --esm2-baseline data/mean_esm2_baseline.json \
+  --metal-anchored-results reports/b1_structural_model_evaluation.json \
   --fargene-results reports/fargene_b1_b2_comparator.json \
+  --fargene-b1-results reports/fargene_b1_specific_comparator.json \
   --plm-arg-results reports/plm_arg_comparator.json \
-  --out reports/b1_structural_model_evaluation.json
+  --pair-distance-tolerance 1.5 --workers 8 \
+  --out reports/metal_independent_b1_evaluation.json
+
+python scripts/evaluate_external_mbl_panel.py \
+  --config configs/external_experimental_mbl_panel.json \
+  --raw-dir data/external_experimental_mbl/raw \
+  --chains-dir data/external_experimental_mbl/chains \
+  --template data/catalytic_templates/B1_NDM1_hydrolyzed_meropenem_4EYL.npz \
+  --fasta-out data/external_experimental_mbl/sequences.fasta \
+  --download-missing \
+  --fargene-results reports/external_fargene_b1_b2_comparator.json \
+  --fargene-b1-results reports/external_fargene_b1_specific_comparator.json \
+  --plm-arg-results reports/external_plm_arg_comparator.json \
+  --out reports/external_experimental_mbl_panel.json
+
+python scripts/evaluate_b1_threshold_sensitivity.py \
+  --structures-dir data/domain_pdbs \
+  --template data/catalytic_templates/B1_NDM1_hydrolyzed_meropenem_4EYL.npz \
+  --manifest configs/manifest.csv --splits data/challenge_splits.json \
+  --external-config configs/external_experimental_mbl_panel.json \
+  --external-chains-dir data/external_experimental_mbl/chains \
+  --out reports/metal_independent_b1_threshold_sensitivity.json
 ```
+
+Official comparator implementations are [fARGene](https://github.com/fannyhb/fargene)
+and [PLM-ARG](https://github.com/Junwu302/PLM-ARG). Comparator reports record
+upstream revisions, model hashes, thresholds, and runtime-version caveats.

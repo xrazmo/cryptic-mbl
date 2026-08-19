@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "purpose": "candidate-enumeration sensitivity analysis, not threshold fitting",
+  "primary_pair_distance_tolerance_angstrom": 1.5,
+  "fixed_pharmacophore_rmsd_gate_angstrom": 1.25,
+  "input_hashes": {
+    "template": "f2fdfdd13f33daa77d36505887e781b3a068de5c40e987bb6903aca9cc716646",
+    "manifest": "8cbe79eec63ba459ab37d30a8cf1ab48ff664549cc0f75de3d67a055e3ca4cad",
+    "splits": "b551c4e1f1522e51bed91c319e3a507a7597274dc3d4b833b9948d484b25c703",
+    "external_config": "e1f9e70589453ffda118f6a1432e3560c39c29bdc6e6b45307cdb8f239d08cb7"
+  },
+  "sweep": {
+    "1.00": {
+      "internal_B1_panel_vs_panel_negatives": {
+        "n": 520,
+        "tp": 109,
+        "tn": 410,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.990909090909091,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9954545454545455
+      },
+      "internal_all_B1_vs_all_labeled_negatives": {
+        "n": 1043,
+        "tp": 109,
+        "tn": 931,
+        "fp": 0,
+        "fn": 3,
+        "sensitivity": 0.9732142857142857,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9866071428571428
+      },
+      "external_canonical_B1_vs_B2_B3_controls": {
+        "n": 25,
+        "tp": 13,
+        "tn": 10,
+        "fp": 0,
+        "fn": 2,
+        "sensitivity": 0.8666666666666667,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9333333333333333
+      },
+      "external_positive_ids": [
+        "1BMC",
+        "1ZNB",
+        "1M2X",
+        "2FHX",
+        "2WHG",
+        "2Y87",
+        "2YNT",
+        "4NQ2",
+        "4ZEJ",
+        "5EV6",
+        "5MMD",
+        "6T5K",
+        "6T5L"
+      ]
+    },
+    "1.25": {
+      "internal_B1_panel_vs_panel_negatives": {
+        "n": 520,
+        "tp": 109,
+        "tn": 410,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.990909090909091,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9954545454545455
+      },
+      "internal_all_B1_vs_all_labeled_negatives": {
+        "n": 1043,
+        "tp": 109,
+        "tn": 931,
+        "fp": 0,
+        "fn": 3,
+        "sensitivity": 0.9732142857142857,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9866071428571428
+      },
+      "external_canonical_B1_vs_B2_B3_controls": {
+        "n": 25,
+        "tp": 13,
+        "tn": 10,
+        "fp": 0,
+        "fn": 2,
+        "sensitivity": 0.8666666666666667,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9333333333333333
+      },
+      "external_positive_ids": [
+        "1BMC",
+        "1ZNB",
+        "1M2X",
+        "2FHX",
+        "2WHG",
+        "2Y87",
+        "2YNT",
+        "4NQ2",
+        "4ZEJ",
+        "5EV6",
+        "5MMD",
+        "6T5K",
+        "6T5L"
+      ]
+    },
+    "1.50": {
+      "internal_B1_panel_vs_panel_negatives": {
+        "n": 520,
+        "tp": 109,
+        "tn": 410,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.990909090909091,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9954545454545455
+      },
+      "internal_all_B1_vs_all_labeled_negatives": {
+        "n": 1043,
+        "tp": 109,
+        "tn": 931,
+        "fp": 0,
+        "fn": 3,
+        "sensitivity": 0.9732142857142857,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9866071428571428
+      },
+      "external_canonical_B1_vs_B2_B3_controls": {
+        "n": 25,
+        "tp": 14,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.9333333333333333,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9666666666666667
+      },
+      "external_positive_ids": [
+        "1BMC",
+        "1ZNB",
+        "1M2X",
+        "2FHX",
+        "2WHG",
+        "2Y87",
+        "2YNT",
+        "4NQ2",
+        "4ZEJ",
+        "5EV6",
+        "5MMD",
+        "6T5K",
+        "6T5L",
+        "6V3Q"
+      ]
+    },
+    "1.75": {
+      "internal_B1_panel_vs_panel_negatives": {
+        "n": 520,
+        "tp": 109,
+        "tn": 410,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.990909090909091,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9954545454545455
+      },
+      "internal_all_B1_vs_all_labeled_negatives": {
+        "n": 1043,
+        "tp": 109,
+        "tn": 931,
+        "fp": 0,
+        "fn": 3,
+        "sensitivity": 0.9732142857142857,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9866071428571428
+      },
+      "external_canonical_B1_vs_B2_B3_controls": {
+        "n": 25,
+        "tp": 15,
+        "tn": 10,
+        "fp": 0,
+        "fn": 0,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "external_positive_ids": [
+        "1BMC",
+        "1ZNB",
+        "1M2X",
+        "2FHX",
+        "2WHG",
+        "2Y87",
+        "2YNT",
+        "3S0Z",
+        "4NQ2",
+        "4ZEJ",
+        "5EV6",
+        "5MMD",
+        "6T5K",
+        "6T5L",
+        "6V3Q"
+      ]
+    },
+    "2.00": {
+      "internal_B1_panel_vs_panel_negatives": {
+        "n": 520,
+        "tp": 109,
+        "tn": 410,
+        "fp": 0,
+        "fn": 1,
+        "sensitivity": 0.990909090909091,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9954545454545455
+      },
+      "internal_all_B1_vs_all_labeled_negatives": {
+        "n": 1043,
+        "tp": 109,
+        "tn": 931,
+        "fp": 0,
+        "fn": 3,
+        "sensitivity": 0.9732142857142857,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9866071428571428
+      },
+      "external_canonical_B1_vs_B2_B3_controls": {
+        "n": 25,
+        "tp": 15,
+        "tn": 10,
+        "fp": 0,
+        "fn": 0,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "external_positive_ids": [
+        "1BMC",
+        "1ZNB",
+        "1M2X",
+        "2FHX",
+        "2WHG",
+        "2Y87",
+        "2YNT",
+        "3S0Z",
+        "4NQ2",
+        "4ZEJ",
+        "5EV6",
+        "5MMD",
+        "6T5K",
+        "6T5L",
+        "6V3Q"
+      ]
+    }
+  }
+}

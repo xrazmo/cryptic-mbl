@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "method": "fARGene B1 full-protein HMM",
+  "upstream_url": "https://github.com/fannyhb/fargene",
+  "upstream_revision": "41e3386b7b8da4a4a742f08da6702cf5830a9f14",
+  "hmm_sha256": "86f0bdafb72ff2a97717ef937aebc6937f77d44b4caa034c1325cb58cfe9ef05",
+  "fasta_sha256": "088e3bd899fe69c1fed4948b412a035adf904089043b4bdf3a2488f9ee4fc076",
+  "threshold": {
+    "operator": ">",
+    "domain_score": 135.8,
+    "source": "fargene_analysis.py predefined B1 model"
+  },
+  "sensitive_mode": false,
+  "command": [
+    "/home/moraz/programs/miniconda3/bin/hmmsearch",
+    "-E",
+    "1000",
+    "--domE",
+    "1000",
+    "--domtblout",
+    "data/external_experimental_mbl/fargene_b1_specific.domtblout",
+    "/tmp/cryptic-mbl-b1-upstreams/fargene/fargene_analysis/models/B1.hmm",
+    "data/external_experimental_mbl/sequences.fasta"
+  ],
+  "hmmsearch_version": "HMMER 3.4 (Aug 2023); http://hmmer.org/",
+  "n_sequences": 26,
+  "n_positive": 16,
+  "per_example": {
+    "1BMC": {
+      "best_domain_score": 287.8,
+      "best_domain": {
+        "domain_score": 287.8,
+        "domain_i_evalue": 9.4e-89,
+        "hmm_from": 21,
+        "hmm_to": 240,
+        "ali_from": 3,
+        "ali_to": 213
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1ZNB": {
+      "best_domain_score": 294.7,
+      "best_domain": {
+        "domain_score": 294.7,
+        "domain_i_evalue": 7.3e-91,
+        "hmm_from": 20,
+        "hmm_to": 246,
+        "ali_from": 3,
+        "ali_to": 227
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1M2X": {
+      "best_domain_score": 310.0,
+      "best_domain": {
+        "domain_score": 310.0,
+        "domain_i_evalue": 1.6e-95,
+        "hmm_from": 27,
+        "hmm_to": 245,
+        "ali_from": 1,
+        "ali_to": 218
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2FHX": {
+      "best_domain_score": 268.1,
+      "best_domain": {
+        "domain_score": 268.1,
+        "domain_i_evalue": 9.7e-83,
+        "hmm_from": 27,
+        "hmm_to": 247,
+        "ali_from": 2,
+        "ali_to": 244
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2WHG": {
+      "best_domain_score": 276.4,
+      "best_domain": {
+        "domain_score": 276.4,
+        "domain_i_evalue": 2.8e-85,
+        "hmm_from": 20,
+        "hmm_to": 243,
+        "ali_from": 5,
+        "ali_to": 229
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2Y87": {
+      "best_domain_score": 259.7,
+      "best_domain": {
+        "domain_score": 259.7,
+        "domain_i_evalue": 3.5e-80,
+        "hmm_from": 21,
+        "hmm_to": 240,
+        "ali_from": 6,
+        "ali_to": 226
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "2YNT": {
+      "best_domain_score": 307.8,
+      "best_domain": {
+        "domain_score": 307.8,
+        "domain_i_evalue": 7.3e-95,
+        "hmm_from": 25,
+        "hmm_to": 243,
+        "ali_from": 4,
+        "ali_to": 220
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "3S0Z": {
+      "best_domain_score": 284.7,
+      "best_domain": {
+        "domain_score": 284.7,
+        "domain_i_evalue": 8.1e-88,
+        "hmm_from": 27,
+        "hmm_to": 242,
+        "ali_from": 2,
+        "ali_to": 219
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "4NQ2": {
+      "best_domain_score": 270.8,
+      "best_domain": {
+        "domain_score": 270.8,
+        "domain_i_evalue": 1.4e-83,
+        "hmm_from": 19,
+        "hmm_to": 243,
+        "ali_from": 4,
+        "ali_to": 229
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "4ZEJ": {
+      "best_domain_score": 311.3,
+      "best_domain": {
+        "domain_score": 311.3,
+        "domain_i_evalue": 6.2e-96,
+        "hmm_from": 24,
+        "hmm_to": 242,
+        "ali_from": 2,
+        "ali_to": 218
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "5EV6": {
+      "best_domain_score": 307.7,
+      "best_domain": {
+        "domain_score": 307.7,
+        "domain_i_evalue": 8.1e-95,
+        "hmm_from": 23,
+        "hmm_to": 246,
+        "ali_from": 4,
+        "ali_to": 222
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "5MMD": {
+      "best_domain_score": 315.2,
+      "best_domain": {
+        "domain_score": 315.2,
+        "domain_i_evalue": 4e-97,
+        "hmm_from": 26,
+        "hmm_to": 245,
+        "ali_from": 3,
+        "ali_to": 220
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6T5K": {
+      "best_domain_score": 224.5,
+      "best_domain": {
+        "domain_score": 224.5,
+        "domain_i_evalue": 1.9e-69,
+        "hmm_from": 22,
+        "hmm_to": 238,
+        "ali_from": 8,
+        "ali_to": 222
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6T5L": {
+      "best_domain_score": 236.6,
+      "best_domain": {
+        "domain_score": 236.6,
+        "domain_i_evalue": 4e-73,
+        "hmm_from": 24,
+        "hmm_to": 239,
+        "ali_from": 7,
+        "ali_to": 223
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6V3Q": {
+      "best_domain_score": 279.7,
+      "best_domain": {
+        "domain_score": 279.7,
+        "domain_i_evalue": 2.8e-86,
+        "hmm_from": 24,
+        "hmm_to": 243,
+        "ali_from": 4,
+        "ali_to": 224
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "6CQS": {
+      "best_domain_score": 151.6,
+      "best_domain": {
+        "domain_score": 151.6,
+        "domain_i_evalue": 3.5e-47,
+        "hmm_from": 47,
+        "hmm_to": 239,
+        "ali_from": 29,
+        "ali_to": 241
+      },
+      "n_domains": 1,
+      "predicted_positive": true
+    },
+    "1X8G": {
+      "best_domain_score": 131.4,
+      "best_domain": {
+        "domain_score": 131.4,
+        "domain_i_evalue": 5.4e-41,
+        "hmm_from": 47,
+        "hmm_to": 241,
+        "ali_from": 16,
+        "ali_to": 223
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "5EW0": {
+      "best_domain_score": 117.2,
+      "best_domain": {
+        "domain_score": 117.2,
+        "domain_i_evalue": 1.1e-36,
+        "hmm_from": 48,
+        "hmm_to": 242,
+        "ali_from": 16,
+        "ali_to": 227
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "4AWZ": {
+      "best_domain_score": 16.9,
+      "best_domain": {
+        "domain_score": 16.9,
+        "domain_i_evalue": 4.8e-06,
+        "hmm_from": 55,
+        "hmm_to": 132,
+        "ali_from": 33,
+        "ali_to": 112
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "5K0W": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    },
+    "1K07": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    },
+    "5IQK": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    },
+    "3VPE": {
+      "best_domain_score": 17.0,
+      "best_domain": {
+        "domain_score": 17.0,
+        "domain_i_evalue": 4.3e-06,
+        "hmm_from": 60,
+        "hmm_to": 115,
+        "ali_from": 30,
+        "ali_to": 86
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "2AIO": {
+      "best_domain_score": 12.4,
+      "best_domain": {
+        "domain_score": 12.4,
+        "domain_i_evalue": 0.00011,
+        "hmm_from": 55,
+        "hmm_to": 136,
+        "ali_from": 38,
+        "ali_to": 134
+      },
+      "n_domains": 1,
+      "predicted_positive": false
+    },
+    "5NJW": {
+      "best_domain_score": 19.1,
+      "best_domain": {
+        "domain_score": 19.1,
+        "domain_i_evalue": 1e-06,
+        "hmm_from": 46,
+        "hmm_to": 114,
+        "ali_from": 24,
+        "ali_to": 96
+      },
+      "n_domains": 2,
+      "predicted_positive": false
+    },
+    "5AEB": {
+      "best_domain_score": null,
+      "best_domain": null,
+      "n_domains": 0,
+      "predicted_positive": false
+    }
+  }
+}

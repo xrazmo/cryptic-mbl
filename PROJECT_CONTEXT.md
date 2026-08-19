@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-19  
 Repository: `cryptic-mbl`  
-Current branch at the time of writing: `feature/structural-v2`
+Current branch at the time of writing: `feature/b1-structural-detector`
 
 ## Purpose of this document
 
@@ -10,9 +10,12 @@ This is a scientific and technical handoff for a future Codex thread. It records
 
 The most important high-level conclusion is:
 
-> The project has a usable sequence-dominant production prioritization model, but it has not yet demonstrated a structural advantage over ESM-2 for cryptic MBL discovery. Moreover, the apparent weakness of explicit metal geometry cannot yet be interpreted biologically because a deterministic pocket-preprocessing bug averaged multiple Metal3D site predictions into a physically meaningless point and also allowed multi-chain residue-number collisions.
+> The broad mixed-subclass structural models did not beat sequence methods, but a new full-chain, metal-coordinate-independent detector now establishes a strong structural result for canonical B1 specifically: 109/110 sequence-remote B1 positives and 0/410 panel false positives, including all ten B1 examples missed by mean-ESM2 5-NN. It uses the complete six-donor 3D architecture rather than a labeled reference panel or cysteine presence alone. fARGene still detects every available known B1 in the principal panels, so structure-beyond-HMM discovery remains a prospective biological question rather than a completed claim.
 
-Any future work must preserve this distinction. The existing production model can be called a frozen V1 retrieval/prioritization system. It must not be described as a validated structure-led detector until the structural input is repaired and re-evaluated.
+Any future work must preserve the version boundary. The existing production
+model is a frozen sequence-dominant retrieval/prioritization system. The new B1
+pharmacophore is a separate structural evidence channel and has not been used
+for Atlas screening or silently substituted into production.
 
 ## 1. Biological problem and intended use
 
@@ -649,3 +652,97 @@ Atlas-scale screen with it. Full methods, hashes, metrics, and controls are in
 `reports/catalytic_feasibility_evaluation.json`, and
 `reports/catalytic_feasibility_no_go.md`. No Atlas access or processing was
 performed during this experiment.
+
+## 18. Superseding update: canonical-B1 six-donor pharmacophore
+
+The broad Structural V3 failure did not imply that every subclass-specific
+structural question was dead. B3 first-shell geometry is genuinely degenerate
+with related metallohydrolases, but canonical B1 contains a more distinctive
+two-site donor arrangement. Work therefore narrowed to B1 rather than asking
+one structural model to detect every MBL subclass.
+
+The first B1 model was anchored to corrected Metal3D sites and already showed
+real angular dependence, but its apparent specificity included 241/931
+negative structures that were unevaluable because no acceptable dinuclear
+metal prediction existed. This was fixed by removing predicted metal
+coordinates from the detector entirely.
+
+`scripts/metal_independent_b1.py` now searches a complete single-chain
+structure for two donor triads: three distinct His N atoms and an Asp O, Cys S,
+His N set. It fits all six donor coordinates to the 4EYL hydrolyzed-meropenem
+reaction-state template. It reads no sequence order, motif, ESM embedding,
+HMM score, label, reference protein, class centroid, or predicted metal site.
+The primary output is the six-donor pharmacophore; transferred product-pose
+clash/contact is retained as secondary evidence because that gate is more
+NDM-pocket-specific.
+
+Frozen internal results on 110 B1 positives and 410 negatives from the audited
+B1/B2 transfer panel are:
+
+- donor inventory only: sensitivity 1.000, specificity 0.059;
+- within-site geometry: sensitivity 0.991, specificity 0.990;
+- six-donor pharmacophore: sensitivity 0.991, specificity 1.000;
+- pharmacophore plus transferred product pose: sensitivity 0.982,
+  specificity 1.000;
+- mean-ESM2 5-NN comparator: sensitivity 0.909, specificity 0.998;
+- fARGene B1-specific HMM: sensitivity 1.000, specificity 1.000.
+
+The six-donor model called 0/931 labeled negatives and recovered all ten B1
+panel positives missed by mean-ESM2. It detected 104/105 B1 positives with no
+MMseqs hit at the audited 80%-coverage criterion. Donor-coordinate permutation
+reduced detection to 2/110 and generated 15/410 false positives, while donor
+inventory alone called 386/410 negatives. The useful signal is therefore the
+role-specific three-dimensional architecture, not cysteine presence or donor
+composition alone.
+
+The method also recovered 15 known B1 examples missed by the Metal3D-anchored
+version, including VIM-2 and IMP-1. Every full-chain input is now evaluable;
+missing predicted sites are no longer converted into operational negative
+calls.
+
+An external PDB panel was declared from MBL structure reviews before scoring:
+15 canonical B1 enzymes, SPS-1 as a noncanonical boundary case, two B2
+controls, and eight B3 controls. At the frozen 1.50 A donor-pair enumeration
+tolerance, the six-donor architecture detected 14/15 canonical B1 structures
+and rejected 10/10 B2/B3 controls. SPM-1 and FIM-1 contain oxidized modified
+cysteines in the crystallographic files; the parser now preserves those SG
+coordinates but reports modified-ligand architecture separately from native
+thiolate support. SPS-1 was correctly rejected under the declared canonical-B1
+scope. The sole architecture miss was a distorted NDM-1 3S0Z conformation.
+This is a portability panel rather than an independent novel-family set:
+several canonical families overlap the project's biological reference space,
+and the physical template is itself NDM-derived.
+
+A 1.00-2.00 A enumeration-tolerance sweep left the internal result exactly
+109/110 and 0/410, with 0/931 negative calls, at every setting. The external
+panel progressed from 13/15 at 1.00-1.25 A to 14/15 at the frozen 1.50 A and
+15/15 at 1.75-2.00 A, always with 0/10 B2/B3 calls. Because the external miss
+motivated inspection of the margin, the more permissive value is sensitivity
+analysis, not a post-hoc replacement of the primary threshold.
+
+The correct current claim is:
+
+> A reference-independent, sequence-blind six-donor pharmacophore recognizes
+> canonical B1 catalytic architecture and outperforms mean-ESM2 nearest-neighbor
+> retrieval on the audited B1 panel. It is not merely a cysteine rule and does
+> not depend on Metal3D coordinates. It has not yet demonstrated prospective
+> discovery of a biochemically verified fARGene-negative B1 enzyme.
+
+This is a useful structural tool even though it does not solve B3. It provides
+an orthogonal way to confirm or prioritize canonical B1 architecture and has a
+mechanistic route to detecting HMM-negative sequences. The remaining evidence
+gap cannot be closed by repartitioning the same known positives: it requires a
+real structure that falls below the frozen fARGene threshold and ultimately a
+functional assay. No Atlas search was run in this branch.
+
+Authoritative artifacts for this update are:
+
+- `scripts/metal_independent_b1.py`;
+- `scripts/evaluate_metal_independent_b1.py`;
+- `scripts/evaluate_external_mbl_panel.py`;
+- `scripts/evaluate_b1_threshold_sensitivity.py`;
+- `configs/external_experimental_mbl_panel.json`;
+- `reports/metal_independent_b1_evaluation.json`;
+- `reports/external_experimental_mbl_panel.json`;
+- `reports/metal_independent_b1_threshold_sensitivity.json`;
+- `docs/B1_STRUCTURAL_DETECTOR.md`.

@@ -30,11 +30,18 @@ score.
 
 `feature/b1-structural-detector` narrows the structural question to canonical
 subclass B1 rather than requiring one model to solve B1, B2, and B3. The
-candidate-local scorer is `scripts/b1_structural_model.py`. A positive call
-requires the complete site-resolved dinuclear B1 donor architecture and a
-physically plausible transfer of the experimental hydrolyzed-meropenem pose;
-the coordinating-cysteine rule is emitted only as partial evidence.
+preferred scorer is now `scripts/metal_independent_b1.py`. It searches the
+full chain for the complete three-His plus Asp-Cys-His six-donor architecture,
+without sequence, a labeled reference panel, ESM embeddings, or predicted
+metal coordinates. The hydrolyzed-meropenem pose is retained as secondary
+evidence rather than the primary detector.
 
 The frozen evaluation and external sequence comparators are described in
-`docs/B1_STRUCTURAL_DETECTOR.md`. Atlas screening remains deliberately out of
-scope until a genuinely HMM-negative prospective structure set exists.
+`docs/B1_STRUCTURAL_DETECTOR.md`. On the sequence-remote B1 panel the
+six-donor model detected 109/110 B1 structures with 0/410 false positives,
+including all ten B1 examples missed by mean-ESM2 5-NN. It also detected 14/15
+literature-selected canonical B1 PDB structures and rejected all ten B2/B3
+controls at the frozen setting. fARGene's B1 HMM still detected every known B1
+in those evaluated panels, so prospective HMM-negative discovery remains the
+next biological validation rather than an established claim. Atlas screening
+remains deliberately out of scope on this branch.

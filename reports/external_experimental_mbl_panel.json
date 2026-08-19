@@ -1,0 +1,1304 @@
+{
+  "schema_version": 1,
+  "panel_selection_policy": "Literature-listed experimental MBL structures, declared before scoring. Canonical B1 is the target; SPS-1 is a predeclared noncanonical-B1 boundary case; B2/B3 are subclass controls.",
+  "primary_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8792953/",
+  "secondary_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3970115/",
+  "config_sha256": "e1f9e70589453ffda118f6a1432e3560c39c29bdc6e6b45307cdb8f239d08cb7",
+  "template_sha256": "f2fdfdd13f33daa77d36505887e781b3a068de5c40e987bb6903aca9cc716646",
+  "fasta_sha256": "088e3bd899fe69c1fed4948b412a035adf904089043b4bdf3a2488f9ee4fc076",
+  "method_summaries": {
+    "six_donor_architecture": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 14,
+        "rate": 0.9333333333333333,
+        "positive_calls": 14
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 10,
+        "rate": 1.0,
+        "positive_calls": 0
+      }
+    },
+    "six_donor_architecture_native_thiolate_only": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 12,
+        "rate": 0.8,
+        "positive_calls": 12
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 10,
+        "rate": 1.0,
+        "positive_calls": 0
+      }
+    },
+    "full_architecture_and_product_pose": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 13,
+        "rate": 0.8666666666666667,
+        "positive_calls": 13
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 10,
+        "rate": 1.0,
+        "positive_calls": 0
+      }
+    },
+    "full_architecture_and_product_pose_native_thiolate_only": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 11,
+        "rate": 0.7333333333333333,
+        "positive_calls": 11
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 10,
+        "rate": 1.0,
+        "positive_calls": 0
+      }
+    },
+    "fargene_B1_B2_HMM": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 15,
+        "rate": 1.0,
+        "positive_calls": 15
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 8,
+        "rate": 0.8,
+        "positive_calls": 2
+      }
+    },
+    "fargene_B1_specific_HMM": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 15,
+        "rate": 1.0,
+        "positive_calls": 15
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 10,
+        "rate": 1.0,
+        "positive_calls": 0
+      }
+    },
+    "PLM_ARG_beta_lactam": {
+      "canonical_B1_sensitivity": {
+        "n": 15,
+        "correct": 15,
+        "rate": 1.0,
+        "positive_calls": 15
+      },
+      "B2_B3_control_specificity": {
+        "n": 10,
+        "correct": 0,
+        "rate": 0.0,
+        "positive_calls": 10
+      }
+    }
+  },
+  "comparator_sources": {
+    "fargene_B1_B2_HMM": {
+      "path": "reports/external_fargene_b1_b2_comparator.json",
+      "sha256": "dcc976cccd0ea7f22e8bd9c5b6115f1b089c99f858eff33e3f245040d569ca6a"
+    },
+    "fargene_B1_specific_HMM": {
+      "path": "reports/external_fargene_b1_specific_comparator.json",
+      "sha256": "73c69a6990ec6b29bad3659e936abd850e5d4f29bf700dfb37f2cba1f2282e57"
+    },
+    "PLM_ARG_beta_lactam": {
+      "path": "reports/external_plm_arg_comparator.json",
+      "sha256": "5e64a184f087d81037db63b7a5b394c90f38e86e75202050a4d3ec90d2d4a28a"
+    }
+  },
+  "per_example": {
+    "1BMC": {
+      "pdb_id": "1BMC",
+      "name": "BcII",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 213,
+      "raw_pdb_sha256": "c569741a1e62c8eeefd43e259caff6284164f3ba37c55d27803c8c1a98769b6b",
+      "chain_pdb_sha256": "162e531d1b31b2f221bde7e406b8a69038bf472efa7b4231b0c856a6abbde6c3",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 22,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 1,
+        "n_alignments": 6,
+        "pharmacophore_rmsd": 0.5063,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.7037,
+          "minimum_protein_ligand_distance": 1.8555
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:90:OD2",
+          "A:CYS:168:SG",
+          "A:HIS:210:NE2",
+          "A:HIS:86:NE2",
+          "A:HIS:88:ND1",
+          "A:HIS:149:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            12.6163,
+            31.5583,
+            45.8279
+          ],
+          [
+            15.8224,
+            30.6863,
+            43.5143
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "1ZNB": {
+      "pdb_id": "1ZNB",
+      "name": "CcrA",
+      "group": "canonical_B1",
+      "selected_chain": "B",
+      "sequence_length": 230,
+      "raw_pdb_sha256": "bf792c956125c09d27cf87335270e0a94c282e6ae8acdf8b121a5ce2f2f4dc9d",
+      "chain_pdb_sha256": "762c359aea2ebecd15f6144a5117775bc2143ba1652a670457d67bfbc3121893",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 16,
+          "ASP_O": 32,
+          "CYS_S": 3
+        },
+        "n_dch_triads": 4,
+        "n_three_his_triads": 1,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.3409,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.7778,
+          "minimum_protein_ligand_distance": 1.5918
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "B:ASP:103:OD2",
+          "B:CYS:181:SG",
+          "B:HIS:223:NE2",
+          "B:HIS:99:NE2",
+          "B:HIS:101:ND1",
+          "B:HIS:162:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            36.038,
+            54.8682,
+            13.1772
+          ],
+          [
+            33.5704,
+            57.7495,
+            11.7624
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "1M2X": {
+      "pdb_id": "1M2X",
+      "name": "BlaB-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 219,
+      "raw_pdb_sha256": "4a560c786905b620d299c75cdefb301be2fb86893bd10d9f3824c76cce082300",
+      "chain_pdb_sha256": "88a38daa50ab1d8aa8dcd9cd7f46d2e001b5ded2b241b552d4b603aff2879dd7",
+      "structural_result": {
+        "status": "not_supported",
+        "architecture_call": true,
+        "full_pose_call": false,
+        "positive_call": false,
+        "reason": "best_pharmacophore_failed_geometry_or_pose_gate",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 36,
+          "CYS_S": 2
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 2,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.2544,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.1481,
+          "pocket_contact_fraction": 1.0,
+          "minimum_protein_ligand_distance": 0.7142
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": false,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:120:OD2",
+          "A:CYS:221:SG",
+          "A:HIS:263:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:118:ND1",
+          "A:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": false,
+        "transferred_metal_coords": [
+          [
+            -19.9899,
+            38.2299,
+            7.1089
+          ],
+          [
+            -21.4514,
+            34.4735,
+            7.4903
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "2FHX": {
+      "pdb_id": "2FHX",
+      "name": "SPM-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 245,
+      "raw_pdb_sha256": "cd3976f2a571a19e404682800a1934293ef7fe04fd155df3f05f43df92dbd34a",
+      "chain_pdb_sha256": "1e34770f9f07a63717e7e54ae38d74a781e53e1ca0fb86d56ea5f98c92f2dffd",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 12,
+          "ASP_O": 34,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 1,
+        "n_alignments": 6,
+        "pharmacophore_rmsd": 0.5037,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.037,
+          "pocket_contact_fraction": 0.9259,
+          "minimum_protein_ligand_distance": 0.8569
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:120:OD1",
+          "A:CSD:221:SG",
+          "A:HIS:263:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:118:ND1",
+          "A:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": true,
+        "native_thiolate_architecture_call": false,
+        "native_thiolate_positive_call": false,
+        "transferred_metal_coords": [
+          [
+            -28.3453,
+            78.406,
+            25.9135
+          ],
+          [
+            -26.32,
+            77.235,
+            22.6091
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "2WHG": {
+      "pdb_id": "2WHG",
+      "name": "VIM-4",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 230,
+      "raw_pdb_sha256": "83b2b34911ec2a6062cc4d24dd2dbac83793f538b35c0cb164806a0c3782e6d1",
+      "chain_pdb_sha256": "a2f9035402b90feedd0bf8b7a7bfe6423db9a85dd91d42d8b2828ae84088c841",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 20,
+          "ASP_O": 26,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 2,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.7687,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0741,
+          "pocket_contact_fraction": 0.963,
+          "minimum_protein_ligand_distance": 0.8646
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:118:OD2",
+          "A:CYS:198:SG",
+          "A:HIS:240:NE2",
+          "A:HIS:114:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:179:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            29.8259,
+            -1.5138,
+            -39.7392
+          ],
+          [
+            27.1408,
+            0.0409,
+            -42.3403
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "2Y87": {
+      "pdb_id": "2Y87",
+      "name": "VIM-7",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 227,
+      "raw_pdb_sha256": "7a92fd5c95984a2056df313a54a9a3acc97f215c72216cc17dd5484627d41469",
+      "chain_pdb_sha256": "69ee2d8dedb99e3885c0476da325f77f7d045d969038e0029adaaead6aa8edda",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 16,
+          "ASP_O": 26,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 2,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.3103,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 1.0,
+          "minimum_protein_ligand_distance": 1.6181
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:120:OD2",
+          "A:CYS:221:SG",
+          "A:HIS:263:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:118:ND1",
+          "A:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            31.7141,
+            12.9438,
+            -2.0267
+          ],
+          [
+            33.0091,
+            9.8493,
+            -4.2938
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "2YNT": {
+      "pdb_id": "2YNT",
+      "name": "GIM-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 221,
+      "raw_pdb_sha256": "92e434468eeaa8ba0cc9ae7d1db6e4446f59333bdf625fa8f3d5a4eaf47bccbc",
+      "chain_pdb_sha256": "577e5d348da40d75ffd5a7a2294665d58b344b79dbd283d22ae12f36a9df95e8",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 30,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 2,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.71,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0741,
+          "pocket_contact_fraction": 1.0,
+          "minimum_protein_ligand_distance": 0.8861
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:120:OD2",
+          "A:CYS:221:SG",
+          "A:HIS:263:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:118:NE2",
+          "A:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            93.2518,
+            38.3279,
+            31.6705
+          ],
+          [
+            96.4608,
+            39.5111,
+            33.8373
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "3S0Z": {
+      "pdb_id": "3S0Z",
+      "name": "NDM-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 220,
+      "raw_pdb_sha256": "99a78b1ec26f265e4728588f56cbfd1f8935a65726259d82c2af7cc20e6615f1",
+      "chain_pdb_sha256": "1f5f371722864c9e2a469640b19d95b6587f6a2d9e70f2fa4bf81bd0c39af8ae",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 32,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "4NQ2": {
+      "pdb_id": "4NQ2",
+      "name": "VIM-2",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 230,
+      "raw_pdb_sha256": "27265cf29b2973186b6b0ef9b2fee929d6c3e69752085204016c7c3beb877371",
+      "chain_pdb_sha256": "a62b407779d841dc51ba7f96dd240fefdfe31336eef6043782e44c5a82625c00",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 26,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 1,
+        "n_alignments": 6,
+        "pharmacophore_rmsd": 0.2455,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 1.0,
+          "minimum_protein_ligand_distance": 1.7675
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:118:OD2",
+          "A:CYS:198:SG",
+          "A:HIS:240:NE2",
+          "A:HIS:114:NE2",
+          "A:HIS:116:ND1",
+          "A:HIS:179:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            -8.9019,
+            -18.1733,
+            -8.2823
+          ],
+          [
+            -8.9363,
+            -14.7599,
+            -10.4594
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "4ZEJ": {
+      "pdb_id": "4ZEJ",
+      "name": "DIM-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 219,
+      "raw_pdb_sha256": "2f2660334fc6bbaf5c3c97c3edafdf0050c11ec7a841e69795e87f97ff055846",
+      "chain_pdb_sha256": "9ac69ef5834d2f75b55e2dee2852886728be578806f79851ca305ab1df968b66",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 24,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 1,
+        "n_alignments": 6,
+        "pharmacophore_rmsd": 0.3127,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.8889,
+          "minimum_protein_ligand_distance": 1.9026
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:81:OD2",
+          "A:CYS:158:SG",
+          "A:HIS:200:NE2",
+          "A:HIS:77:NE2",
+          "A:HIS:79:ND1",
+          "A:HIS:139:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            -21.9114,
+            -1.7019,
+            34.5324
+          ],
+          [
+            -22.5766,
+            -4.0464,
+            31.2992
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5EV6": {
+      "pdb_id": "5EV6",
+      "name": "IMP-1",
+      "group": "canonical_B1",
+      "selected_chain": "B",
+      "sequence_length": 223,
+      "raw_pdb_sha256": "eedaec3de935a5d8edaf23800b28c2a0f22ee9fbead377d4c649c544f2a990ce",
+      "chain_pdb_sha256": "8b8fce7cbc1bd96139bb999dd14af373b9059dcb724d95b08c7952afbfb5b4e1",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 12,
+          "ASP_O": 18,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 3,
+        "n_three_his_triads": 2,
+        "n_alignments": 12,
+        "pharmacophore_rmsd": 0.3647,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.9259,
+          "minimum_protein_ligand_distance": 2.3568
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "B:ASP:81:OD1",
+          "B:CYS:158:SG",
+          "B:HIS:197:NE2",
+          "B:HIS:77:NE2",
+          "B:HIS:79:ND1",
+          "B:HIS:139:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            67.7162,
+            80.6343,
+            -6.866
+          ],
+          [
+            69.5731,
+            79.0055,
+            -3.6581
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5MMD": {
+      "pdb_id": "5MMD",
+      "name": "TMB-1",
+      "group": "canonical_B1",
+      "selected_chain": "E",
+      "sequence_length": 221,
+      "raw_pdb_sha256": "e071a032e3a356d1a86661ea2d2e19e1ec21a2dd09a82a8022ccc0f731618ac9",
+      "chain_pdb_sha256": "c82cd3a0b9d300db5298f8e360c5961f7dac4feb657c5a4dcefdd2ba95332fba",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 12,
+          "ASP_O": 18,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 3,
+        "n_three_his_triads": 2,
+        "n_alignments": 24,
+        "pharmacophore_rmsd": 0.323,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.8889,
+          "minimum_protein_ligand_distance": 1.9657
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "E:ASP:120:OD2",
+          "E:CYS:221:SG",
+          "E:HIS:263:NE2",
+          "E:HIS:116:NE2",
+          "E:HIS:118:ND1",
+          "E:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            -25.4775,
+            -6.9557,
+            13.5057
+          ],
+          [
+            -23.7245,
+            -10.3684,
+            14.7989
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "6T5K": {
+      "pdb_id": "6T5K",
+      "name": "ECV-1",
+      "group": "canonical_B1",
+      "selected_chain": "C",
+      "sequence_length": 224,
+      "raw_pdb_sha256": "6eac65b4df7959f225c08e36f39ef2ff61db60c4556943987d3ea759f5279bcb",
+      "chain_pdb_sha256": "b27332903c0882c6ca2fc75333de33f52c768618003da675d3f2bb6a5592e61a",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 20,
+          "ASP_O": 26,
+          "CYS_S": 3
+        },
+        "n_dch_triads": 5,
+        "n_three_his_triads": 2,
+        "n_alignments": 30,
+        "pharmacophore_rmsd": 0.2585,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.963,
+          "minimum_protein_ligand_distance": 1.7103
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "C:ASP:120:OD2",
+          "C:CYS:221:SG",
+          "C:HIS:263:NE2",
+          "C:HIS:116:NE2",
+          "C:HIS:118:ND1",
+          "C:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            45.4754,
+            13.4801,
+            49.8355
+          ],
+          [
+            49.2294,
+            13.7172,
+            51.3333
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "6T5L": {
+      "pdb_id": "6T5L",
+      "name": "MYO-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 224,
+      "raw_pdb_sha256": "2ce5a9b027b3307be7b3fef79144d0b1926fa03cfb153f2a7ed167b6be24cd88",
+      "chain_pdb_sha256": "be7b893c80b4ca1b0dae9b0c099cee368fb661a0746b6184f866ba6cb69b0093",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 34,
+          "CYS_S": 3
+        },
+        "n_dch_triads": 5,
+        "n_three_his_triads": 1,
+        "n_alignments": 18,
+        "pharmacophore_rmsd": 0.2711,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.037,
+          "pocket_contact_fraction": 0.7407,
+          "minimum_protein_ligand_distance": 1.4739
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:120:OD2",
+          "A:CYS:221:SG",
+          "A:HIS:263:NE2",
+          "A:HIS:116:NE2",
+          "A:HIS:118:ND1",
+          "A:HIS:196:NE2"
+        ],
+        "uses_modified_cysteine_donor": false,
+        "native_thiolate_architecture_call": true,
+        "native_thiolate_positive_call": true,
+        "transferred_metal_coords": [
+          [
+            43.5986,
+            -44.1375,
+            -13.1137
+          ],
+          [
+            43.0453,
+            -47.942,
+            -14.3835
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "6V3Q": {
+      "pdb_id": "6V3Q",
+      "name": "FIM-1",
+      "group": "canonical_B1",
+      "selected_chain": "A",
+      "sequence_length": 226,
+      "raw_pdb_sha256": "16fbba888db7829a6ce3b086fc3d6f3eb30961a840aa56e4388edfa8a8d3f165",
+      "chain_pdb_sha256": "0ee6ddda11d1db4cc940beff2baa02cab2a3b3117e5f31da79047d8bdc72426d",
+      "structural_result": {
+        "status": "supported",
+        "architecture_call": true,
+        "full_pose_call": true,
+        "positive_call": true,
+        "reason": "all_geometry_and_pose_gates_passed",
+        "donor_counts": {
+          "HIS_N": 22,
+          "ASP_O": 30,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 1,
+        "n_alignments": 6,
+        "pharmacophore_rmsd": 0.5852,
+        "pose_metrics": {
+          "hard_clash_fraction": 0.0,
+          "pocket_contact_fraction": 0.6667,
+          "minimum_protein_ligand_distance": 1.9324
+        },
+        "gates": {
+          "pharmacophore_rmsd": true,
+          "hard_clash_fraction": true,
+          "pocket_contact_fraction": true
+        },
+        "donor_mapping": [
+          "A:ASP:82:OD2",
+          "A:OCS:161:SG",
+          "A:HIS:203:NE2",
+          "A:HIS:78:NE2",
+          "A:HIS:80:ND1",
+          "A:HIS:142:NE2"
+        ],
+        "uses_modified_cysteine_donor": true,
+        "native_thiolate_architecture_call": false,
+        "native_thiolate_positive_call": false,
+        "transferred_metal_coords": [
+          [
+            43.9998,
+            19.6219,
+            5.1615
+          ],
+          [
+            46.0923,
+            18.1554,
+            8.302
+          ]
+        ]
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "6CQS": {
+      "pdb_id": "6CQS",
+      "name": "SPS-1",
+      "group": "noncanonical_B1_boundary",
+      "note": "Zn1 lacks the canonical three-His site",
+      "selected_chain": "A",
+      "sequence_length": 242,
+      "raw_pdb_sha256": "c4a5a2a82b99a089703eb6d4635fed1c13728295ba8f207d8716ddf6e2d66116",
+      "chain_pdb_sha256": "97be83d2e8d97178170b8c5f9983499bd11a03d19ebdd439cbe099522d59cdbd",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 26,
+          "CYS_S": 2
+        },
+        "n_dch_triads": 2,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": true,
+      "PLM_ARG_beta_lactam": true
+    },
+    "1X8G": {
+      "pdb_id": "1X8G",
+      "name": "CphA",
+      "group": "B2_control",
+      "selected_chain": "A",
+      "sequence_length": 225,
+      "raw_pdb_sha256": "367663e7fde1157d3bd56c8d201f951eeb81d1415fbc57e6a5785240508a5f45",
+      "chain_pdb_sha256": "25335a8f1f1b863019564cb44fd31661f5b18900db0732fada10b95bc642437d",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 26,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5EW0": {
+      "pdb_id": "5EW0",
+      "name": "Sfh-I",
+      "group": "B2_control",
+      "selected_chain": "A",
+      "sequence_length": 228,
+      "raw_pdb_sha256": "6bdede640ab60b7469fbcddfb8ad60ebebc4832724e8a077c07fde9e4e13adea",
+      "chain_pdb_sha256": "87bed0622fed3753d97bca22d40a46c5d52b724dc747e154248e787c770017c4",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 12,
+          "ASP_O": 22,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 1,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": true,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "4AWZ": {
+      "pdb_id": "4AWZ",
+      "name": "AIM-1",
+      "group": "B3_control",
+      "selected_chain": "A",
+      "sequence_length": 269,
+      "raw_pdb_sha256": "eef918f1500d23bc9fe3afed5808699044235bc545c2bd9694f409b2676fdb23",
+      "chain_pdb_sha256": "5fb3718e5929970bfcd23f9decf612669620aded5fdc0a204aac12aa90487316",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 44,
+          "CYS_S": 6
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 1,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5K0W": {
+      "pdb_id": "5K0W",
+      "name": "GOB-18",
+      "group": "B3_control",
+      "selected_chain": "B",
+      "sequence_length": 271,
+      "raw_pdb_sha256": "904151ba253364693847193483055feaf401435b709e0b184aa86b604f7359d9",
+      "chain_pdb_sha256": "4d1ee2c7500762c27d0e6d0c639bd3734f03fc6bed58fd1278460e1aacee6ebd",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 14,
+          "ASP_O": 46,
+          "CYS_S": 1
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "1K07": {
+      "pdb_id": "1K07",
+      "name": "FEZ-1",
+      "group": "B3_control",
+      "selected_chain": "A",
+      "sequence_length": 262,
+      "raw_pdb_sha256": "f252c2fdc0213a8a9c01520c0553719e95d9776983d6f451e69e6d10d27a5ecf",
+      "chain_pdb_sha256": "ed24db6f061ae6377d641199a46808bcf3096fe73287214edde32b1e21810bb0",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 20,
+          "ASP_O": 36,
+          "CYS_S": 3
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 1,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5IQK": {
+      "pdb_id": "5IQK",
+      "name": "Rm3",
+      "group": "B3_control",
+      "selected_chain": "B",
+      "sequence_length": 270,
+      "raw_pdb_sha256": "a7401907f34dcca5ce8b6d9c5c766a8a510aa83cdc36c5204e0ad32f98745411",
+      "chain_pdb_sha256": "49274d7f08965dc94b9f2bcfdd15ec60323ddf2ccc4d14958edbb83588712476",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 34,
+          "CYS_S": 6
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 1,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "3VPE": {
+      "pdb_id": "3VPE",
+      "name": "SMB-1",
+      "group": "B3_control",
+      "selected_chain": "A",
+      "sequence_length": 259,
+      "raw_pdb_sha256": "8e367962d955a8741ed1f42e6213bb6aee0a2e5e838653515c87238cdb2a72c4",
+      "chain_pdb_sha256": "7e4519b03faa13c48531db3dd6915a0ad75da392d45fe905aabe32e071270d6f",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 18,
+          "ASP_O": 28,
+          "CYS_S": 4
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 2,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "2AIO": {
+      "pdb_id": "2AIO",
+      "name": "L1",
+      "group": "B3_control",
+      "selected_chain": "A",
+      "sequence_length": 266,
+      "raw_pdb_sha256": "b994d0ad9455617195775728a88b9a0eb87beab954c9eaa4c6652ae102de5fe5",
+      "chain_pdb_sha256": "56fe3b15740a770ffdad966b3785be422228c233dbc90750ab3e2c009aae3b2f",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 20,
+          "ASP_O": 40,
+          "CYS_S": 2
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 1,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5NJW": {
+      "pdb_id": "5NJW",
+      "name": "BJP-1",
+      "group": "B3_control",
+      "selected_chain": "A",
+      "sequence_length": 274,
+      "raw_pdb_sha256": "4d0aec8bd08a3c9169bbed5bbb1721eb5876f662af54b7520e2b0f7f84d59477",
+      "chain_pdb_sha256": "928873837336cc5ff459c1f9fbfeb7715493e33b34e95a0c36a6f4c3663da275",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 12,
+          "ASP_O": 40,
+          "CYS_S": 2
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 2,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    },
+    "5AEB": {
+      "pdb_id": "5AEB",
+      "name": "LRA-12",
+      "group": "B3_control",
+      "selected_chain": "B",
+      "sequence_length": 266,
+      "raw_pdb_sha256": "351c052993d1bd6cf32d3c1b658a55743ec513dff63a5281e834e7b653c9d152",
+      "chain_pdb_sha256": "912361f2da3cb28e0c52ea7c7032998357c92c9f5ecfa2af0e2286106aafb7ef",
+      "structural_result": {
+        "status": "not_supported",
+        "positive_call": false,
+        "architecture_call": false,
+        "full_pose_call": false,
+        "reason": "no_complete_six_donor_B1_pharmacophore",
+        "donor_counts": {
+          "HIS_N": 22,
+          "ASP_O": 40,
+          "CYS_S": 2
+        },
+        "n_dch_triads": 0,
+        "n_three_his_triads": 0,
+        "n_alignments": 0
+      },
+      "fargene_B1_B2_HMM": false,
+      "fargene_B1_specific_HMM": false,
+      "PLM_ARG_beta_lactam": true
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "method": "PLM-ARG released ESM-1b/XGBoost checkpoints",
+  "upstream_url": "https://github.com/Junwu302/PLM-ARG",
+  "upstream_revision": "61481c50217fa47cd3d5ad6b610f3b223cffc7a3",
+  "license_note": "No explicit upstream license was found at the pinned revision; source and checkpoints are therefore external inputs and are not redistributed here.",
+  "runtime_compatibility_note": "The released pickle checkpoints were loaded in the current project runtime, not the upstream Python 3.7 / scikit-learn 1.0.2 / XGBoost 1.6.1 environment. Probabilities are recorded for comparison but should be treated as a compatibility reproduction unless independently matched in that legacy environment.",
+  "runtime_versions": {
+    "torch": "2.13.0+cu132",
+    "scikit_learn": "1.9.0",
+    "xgboost": "1.6.1",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5"
+  },
+  "model_hashes": {
+    "esm1b": "0569754efaff7dcb7e068c27367bc73f10afb4b450ea30aac30d9bc60783a8b1",
+    "arg": "57a7f2e50adb9756fef45fff14ba678fa896f633eaf161406484316ad1b7e88f",
+    "category": "abec1f598751b611efdd3723858bef8718bbd050593c015485ad68305fae6754",
+    "category_index": "285ae225ddda04637d4b5c8a906a74db4481387ebae6e82a4c5cccbbb9f967c1"
+  },
+  "fasta_sha256": "088e3bd899fe69c1fed4948b412a035adf904089043b4bdf3a2488f9ee4fc076",
+  "embedding": {
+    "model": "esm1b_t33_650M_UR50S",
+    "layer": 32,
+    "maximum_total_tokens": 200,
+    "maximum_residues": 199,
+    "pooling": "mean"
+  },
+  "thresholds": {
+    "arg_probability": 0.5,
+    "category_probability": 0.5
+  },
+  "n_sequences": 26,
+  "n_predicted_arg": 26,
+  "n_predicted_beta_lactam": 26,
+  "per_example": {
+    "1BMC": {
+      "sequence_length": 213,
+      "embedded_residues": 199,
+      "arg_probability": 0.9968634843826294,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9987096786499023,
+      "predicted_beta_lactam": true
+    },
+    "1ZNB": {
+      "sequence_length": 230,
+      "embedded_residues": 199,
+      "arg_probability": 0.9935867190361023,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.998589813709259,
+      "predicted_beta_lactam": true
+    },
+    "1M2X": {
+      "sequence_length": 219,
+      "embedded_residues": 199,
+      "arg_probability": 0.9906416535377502,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9997208714485168,
+      "predicted_beta_lactam": true
+    },
+    "2FHX": {
+      "sequence_length": 245,
+      "embedded_residues": 199,
+      "arg_probability": 0.9939477443695068,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9985703229904175,
+      "predicted_beta_lactam": true
+    },
+    "2WHG": {
+      "sequence_length": 230,
+      "embedded_residues": 199,
+      "arg_probability": 0.9851148724555969,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9932624697685242,
+      "predicted_beta_lactam": true
+    },
+    "2Y87": {
+      "sequence_length": 227,
+      "embedded_residues": 199,
+      "arg_probability": 0.9866881966590881,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9974945783615112,
+      "predicted_beta_lactam": true
+    },
+    "2YNT": {
+      "sequence_length": 221,
+      "embedded_residues": 199,
+      "arg_probability": 0.993120551109314,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9987421631813049,
+      "predicted_beta_lactam": true
+    },
+    "3S0Z": {
+      "sequence_length": 220,
+      "embedded_residues": 199,
+      "arg_probability": 0.9910153746604919,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.998914361000061,
+      "predicted_beta_lactam": true
+    },
+    "4NQ2": {
+      "sequence_length": 230,
+      "embedded_residues": 199,
+      "arg_probability": 0.9864039421081543,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9895415306091309,
+      "predicted_beta_lactam": true
+    },
+    "4ZEJ": {
+      "sequence_length": 219,
+      "embedded_residues": 199,
+      "arg_probability": 0.9637918472290039,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9978650212287903,
+      "predicted_beta_lactam": true
+    },
+    "5EV6": {
+      "sequence_length": 223,
+      "embedded_residues": 199,
+      "arg_probability": 0.995414137840271,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9979594945907593,
+      "predicted_beta_lactam": true
+    },
+    "5MMD": {
+      "sequence_length": 221,
+      "embedded_residues": 199,
+      "arg_probability": 0.9881384968757629,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9944798946380615,
+      "predicted_beta_lactam": true
+    },
+    "6T5K": {
+      "sequence_length": 224,
+      "embedded_residues": 199,
+      "arg_probability": 0.8764312863349915,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9913936257362366,
+      "predicted_beta_lactam": true
+    },
+    "6T5L": {
+      "sequence_length": 224,
+      "embedded_residues": 199,
+      "arg_probability": 0.9616513848304749,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9894808530807495,
+      "predicted_beta_lactam": true
+    },
+    "6V3Q": {
+      "sequence_length": 226,
+      "embedded_residues": 199,
+      "arg_probability": 0.9934351444244385,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9984415173530579,
+      "predicted_beta_lactam": true
+    },
+    "6CQS": {
+      "sequence_length": 242,
+      "embedded_residues": 199,
+      "arg_probability": 0.9858319759368896,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.982637345790863,
+      "predicted_beta_lactam": true
+    },
+    "1X8G": {
+      "sequence_length": 225,
+      "embedded_residues": 199,
+      "arg_probability": 0.99126136302948,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9990109205245972,
+      "predicted_beta_lactam": true
+    },
+    "5EW0": {
+      "sequence_length": 228,
+      "embedded_residues": 199,
+      "arg_probability": 0.9932026863098145,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9993199110031128,
+      "predicted_beta_lactam": true
+    },
+    "4AWZ": {
+      "sequence_length": 269,
+      "embedded_residues": 199,
+      "arg_probability": 0.9867643117904663,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9926751255989075,
+      "predicted_beta_lactam": true
+    },
+    "5K0W": {
+      "sequence_length": 271,
+      "embedded_residues": 199,
+      "arg_probability": 0.9891748428344727,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.997372031211853,
+      "predicted_beta_lactam": true
+    },
+    "1K07": {
+      "sequence_length": 262,
+      "embedded_residues": 199,
+      "arg_probability": 0.9711602926254272,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9855955839157104,
+      "predicted_beta_lactam": true
+    },
+    "5IQK": {
+      "sequence_length": 270,
+      "embedded_residues": 199,
+      "arg_probability": 0.9646244049072266,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9961328506469727,
+      "predicted_beta_lactam": true
+    },
+    "3VPE": {
+      "sequence_length": 259,
+      "embedded_residues": 199,
+      "arg_probability": 0.962870180606842,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9968947172164917,
+      "predicted_beta_lactam": true
+    },
+    "2AIO": {
+      "sequence_length": 266,
+      "embedded_residues": 199,
+      "arg_probability": 0.9630652070045471,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9872676730155945,
+      "predicted_beta_lactam": true
+    },
+    "5NJW": {
+      "sequence_length": 274,
+      "embedded_residues": 199,
+      "arg_probability": 0.9605786800384521,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9955893754959106,
+      "predicted_beta_lactam": true
+    },
+    "5AEB": {
+      "sequence_length": 266,
+      "embedded_residues": 199,
+      "arg_probability": 0.9840810298919678,
+      "predicted_arg": true,
+      "beta_lactam_probability": 0.9481299519538879,
+      "predicted_beta_lactam": true
+    }
+  }
+}
