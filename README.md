@@ -25,3 +25,16 @@ same catalytic-looking metal scaffold. See
 No ESM Metagenomic Atlas processing should begin from this branch. Structural
 V3 is retained as a reproducible negative experiment, not a deployed discovery
 score.
+
+## B1 structural detector branch
+
+`feature/b1-structural-detector` narrows the structural question to canonical
+subclass B1 rather than requiring one model to solve B1, B2, and B3. The
+candidate-local scorer is `scripts/b1_structural_model.py`. A positive call
+requires the complete site-resolved dinuclear B1 donor architecture and a
+physically plausible transfer of the experimental hydrolyzed-meropenem pose;
+the coordinating-cysteine rule is emitted only as partial evidence.
+
+The frozen evaluation and external sequence comparators are described in
+`docs/B1_STRUCTURAL_DETECTOR.md`. Atlas screening remains deliberately out of
+scope until a genuinely HMM-negative prospective structure set exists.

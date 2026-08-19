@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "purpose": "untruncated dominant-chain sequences for external comparators",
+  "n_records": 1077,
+  "minimum_length": 79,
+  "maximum_length": 1096,
+  "manifest_sha256": "8cbe79eec63ba459ab37d30a8cf1ab48ff664549cc0f75de3d67a055e3ca4cad",
+  "fasta_sha256": "6535a3739f4891083befe539168ed6c13ca56e0e4fedef5dfd42d08dea5a74de"
+}
