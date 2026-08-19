@@ -118,11 +118,22 @@ def combine_triage(dch_status: str, esm2_status: str) -> str:
     return "unresolved"
 
 
-def score_legacy_gnn_v1(pocket, esm2_emb, models_dir: Path, reference_bank_dir: Path, n_seeds: int, k: int, device: str) -> dict:
+def score_legacy_gnn_v1(pocket, esm2_dir, models_dir: Path, reference_bank_dir: Path, n_seeds: int, k: int, device: str) -> dict:
     from graph_construction import pocket_to_pyg_data
     from model import PocketEncoder, SiameseTripletModel
+    from utils import load_esm2_embedding
     import torch
 
+    # load_esm2_embedding, not a raw esm2_emb array: it falls back to None
+    # (-> zeros) with a warning when the cached embedding's residue count
+    # doesn't match this pocket, rather than crashing -- which it never
+    # will for a v2 pocket, since pocket residue sets changed under the
+    # metal-site-corruption fix (e.g. NDM-1: 293 residues pre-fix, 52
+    # post-fix) and cached embeddings were never realigned. Acceptable
+    # here specifically because this path is reference-only, off by
+    # default, and excluded from the actual triage decision.
+    n_residues = len(set(pocket.res_ids.tolist()))
+    esm2_emb = load_esm2_embedding(esm2_dir, pocket.metadata.source_structure_id, n_residues)
     graph = pocket_to_pyg_data(pocket, esm2_embeddings=esm2_emb)
     in_dim = graph.x.shape[1]
     per_seed = []
@@ -185,8 +196,8 @@ def main():
         import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
         output["legacy_gnn_v1"] = score_legacy_gnn_v1(
-            pocket, esm2_emb, args.legacy_models_dir, args.legacy_reference_bank,
-            args.legacy_n_seeds, args.k, device,
+            pocket, args.esm2_embedding.parent if args.esm2_embedding else None,
+            args.legacy_models_dir, args.legacy_reference_bank, args.legacy_n_seeds, args.k, device,
         )
 
     log.info(f"{output['structure_id']}: DCH={dch['status']} ESM2={esm2['status']} -> triage={triage}")
