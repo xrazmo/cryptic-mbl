@@ -31,7 +31,7 @@ for i in "$@"; do
     if [ "$skip_next" = true ]; then
         args+=("$(to_absolute "$i")")
         skip_next=false
-    elif [[ "$i" == "--pdb" ]] || [[ "$i" == "--out" ]]; then
+    elif [[ "$i" == "--pdb" ]] || [[ "$i" == "--out" ]] || [[ "$i" == "--batch-dir" ]] || [[ "$i" == "--ids-file" ]] || [[ "$i" == "--out-dir" ]]; then
         args+=("$i")
         skip_next=true
     else
