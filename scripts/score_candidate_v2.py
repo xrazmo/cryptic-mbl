@@ -5,10 +5,15 @@ Production scoring regime v2: asymmetric, evidence-channel scoring, not
 a forced universal binary label. Per the agreed architecture --
 
     B1/B2 channel:  corrected Metal3D complex -> DCH cysteine rule
-    B3 channel:     ESM2 alone (outer-pocket encoder tested and
-                     REJECTED by its predeclared go/no-go gate -- see
-                     reports/outer_pocket_encoder_rejection.md; never
-                     run during production scoring, not wired in here)
+    B3 channel:     ESM2 alone (nearest-centroid classification of
+                     mean-pooled frozen outer-pocket embeddings tested
+                     and REJECTED by its predeclared go/no-go gate --
+                     see reports/outer_pocket_encoder_rejection.md.
+                     That result is scoped to resemblance-style
+                     classification of that specific representation; it
+                     does NOT establish that outer-pocket structure
+                     carries no catalytic information. Not run during
+                     production scoring, not wired in here.)
     Sequence:       mean ESM2 retrieval, with subclass/family neighbor
                      context and an OOD distance percentile
     Final output:   two evidence channels kept separate + one triage

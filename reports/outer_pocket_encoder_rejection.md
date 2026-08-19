@@ -2,8 +2,29 @@
 
 ## Decision
 
-**Rejected.** Not part of the production scoring path. B3 uses ESM2
-retrieval alone.
+**Rejected as tested. Scope of the rejection, precisely:**
+
+> NO-GO for mean-pooled ESM-IF1 embeddings classified by nearest class
+> centroid.
+
+**NOT established:**
+
+> NO-GO for outer-pocket structure as a source of catalytic
+> information.
+
+This experiment took a frozen inverse-folding representation, averaged
+512-dim per-residue vectors across the whole pocket (discarding which
+geometric feature occurs where and how pocket regions relate spatially),
+and reduced each class to one centroid. That is a resemblance test --
+structurally analogous to the sequence retrieval this project exists to
+transcend, not a mechanistic catalytic-feasibility model. Not part of
+the production scoring path; B3 uses ESM2 retrieval alone for now. A
+substrate-conditioned catalytic-feasibility approach (constrained
+docking / pharmacophore alignment against the corrected metal sites,
+scoring reaction-compatible geometry rather than embedding resemblance)
+remains open and is a materially different direction, not a rerun of
+this experiment with a different classifier -- see project discussion
+for the proposed design.
 
 ## The bounded experiment
 
