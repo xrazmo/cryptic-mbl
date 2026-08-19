@@ -1,0 +1,189 @@
+{
+  "summary": {
+    "median_localization_error_A": 0.3723398948789786,
+    "max_localization_error_A": 3.891680233797431,
+    "n_localization_measurements": 12,
+    "n_references_with_single_input_chain": 7,
+    "n_references_correct_site_count": 5,
+    "n_references_donor_coverage_ok_at_3.5A": 7,
+    "n_references_total": 7,
+    "acceptance_gate": {
+      "median_error_below_1A": true,
+      "no_cross_chain_contamination": true,
+      "donor_coverage_ge_90pct_at_3.5A": true
+    }
+  },
+  "per_reference": {
+    "NDM-1": {
+      "pdb_id": "3SPU",
+      "subclass": "B1",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 6,
+      "n_predicted_sites": 2,
+      "n_expected_sites": 2,
+      "site_count_correct": true,
+      "predicted_site_probabilities": [
+        0.95,
+        0.92
+      ],
+      "localization_errors_A": [
+        0.127,
+        0.447
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 3,
+        "3.5": 3
+      },
+      "pocket_n_residues": 52,
+      "pocket_n_atoms": 374,
+      "pocket_atoms_per_residue": 7.19
+    },
+    "VIM-2": {
+      "pdb_id": "1KO3",
+      "subclass": "B1",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 6,
+      "n_predicted_sites": 1,
+      "n_expected_sites": 2,
+      "site_count_correct": false,
+      "predicted_site_probabilities": [
+        0.99
+      ],
+      "localization_errors_A": [
+        0.184
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 3,
+        "3.5": 3
+      },
+      "pocket_n_residues": 41,
+      "pocket_n_atoms": 299,
+      "pocket_atoms_per_residue": 7.29
+    },
+    "IMP-1": {
+      "pdb_id": "1DD6",
+      "subclass": "B1",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 4,
+      "n_predicted_sites": 2,
+      "n_expected_sites": 2,
+      "site_count_correct": true,
+      "predicted_site_probabilities": [
+        0.99,
+        0.96
+      ],
+      "localization_errors_A": [
+        0.992,
+        1.464
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 3,
+        "3.5": 4
+      },
+      "pocket_n_residues": 48,
+      "pocket_n_atoms": 350,
+      "pocket_atoms_per_residue": 7.29
+    },
+    "CphA": {
+      "pdb_id": "1X8G",
+      "subclass": "B2",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 8,
+      "n_predicted_sites": 2,
+      "n_expected_sites": 1,
+      "site_count_correct": false,
+      "predicted_site_probabilities": [
+        0.98,
+        0.42
+      ],
+      "localization_errors_A": [
+        0.372,
+        3.892
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 4,
+        "3.5": 4
+      },
+      "pocket_n_residues": 53,
+      "pocket_n_atoms": 410,
+      "pocket_atoms_per_residue": 7.74
+    },
+    "Sfh-I": {
+      "pdb_id": "2QDS",
+      "subclass": "B2",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 6,
+      "n_predicted_sites": 1,
+      "n_expected_sites": 1,
+      "site_count_correct": true,
+      "predicted_site_probabilities": [
+        0.98
+      ],
+      "localization_errors_A": [
+        0.298
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 3,
+        "3.5": 4
+      },
+      "pocket_n_residues": 46,
+      "pocket_n_atoms": 346,
+      "pocket_atoms_per_residue": 7.52
+    },
+    "L1": {
+      "pdb_id": "1SML",
+      "subclass": "B3",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 6,
+      "n_predicted_sites": 2,
+      "n_expected_sites": 2,
+      "site_count_correct": true,
+      "predicted_site_probabilities": [
+        1.0,
+        0.99
+      ],
+      "localization_errors_A": [
+        0.626,
+        0.166
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 4,
+        "3.5": 4
+      },
+      "pocket_n_residues": 51,
+      "pocket_n_atoms": 367,
+      "pocket_atoms_per_residue": 7.2
+    },
+    "FEZ-1": {
+      "pdb_id": "1K07",
+      "subclass": "B3",
+      "n_input_chains": 1,
+      "n_raw_metal3d_probes": 8,
+      "n_predicted_sites": 2,
+      "n_expected_sites": 2,
+      "site_count_correct": true,
+      "predicted_site_probabilities": [
+        1.0,
+        0.97
+      ],
+      "localization_errors_A": [
+        0.279,
+        0.238
+      ],
+      "donor_coverage_by_radius": {
+        "2.8": 3,
+        "3.2": 3,
+        "3.5": 3
+      },
+      "pocket_n_residues": 50,
+      "pocket_n_atoms": 367,
+      "pocket_atoms_per_residue": 7.34
+    }
+  }
+}
