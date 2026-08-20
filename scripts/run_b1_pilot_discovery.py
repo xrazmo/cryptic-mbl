@@ -42,7 +42,13 @@ from metal_independent_b1 import score_without_predicted_metals
 
 log = get_logger(__name__)
 
-FARGENE_THRESHOLD = 127.0  # DEFAULT_THRESHOLD in run_fargene_comparator.py
+# Per-model thresholds -- NOT interchangeable. Verified against the already-
+# frozen reports/fargene_b1_b2_comparator.json ("class_b_1_2 model", 127.0)
+# and reports/fargene_b1_specific_comparator.json ("B1 model", 135.8). An
+# earlier version of this script applied 127.0 to both HMMs, which silently
+# used the wrong (looser) cutoff for the B1-specific model.
+FARGENE_COMBINED_THRESHOLD = 127.0
+FARGENE_B1_SPECIFIC_THRESHOLD = 135.8
 
 
 def score_architecture(candidates: list[dict], structures_dir: Path, template_path: Path) -> dict[str, dict]:
@@ -70,13 +76,13 @@ def write_fasta(candidates: list[dict], out_path: Path) -> None:
                 f.write(f">{c['accession']}\n{c['sequence']}\n")
 
 
-def run_fargene(fasta_path: Path, hmm_path: Path, upstream_dir: Path, out_path: Path) -> dict:
+def run_fargene(fasta_path: Path, hmm_path: Path, threshold: float, upstream_dir: Path, out_path: Path) -> dict:
     domtblout = out_path.with_suffix(".domtblout")
     cmd = [
         "python", "scripts/run_fargene_comparator.py",
         "--fasta", str(fasta_path), "--hmm", str(hmm_path),
         "--hmmsearch", "/home/moraz/programs/miniconda3/bin/hmmsearch",
-        "--threshold", str(FARGENE_THRESHOLD),
+        "--threshold", str(threshold),
         "--upstream-checkout", str(upstream_dir),
         "--out", str(out_path), "--domtblout", str(domtblout),
     ]
@@ -136,8 +142,8 @@ def main():
     write_fasta(candidates, fasta_path)
     combined_hmm = args.fargene_upstream / "fargene_analysis" / "models" / "class_B_1_2.hmm"
     b1_hmm = args.fargene_upstream / "fargene_analysis" / "models" / "B1.hmm"
-    fargene_combined = run_fargene(fasta_path, combined_hmm, args.fargene_upstream, args.out_dir / "fargene_combined.json")
-    fargene_b1 = run_fargene(fasta_path, b1_hmm, args.fargene_upstream, args.out_dir / "fargene_b1_specific.json")
+    fargene_combined = run_fargene(fasta_path, combined_hmm, FARGENE_COMBINED_THRESHOLD, args.fargene_upstream, args.out_dir / "fargene_combined.json")
+    fargene_b1 = run_fargene(fasta_path, b1_hmm, FARGENE_B1_SPECIFIC_THRESHOLD, args.fargene_upstream, args.out_dir / "fargene_b1_specific.json")
 
     log.info("=== Scoring mean-ESM2 5-NN ===")
     import torch
@@ -166,12 +172,13 @@ def main():
             "fargene_combined_hit": fargene_combined_hit, "fargene_b1_specific_hit": fargene_b1_hit,
         }
         report[acc] = entry
-        if arch.get("status") == "supported" and not fargene_combined_hit and not fargene_b1_hit:
+        if arch.get("architecture_call", False) and not fargene_combined_hit and not fargene_b1_hit:
             shortlist.append(acc)
 
     output = {
         "n_candidates": len(candidates),
-        "n_architecture_supported": sum(1 for r in architecture_results.values() if r.get("status") == "supported"),
+        "n_architecture_call_positive": sum(1 for r in architecture_results.values() if r.get("architecture_call", False)),
+        "n_full_pose_supported": sum(1 for r in architecture_results.values() if r.get("status") == "supported"),
         "n_fargene_combined_hits": len(fargene_combined_hits),
         "n_fargene_b1_specific_hits": len(fargene_b1_hits),
         "priority_shortlist_architecture_positive_fargene_negative": shortlist,
@@ -179,7 +186,8 @@ def main():
     }
     out_path = args.out_dir / "pilot_discovery_report.json"
     out_path.write_text(json.dumps(output, indent=2, default=str))
-    log.info(f"Pilot: {output['n_architecture_supported']}/{len(candidates)} architecture-supported, "
+    log.info(f"Pilot: {output['n_architecture_call_positive']}/{len(candidates)} architecture_call-positive "
+             f"({output['n_full_pose_supported']} also pass the secondary product-pose gate), "
              f"{len(fargene_combined_hits)} fARGene-combined hits, {len(fargene_b1_hits)} fARGene-B1 hits")
     log.info(f"Priority shortlist (architecture-positive, fARGene-negative both models): {len(shortlist)} -> {shortlist}")
     log.info(f"Wrote pilot discovery report -> {out_path}")
