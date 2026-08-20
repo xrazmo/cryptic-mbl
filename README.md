@@ -1,47 +1,93 @@
-# cryptic-mbl
+# Canonical B1 structural pharmacophore
 
-Structure-guided discovery of cryptic metallo-β-lactamases from environmental
-metagenomes. The repository combines structure prediction, Foldseek, corrected
-multi-site Metal3D pocket extraction, ESM2 retrieval, and explicitly separated
-structural evidence channels.
+This repository is a concluded research project on structure-guided detection
+of metallo-beta-lactamases (MBLs). Its final supported deliverable is a frozen,
+reference-independent structural detector for the canonical subclass B1
+six-donor architecture. It is not an Atlas-scale discovery system and it is
+not a general detector of beta-lactam hydrolysis.
 
-## Current scientific status
+Project status: **concluded and frozen on 2026-08-20**.
 
-The production path is `scripts/score_candidate_v2.py`. It keeps canonical
-B1/B2 DCH coordination support and ESM2 retrieval separate; the legacy GNN is
-not part of the decision. See `reports/production_model_v2_manifest.json`.
+## Final scientific conclusion
 
-A family-reference-independent, substrate-conditioned Structural V3 experiment
-is implemented in `scripts/catalytic_feasibility.py`. It transfers experimental
-hydrolyzed beta-lactam reaction states into a candidate's metal/donor frame,
-without sequence, labels, nearest neighbours, or class centroids. It was tested
-under a frozen gate and **rejected for production**: despite recovering 8/20
-ESM2 misses and passing a donor-geometry destruction control, specificity among
-evaluable negatives was only 0.338 because related metallohydrolases share the
-same catalytic-looking metal scaffold. See
-`reports/catalytic_feasibility_no_go.md` and
-`reports/catalytic_feasibility_evaluation.json`.
+The full-chain detector in `scripts/metal_independent_b1.py` searches directly
+for the spatial arrangement of a three-histidine site and an Asp-Cys-His site.
+It uses donor chemistry and coordinates, but no sequence alignment, HMM score,
+ESM embedding, labeled reference bank, trained GNN, or predicted metal
+coordinate.
 
-No ESM Metagenomic Atlas processing should begin from this branch. Structural
-V3 is retained as a reproducible negative experiment, not a deployed discovery
-score.
+The detector is a strong and interpretable **canonical-B1 structural
+confirmation channel**:
 
-## B1 structural detector branch
+| evaluation | structural result | sequence comparator |
+|---|---:|---:|
+| Sequence-remote internal B1 panel | 109/110 sensitivity; 410/410 specificity | fARGene B1: 110/110; 410/410 |
+| All labeled negatives | 0/931 structural calls | - |
+| External experimental structures | 14/15 canonical B1; 0/10 B2/B3 calls | fARGene B1: 15/15; 0/10 calls |
+| Reviewed external discovery pilot | 17 structural calls | exactly the same 17 called by fARGene B1 |
+| Broad 10,000-sequence pilot | 0 structural calls among 8,669 available structures | 0 fARGene B1 calls |
 
-`feature/b1-structural-detector` narrows the structural question to canonical
-subclass B1 rather than requiring one model to solve B1, B2, and B3. The
-preferred scorer is now `scripts/metal_independent_b1.py`. It searches the
-full chain for the complete three-His plus Asp-Cys-His six-donor architecture,
-without sequence, a labeled reference panel, ESM embeddings, or predicted
-metal coordinates. The hydrolyzed-meropenem pose is retained as secondary
-evidence rather than the primary detector.
+The structural rule recovered all ten internal B1 examples missed by the
+project's mean-ESM2 nearest-neighbor baseline. However, it recovered **no
+experimentally supported B1 missed by the correctly thresholded fARGene B1
+HMM**. Because the canonical donor residues also create a conserved sequence
+signature, the probability of substantial unique recall beyond modern HMM and
+protein-language-model methods is judged low.
 
-The frozen evaluation and external sequence comparators are described in
-`docs/B1_STRUCTURAL_DETECTOR.md`. On the sequence-remote B1 panel the
-six-donor model detected 109/110 B1 structures with 0/410 false positives,
-including all ten B1 examples missed by mean-ESM2 5-NN. It also detected 14/15
-literature-selected canonical B1 PDB structures and rejected all ten B2/B3
-controls at the frozen setting. fARGene's B1 HMM still detected every known B1
-in those evaluated panels, so prospective HMM-negative discovery remains the
-next biological validation rather than an established claim. Atlas screening
-remains deliberately out of scope on this branch.
+Accordingly:
+
+- do use this method to confirm and interpret canonical B1 architecture;
+- do use structural/sequence disagreement as a review flag;
+- do not use it as the primary engine for rare-ARG discovery;
+- do not claim that a positive call proves hydrolysis or resistance;
+- do not begin ESM Atlas-scale screening from this repository.
+
+The separate question of fold-independent carbapenem catalytic chemistry has
+been deliberately moved outside this project's scope. Historical prototypes
+are preserved under `archive/catalytic_chemistry_handoff/` for transfer into a
+new repository.
+
+## Primary entry point
+
+```bash
+python scripts/metal_independent_b1.py \
+  --structure path/to/single_chain_structure.pdb \
+  --template data/catalytic_templates/B1_NDM1_hydrolyzed_meropenem_4EYL.npz \
+  --out candidate.b1_structure.json
+```
+
+Interpret `result.architecture_call` as compatibility with the frozen
+six-donor B1 pharmacophore. `result.full_pose_call` is a secondary,
+NDM-template-dependent pose check and must not replace the primary call.
+
+## Documentation
+
+- `docs/PROJECT_CLOSURE.md` — final decision, evidence, limitations, and
+  scientific boundary.
+- `docs/B1_STRUCTURAL_DETECTOR.md` — implementation and complete evaluation.
+- `docs/METHODS_AND_RESULTS.md` — manuscript-ready description of the final
+  method and findings.
+- `docs/REPRODUCIBILITY.md` — environments, required data, commands, and tests.
+- `reports/project_closure_manifest.json` — hashes and verification state for
+  the sealed active method and evidence.
+- `PROJECT_CONTEXT.md` — concise handoff context for future maintainers.
+- `archive/README.md` — inventory and status of historical work.
+
+## Repository layout
+
+```text
+configs/            Frozen manifests and external-panel declarations
+data/               Active derived inputs required by documented evaluations
+docs/               Final scientific and reproducibility documentation
+reports/            Audited final B1 results and sequence-comparator outputs
+scripts/            Active detector plus retained historical pipeline code
+tests/              Lightweight structural-geometry unit tests
+archive/            Superseded experiments, legacy documents, and artifacts
+```
+
+Large generated artifacts are not versioned. Their locations and scientific
+status are recorded in `archive/README.md`.
+
+## License
+
+See `LICENSE`.

@@ -1,17 +1,20 @@
 __pycache__/
 *.pyc
 
-# Vendored external tool (installed separately, see run_metal3d.sh)
+# Vendored external tool (archived; see archive/legacy_metal3d/)
 assets/
 
-# Raw/derived structure data (regenerate via catalog_to_manifest.py + data_assembly.py + clustering_split.py)
+# Raw/derived structure data
 final_structures/
 data/
 
-# Training checkpoints/eval outputs (regenerate via train.py / evaluate.py)
+# Training checkpoints/eval outputs
 models/
 results/
 
 # Unrelated
 files/
 files.zip
+
+# Preserved large historical artifacts moved during project closure.
+archive/artifacts/

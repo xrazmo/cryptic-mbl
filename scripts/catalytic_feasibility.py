@@ -43,7 +43,7 @@ from typing import Iterable
 
 import numpy as np
 
-from graph_construction import LIGAND_ATOMS
+from structural_chemistry import LIGAND_ATOMS
 from utils import PocketSubgraph, get_logger
 
 log = get_logger(__name__)

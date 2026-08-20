@@ -77,6 +77,7 @@ from typing import Optional
 import numpy as np
 
 from utils import PocketSubgraph, get_logger
+from structural_chemistry import LIGAND_ATOMS, ZN_BOND_CUTOFF
 
 log = get_logger(__name__)
 
@@ -140,17 +141,6 @@ ESM2_SLICE = slice(N_AA_IDENTITY + N_STRUCTURAL, N_AA_IDENTITY + N_STRUCTURAL + 
 # [0, 5) -> coordination shell, [5, 9) -> pocket core, [9, inf) -> outer
 # boundary (bounded in practice by the 12A pocket-extraction radius).
 RADIAL_SHELL_BOUNDARIES = (5.0, 9.0)
-
-# Side-chain atom(s) that actually coordinate a Zn ion in canonical MBL
-# active sites (3H, DCH, and related B1/B2/B3 coordination schemes).
-LIGAND_ATOMS = {
-    "HIS": ("ND1", "NE2"),
-    "ASP": ("OD1", "OD2"),
-    "GLU": ("OE1", "OE2"),
-    "CYS": ("SG",),
-}
-ZN_BOND_CUTOFF = 2.8  # Angstrom; generous upper bound on Zn-N/O/S bond lengths
-
 
 def _one_hot_aa(res_name: str) -> np.ndarray:
     v = np.zeros(len(AMINO_ACIDS), dtype=np.float32)

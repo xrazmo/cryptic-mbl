@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Structure-aware metric learning for discovery prioritization of cryptic metallo-beta-lactamases</title>
+  <style>
+    @page { size: A4; margin: 2.15cm 2.05cm 2.05cm 2.05cm; }
+    body {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      color: #17212b;
+      font-size: 10.5pt;
+      line-height: 1.46;
+      margin: 0;
+    }
+    h1, h2, h3 { color: #173f5f; page-break-after: avoid; }
+    h1 { font-size: 24pt; line-height: 1.12; margin: 0 0 10pt 0; }
+    h2 {
+      font-size: 15pt;
+      margin: 22pt 0 7pt 0;
+      padding-bottom: 3pt;
+      border-bottom: 1.2pt solid #8fb8cf;
+    }
+    h3 { font-size: 11.5pt; margin: 15pt 0 4pt 0; }
+    p { margin: 0 0 8pt 0; text-align: justify; }
+    ul, ol { margin: 4pt 0 9pt 19pt; padding: 0; }
+    li { margin: 0 0 4pt 0; }
+    a { color: #176b87; text-decoration: none; }
+    .title-page { page-break-after: always; padding-top: 2.0cm; }
+    .kicker {
+      font-size: 9.5pt; font-weight: bold; letter-spacing: 1.2pt;
+      color: #2c7a7b; text-transform: uppercase; margin-bottom: 18pt;
+    }
+    .subtitle { font-size: 14pt; color: #496777; line-height: 1.35; margin-bottom: 26pt; }
+    .meta { margin-top: 24pt; color: #475b66; }
+    .meta p { margin: 2pt 0; text-align: left; }
+    .status { margin-top: 25pt; color: #154f52; }
+    .status strong { color: #154f52; }
+    .abstract { margin: 6pt 0 16pt 0; }
+    .abstract h2 { border: 0; margin-top: 0; padding: 0; font-size: 13pt; }
+    .callout { color: #61450f; margin: 12pt 0; }
+    .callout.red { color: #762f2a; }
+    .callout.blue { color: #245977; }
+    .callout p:last-child, .abstract p:last-child, .status p:last-child { margin-bottom: 0; }
+    table { border-collapse: collapse; table-layout: fixed; width: 100%; margin: 8pt 0 13pt 0; font-size: 9.1pt; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
+    th { background: #1d526f; color: white; text-align: left; padding: 5pt 5pt; border: 0.8pt solid #7b929e; }
+    td { vertical-align: top; text-align: left; padding: 4pt 5pt; border: 0.8pt solid #9fb1ba; }
+    tr:nth-child(even) td { background: #f5f8fa; }
+    .small { font-size: 8.8pt; color: #4b5f6a; }
+    .caption { font-size: 8.8pt; color: #435761; margin-top: -8pt; text-align: left; }
+    .mono { font-family: "Liberation Mono", Consolas, monospace; font-size: 9pt; }
+    .equation { text-align: center; font-family: "Liberation Serif", serif; font-size: 11pt; margin: 10pt 0; }
+    .page-break { page-break-before: always; }
+    .ref { padding-left: 17pt; text-indent: -17pt; margin-bottom: 6pt; font-size: 9.3pt; text-align: left; }
+    .footer-note { margin-top: 18pt; font-size: 8.5pt; color: #52656f; }
+  </style>
+</head>
+<body>
+
+<section class="title-page">
+  <div class="kicker">Production model dossier · manuscript-ready methods and validation text</div>
+  <h1>Structure-aware metric learning for discovery prioritization of cryptic metallo-β-lactamases</h1>
+  <div class="subtitle">Production architecture, training design, similarity-controlled transfer evaluation, and limits of inference</div>
+
+  <div class="status">
+    <p><strong>Evidence grade: moderate.</strong> The frozen model is suitable for ranking candidates for follow-up when its graph-neural-network and raw-ESM2 outputs are reported together. It is not a stand-alone diagnostic of β-lactam hydrolysis, antimicrobial-resistance phenotype, or gene mobility.</p>
+  </div>
+
+  <div class="meta">
+    <p><strong>Model:</strong> <span class="mono">new_graph_flat_production</span></p>
+    <p><strong>Artifact:</strong> eight independently initialized checkpoints, <span class="mono">models/production/seed_0–seed_7/final.pt</span></p>
+    <p><strong>Frozen training pool:</strong> 1,077 labeled structures (146 positive; 931 negative)</p>
+    <p><strong>Sequence representation:</strong> ESM-2 <span class="mono">esm2_t33_650M_UR50D</span></p>
+    <p><strong>Document version:</strong> 19 August 2026</p>
+  </div>
+
+  <div class="footer-note">
+    This document describes the repository state frozen for large-scale candidate screening. Numerical performance statements refer to similarity-controlled proxy experiments with the same architecture, not to a held-out test of the final full-data checkpoints.
+  </div>
+</section>
+
+<section class="abstract">
+  <h2 style="page-break-before: always; border-bottom: none;">Abstract</h2>
+  <p style="margin: 0; font-size: 1pt;">&nbsp;</p>
+  <p>We developed a structure-aware metric-learning system to prioritize candidate metallo-β-lactamases (MBLs) from protein structures. Each putative metal-binding pocket is represented as a residue graph containing amino-acid identity, physicochemical and metal-coordination descriptors, backbone geometry, solvent exposure, radial position relative to the predicted metal, and frozen per-residue ESM-2 representations. Spatial contacts and explicit sequence-adjacency edges are processed by a four-layer distance-aware graph neural network, and the resulting unit-normalized pocket embedding is optimized with a confidence-weighted triplet loss. The production system is an ensemble of eight independently initialized models trained for 60 epochs on all 1,077 labeled structures; inference uses seed-specific five-nearest-neighbor reference banks followed by majority voting. A separate five-nearest-neighbor score from mean-pooled ESM-2 embeddings is retained as an independent sequence-dominant retrieval signal.</p>
+  <p>Generalization was assessed before final training using MMseqs2-defined sequence components at &lt;30% train–test identity with at least 80% alignment coverage. The graph ensemble achieved sensitivity/specificity/balanced accuracy of 0.276/1.000/0.638 for B1/B2-component transfer, 0.731/1.000/0.865 for B3-component transfer, and 0.500/0.983/0.741 for four remote positive case studies. The corresponding raw-ESM2 results were 0.897/0.998/0.947, 0.692/0.990/0.841, and 0.750/0.961/0.856. Thus, task-specific graph learning added value for B3-like transfer but did not outperform pretrained sequence-space retrieval in the hardest B1/B2 transfer regime. Because the final production ensemble was deliberately fitted to the complete labeled pool, it has no direct held-out accuracy estimate. Its output must therefore be interpreted as a prioritization score, accompanied by raw-ESM2 agreement, neighbor provenance, seed agreement, and downstream biochemical validation.</p>
+</section>
+
+<h2>1. Scientific objective and intended use</h2>
+
+<p>The model is designed to rank structurally plausible, potentially cryptic MBL candidates for further analysis rather than to reproduce an HMM-like catalogue of known B1 homologues. This distinction matters because the positive set is strongly imbalanced toward subclass B1, and ESM-2 encodes evolutionary information learned from very large protein-sequence corpora. A high score can therefore arise from at least two partially overlapping mechanisms: resemblance to known MBL sequence families, or compatibility with the local physicochemical organization of an MBL-like metal-binding pocket. The production workflow reports these sources of evidence separately so that agreement can raise priority without being mistaken for independent experimental confirmation.</p>
+
+<p>The intended endpoint is triage. A candidate called positive by the model is a protein whose pocket embedding lies near curated positives and away from selected decoys under the learned metric. This does not by itself establish β-lactam turnover, carbapenem hydrolysis, expression in a host, genomic mobility, or clinical resistance. Those claims require orthogonal sequence/context analysis and, ultimately, biochemical or microbiological validation.</p>
+
+<div class="callout red">
+  <p><strong>Overriding caveat.</strong> The deployed production checkpoints were trained on the entire labeled collection. They have never been evaluated on examples withheld from those same checkpoints. The transfer-panel results below are the best available evidence for the behavior of this design, but they are not an accuracy certificate for <span class="mono">models/production/</span>.</p>
+</div>
+
+<h2>2. Labeled data and pocket construction</h2>
+
+<h3>2.1 Composition of the final training pool</h3>
+
+<p>The frozen corpus contains 1,077 structures: 146 positives and 931 negatives. Positives were assembled from CARD and published environmental or functional-metagenomic MBL collections, including Berglund et&nbsp;al. and Gudeta et&nbsp;al. [1–3], and include seven canonical crystallographic reference proteins. Negatives were drawn from UniProt-derived structural decoys and divided operationally into hard negatives, which resemble MBL-related chemistry or fold context, and easy negatives from unrelated folds. The positive subclasses are substantially imbalanced: 112 B1, 27 B3, three B2, and four unclassified examples.</p>
+
+<table>
+  <colgroup><col style="width:16%"><col style="width:10%"><col style="width:29%"><col style="width:45%"></colgroup>
+  <thead><tr><th>Class</th><th>Count</th><th>Role in metric learning</th><th>Principal limitation</th></tr></thead>
+  <tbody>
+    <tr><td>Positive MBL</td><td>146</td><td>Anchor and positive members of triplets</td><td>Dominated by B1; only six sequence-connected positive components at the 30%/80% split criterion</td></tr>
+    <tr><td>Hard negative</td><td>672</td><td>80% of randomly sampled negatives; preferred during semi-hard mining</td><td>Family-level components can be monolithic, limiting within-family holdout design</td></tr>
+    <tr><td>Easy negative</td><td>259</td><td>20% of randomly sampled negatives</td><td>May overstate specificity if used without hard-negative challenge panels</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>1,077</strong></td><td colspan="2">Frozen full-data production pool</td></tr>
+  </tbody>
+</table>
+
+<p>Label provenance is not balanced: the positive and negative labels originate from different source and curation channels, and the internal confidence tier is consequently a perfect proxy for class in this corpus. Tier is not supplied as a node feature, but it contributes to loss weighting. Source-specific biases can therefore enter through structures, sequences, pocket-selection success, and training weights. This limitation should be stated explicitly whenever performance is reported.</p>
+
+<h3>2.2 Metal-site and pocket definition</h3>
+
+<p>For each structure, a putative zinc coordinate was obtained preferentially from Metal3D [5]. If no usable metal prediction was available, the selected fpocket cavity [6] supplied the pocket center. Residues with centroids up to 12 Å from that center were retained. In the frozen collection, 1,051 pockets were centered using Metal3D and 26 used the cavity fallback. This procedure makes the learned representation conditional on an upstream site proposal: failures in structure prediction, side-chain placement, metal-site localization, or cavity selection can propagate directly to the classifier.</p>
+
+<h2>3. Residue-graph representation</h2>
+
+<p>Every pocket is converted to a graph in which nodes represent residues and edges represent either local three-dimensional proximity or explicit backbone adjacency. The production node vector has 1,320 dimensions. Structural and chemical variables occupy 40 dimensions, while frozen ESM-2 contributes 1,280 dimensions per residue. The dimensional imbalance is important: although the graph topology and engineered variables force the network to process structural context, the production architecture concatenates all modalities in a single input projection and therefore does not guarantee equal reliance on them.</p>
+
+<table>
+  <colgroup><col style="width:22%"><col style="width:8%"><col style="width:70%"></colgroup>
+  <thead><tr><th>Feature block</th><th>Dimensions</th><th>Definition</th></tr></thead>
+  <tbody>
+    <tr><td>Amino-acid identity</td><td>20</td><td>One-hot residue identity</td></tr>
+    <tr><td>Basic pocket geometry</td><td>2</td><td>Side-chain-centroid indicator and residue-centroid distance to the proposed metal</td></tr>
+    <tr><td>Physicochemical descriptors</td><td>8</td><td>Hydrophobicity, charge, polarity, side-chain volume, aromaticity, hydrogen-bond donor and acceptor counts, and canonical zinc-ligand capability</td></tr>
+    <tr><td>Coordination descriptors</td><td>2</td><td>Nearest plausible ligand-atom distance to the metal and an indicator for a distance ≤2.8 Å</td></tr>
+    <tr><td>Backbone geometry</td><td>4</td><td>Sine and cosine encodings of φ and ψ; missing dihedrals are zero-filled</td></tr>
+    <tr><td>Solvent exposure</td><td>1</td><td>Residue solvent-accessible surface area, scaled by 100 and computed on the isolated pocket</td></tr>
+    <tr><td>Radial shell</td><td>3</td><td>One-hot bins for &lt;5 Å, 5–9 Å, and ≥9 Å within the 12 Å extraction radius</td></tr>
+    <tr><td>Protein language model</td><td>1,280</td><td>Frozen per-residue ESM-2 representation from <span class="mono">esm2_t33_650M_UR50D</span> [4]</td></tr>
+  </tbody>
+</table>
+
+<p>Edges are the union of all residue pairs whose centroids are within 10 Å and residue pairs adjacent in primary sequence when both residues occur in the pocket. Each edge stores Euclidean distance and a binary sequence-adjacency flag. Adding backbone edges prevents a loop’s neighboring residues from being indistinguishable from unrelated spatial contacts at the same distance. Absolute coordinates are retained in the graph, but the production convolution uses only scalar inter-residue distances and the adjacency flag. The encoder is therefore translation- and rotation-invariant; it is <em>not</em> a fully SE(3)-equivariant network and does not explicitly propagate bond angles or atom-level orientations.</p>
+
+<div class="callout blue">
+  <p><strong>What “structure-aware” means here.</strong> The model uses pocket topology, residue-to-metal distance, ligand-atom proximity, backbone connectivity, dihedrals, solvent exposure, and radial shells. It does not perform atomistic coordination modeling, electronic-structure calculation, or equivariant orientation tracking. “Structure-aware” should not be rewritten as “physics-based.”</p>
+</div>
+
+<h2>4. Neural architecture and metric-learning objective</h2>
+
+<p>The selected production encoder, <span class="mono">PocketEncoder</span>, first projects each 1,320-dimensional residue vector to 256 hidden dimensions. Four distance-aware message-passing layers then aggregate mean neighbor messages. At each layer, a message is calculated from the receiving node, sending node, Euclidean distance, and sequence-adjacency indicator. Residual addition, layer normalization, and dropout (0.1) follow each update. Global mean pooling converts the residue graph to a pocket vector, and a two-layer readout maps this representation to 128 dimensions. The final vector is L2-normalized; Euclidean distance in this space is therefore a monotonic transform of cosine similarity.</p>
+
+<p>Three copies of the same encoder, with shared weights, process an anchor positive, a second positive, and a negative structure. Training minimizes the margin triplet objective</p>
+
+<div class="equation">L = max[0, m + d(f(a), f(p)) − d(f(a), f(n))], &nbsp; with m = 0.3,</div>
+
+<p>where <em>f</em> is the shared pocket encoder and <em>d</em> is Euclidean distance. Any positive can be paired with any other positive, including cross-subclass pairs, so the objective explicitly encourages a common MBL region rather than separate B1, B2, and B3 classifiers. Random triplets use hard negatives with probability 0.8. Every third epoch, negatives are re-mined from the current embedding space using a semi-hard criterion, with a hardest-available fallback when no semi-hard candidate is found [10]. Triplets are weighted by the lower confidence-tier weight of the two positive members.</p>
+
+<p>Each production seed was optimized for 60 epochs with 2,000 triplets per epoch, batches of 64, AdamW (learning rate 10<sup>−4</sup>; weight decay 10<sup>−5</sup>), cosine annealing, and gradient-norm clipping at 1.0. Eight independent seeds (0–7) were trained. No validation subset was removed and no validation-based checkpoint selection was performed; <span class="mono">final.pt</span> is the sole checkpoint for every seed.</p>
+
+<h3>4.1 Architecture selection</h3>
+
+<p>The production choice was the enhanced flat graph rather than a later two-branch fusion network. The branch experiment normalized structural and ESM-2 summaries separately, applied ESM-2 modality dropout, and added a structure-only auxiliary loss. It marginally improved B1/B2 transfer but regressed on the four remote cases and did not show a consistent advantage across seeds. The simpler flat model was therefore frozen as the more balanced production design. A structure-only branch remains useful as an ablation: on the B3 transfer panel it reproducibly achieved 0.462 sensitivity and 0.965 specificity, demonstrating that the engineered structural representation contains sequence-embedding-independent predictive signal. That experiment does not establish that the production model predominantly uses that signal.</p>
+
+<h2 class="page-break">5. Similarity-controlled evaluation design</h2>
+
+<p>The original random or structure-only cross-validation design was rejected after audit. A training-free five-nearest-neighbor lookup in mean ESM-2 space reproduced the earlier trained-model confusion matrix, while test positives frequently had close sequence matches among training examples. In addition, a documented pocket-fragment RMSD/identity post-filter had not been implemented. When implemented, pocket-fragment structural edges formed a 926-of-1,077 component containing biologically unrelated folds, showing that short local alignments and transitive closure were unsuitable as a hard grouping rule.</p>
+
+<p>The corrected audit extracted the exact dominant-chain sequence visible to ESM-2 and performed exhaustive all-versus-all MMseqs2 searches [7]. A sequence edge was defined by ≥30% identity at ≥80% coverage, and connected components were kept intact between train and test. Full-chain Foldseek comparisons with exact TM-scores [8] were used to assess structural feasibility, while pocket-fragment similarity was retained only as a diagnostic. A structurally remote positive cross-validation regime was not supported: 97% of confirmed positives collapsed into one component because B1, B2, and B3 proteins share an MBL fold by definition. This is a dataset limitation, not a reason to force a nominal “novel-fold” split.</p>
+
+<p>At the 30%/80% sequence threshold, the 146 positives formed only six connected components with sizes 116, 26, 1, 1, 1, and 1. Standard balanced k-fold cross-validation was therefore not meaningful. Three component challenge panels were used instead. In every configuration, all test examples had maximum train identity below 0.30 at the required coverage, and no qualifying similarity edge crossed the train–test boundary.</p>
+
+<table>
+  <colgroup><col style="width:17%"><col style="width:44%"><col style="width:13%"><col style="width:13%"><col style="width:13%"></colgroup>
+  <thead><tr><th>Panel</th><th>Transfer question</th><th>Training positives</th><th>Test positives</th><th>Test negatives</th></tr></thead>
+  <tbody>
+    <tr><td>B1/B2 transfer</td><td>From B3-like and singleton components to the dominant B1/B2 component</td><td>26</td><td>116</td><td>410</td></tr>
+    <tr><td>B3 transfer</td><td>From the dominant B1/B2 component to the B3 component</td><td>116</td><td>26</td><td>288</td></tr>
+    <tr><td>Remote outliers</td><td>Recognition of four singleton positive components</td><td>142</td><td>4</td><td>233</td></tr>
+  </tbody>
+</table>
+
+<p>Models were evaluated independently in each seed’s latent coordinate system, and binary predictions were aggregated by majority vote. This corrects an earlier invalid procedure that averaged latent coordinates across independently initialized models. Because the same challenge panels informed architecture selection, they are internal transfer benchmarks rather than a fully untouched external validation set.</p>
+
+<h2>6. Transfer results</h2>
+
+<table>
+  <colgroup><col style="width:20%"><col style="width:29%"><col style="width:31%"><col style="width:20%"></colgroup>
+  <thead><tr><th>Panel</th><th>GNN vote<br>sens / spec / BA</th><th>Raw ESM-2 5-NN<br>sens / spec / BA</th><th>Seed sensitivity range</th></tr></thead>
+  <tbody>
+    <tr><td>B1/B2 transfer</td><td>0.276 / 1.000 / 0.638</td><td>0.897 / 0.998 / 0.947</td><td>0.03–0.66</td></tr>
+    <tr><td>B3 transfer</td><td>0.731 / 1.000 / 0.865</td><td>0.692 / 0.990 / 0.841</td><td>0.19–0.88</td></tr>
+    <tr><td>Remote outliers</td><td>0.500 / 0.983 / 0.741</td><td>0.750 / 0.961 / 0.856</td><td>0.25–0.50</td></tr>
+  </tbody>
+</table>
+
+<p class="caption"><strong>Table 1.</strong> Similarity-controlled proxy performance for the production architecture. Sensitivity, specificity, and balanced accuracy are computed from the corrected per-seed majority vote. The raw ESM-2 comparator uses no task-specific representation learning but does use the pretrained ESM-2 model. Its reported bank contains the full declared training partition, whereas the panel GNNs excluded an internal validation carve; this slightly favors the ESM-2 baseline and should be disclosed. The qualitative conclusions are unchanged by matched-bank checks. The remote panel contains only four positives and is descriptive, not a stable population estimate.</p>
+
+<h3>6.1 B3-like transfer</h3>
+
+<p>The strongest result for task-specific learning was obtained on B3 transfer. The GNN detected 19 of 26 positives with no false positives among 288 test negatives, exceeding the raw ESM-2 baseline in sensitivity (0.731 versus 0.692), specificity (1.000 versus 0.990), and balanced accuracy (0.865 versus 0.841). This provides evidence that the learned pocket metric can add useful information when the training partition contains a sufficiently large and coherent positive set. It should not be generalized automatically to B1/B2 discovery, because the direction of transfer and the number of training positives differ substantially.</p>
+
+<h3>6.2 B1/B2-like transfer</h3>
+
+<p>The central weakness is the B1/B2 component-transfer task, which most closely approximates the stated goal of recovering a distant, previously unrepresented MBL family. The GNN detected 32 of 116 positives (sensitivity 0.276), while the raw ESM-2 lookup detected 104 of 116 (0.897). Specificity was excellent for both methods. The failure is systematic at ensemble level but unstable across individual initializations: seed sensitivity ranged from 0.034 to 0.664. This asymmetry is consistent with the smaller task-training positive pool (26 examples) and with biological divergence between B3 and the B1/B2-dominated component. The experiment does not isolate sample size from subclass biology, because those factors are confounded in the available data.</p>
+
+<h3>6.3 Remote singletons and negative-family stress tests</h3>
+
+<p>The remote-outlier panel contained only four positives. The GNN recovered two and the raw ESM-2 comparator recovered three; neither estimate is statistically stable. Leave-one-negative-family-out analysis of raw ESM-2 exposed a more actionable specificity failure: when lactonases were absent from the reference bank, specificity fell to 0.416, corresponding to 59 false positives among 101 lactonases. RNase Z, glyoxalase II, and phosphodiesterase holdouts were substantially better separated. Large-scale screening should therefore include explicit lactonase annotation or counter-screening rather than trusting either a global score or a nominally high overall specificity.</p>
+
+<div class="callout">
+  <p><strong>Interpretation.</strong> The current evidence supports neither “the GNN has solved novel-family MBL discovery” nor “the model is only an ESM-2 wrapper.” Structure-only ablation shows reproducible signal, and task-specific training helps on B3 transfer. Nevertheless, raw ESM-2 is the stronger retrieval mechanism on the hardest B1/B2 panel and on the four remote cases. Both signals must remain visible in production.</p>
+</div>
+
+<h2>7. Frozen production inference</h2>
+
+<p>The final ensemble was trained on all 146 positives and 931 negatives. For a new candidate, each seed embeds the pocket in its own 128-dimensional metric space. Five Euclidean nearest neighbors are retrieved from the reference bank generated by that same seed. A seed predicts positive when at least three of the five neighbors are positive. The eight seed labels are combined by majority vote, and their positive-neighbor fractions are averaged as a scalar support score. Latent coordinates are never averaged across seeds.</p>
+
+<p>In parallel, the mean of the candidate’s per-residue ESM-2 vectors is compared by five-nearest-neighbor search with the frozen mean-ESM-2 reference bank. This auxiliary result is not fused mathematically with the GNN result. The separation is deliberate: a fused scalar would obscure whether a call is driven by task-trained pocket geometry or by pretrained evolutionary similarity.</p>
+
+<table>
+  <colgroup><col style="width:24%"><col style="width:39%"><col style="width:37%"></colgroup>
+  <thead><tr><th>Reported field</th><th>Interpretation</th><th>What it is not</th></tr></thead>
+  <tbody>
+    <tr><td>GNN ensemble vote</td><td>Majority label across seed-specific pocket metric spaces</td><td>A calibrated probability or held-out production accuracy</td></tr>
+    <tr><td>GNN positive-neighbor fraction</td><td>Mean local support among five neighbors per seed</td><td>A posterior probability; seed outputs are correlated</td></tr>
+    <tr><td>Per-seed votes</td><td>Initialization sensitivity and ensemble stability</td><td>Eight independent biological experiments</td></tr>
+    <tr><td>Raw ESM-2 5-NN</td><td>Sequence-dominant evolutionary retrieval evidence</td><td>Sequence-independent structural validation</td></tr>
+    <tr><td>Nearest-neighbor identities and provenance</td><td>Audit trail for whether a call is anchored to known families or sources</td><td>Proof of shared substrate specificity</td></tr>
+  </tbody>
+</table>
+
+<h3>7.1 Reference-bank dependence</h3>
+
+<p>Five of the seven canonical reference proteins—NDM-1, VIM-2, IMP-1, CphA, and Sfh-I—belong to the same 30%/80% sequence component as the dominant B1/B2 group; FEZ-1 and L1 belong to the B3 component. In the production fit, these reference anchors are training examples. A candidate close to one of them is therefore being retrieved against a memorized reference region, not independently recognized in a held-out experiment. Such similarity is operationally useful but should be described as reference-anchored retrieval, not novel-family generalization.</p>
+
+<h2>8. Recommended use for metagenome-scale discovery</h2>
+
+<p>The production system should be used as a two-signal ranking workflow. No additional retraining is required before the ESM Metagenomic Atlas search; the present model is frozen precisely to prevent retrospective tuning after candidates are observed. The search output should retain enough information to revisit decisions without rerunning the full corpus.</p>
+
+<ol>
+  <li><strong>Apply upstream quality gates.</strong> Require a plausible folded domain, adequate local structural confidence, a credible metal-site proposal, and a non-degenerate pocket graph before model scoring.</li>
+  <li><strong>Record both model signals.</strong> Store the GNN vote, per-seed votes, GNN neighbor fractions and distances, the raw ESM-2 call and distance, and the identities, labels, subclasses, and source provenance of nearest neighbors.</li>
+  <li><strong>Prioritize agreement, but preserve disagreement.</strong> GNN-positive/ESM-positive candidates are high-priority retrieval hits. GNN-positive/ESM-negative candidates are the most interesting structure-led discovery hypotheses but also require the strongest pocket and fold review. GNN-negative/ESM-positive candidates remain plausible homologous MBLs because the GNN missed many B1/B2 transfer positives.</li>
+  <li><strong>Counter-screen known confounders.</strong> Lactonase-like proteins require explicit annotation and structural inspection. Other metallo-hydrolase families, signal peptides, domain architecture, genomic neighborhood, and mobility markers should be reported independently.</li>
+  <li><strong>Deduplicate before manual review.</strong> Cluster candidates by sequence and, secondarily, by full-chain structure so that repeated family members do not dominate the shortlist.</li>
+  <li><strong>Reserve strong claims for validation.</strong> Experimental testing should measure metal dependence and hydrolysis across relevant β-lactam substrates. Computational scores alone should be described as candidate prioritization.</li>
+</ol>
+
+<p>A practical discovery table should therefore use categorical evidence rather than a single pseudo-probability:</p>
+
+<table>
+  <colgroup><col style="width:18%"><col style="width:18%"><col style="width:44%"><col style="width:20%"></colgroup>
+  <thead><tr><th>GNN</th><th>Raw ESM-2</th><th>Recommended interpretation</th><th>Priority</th></tr></thead>
+  <tbody>
+    <tr><td>Positive, strong seed agreement</td><td>Positive</td><td>Concordant MBL-like candidate; may still be a close known-family homologue</td><td>High after deduplication</td></tr>
+    <tr><td>Positive</td><td>Negative or remote</td><td>Potential structure-led novelty or structural false positive</td><td>High scientific interest; mandatory manual geometry/fold review</td></tr>
+    <tr><td>Negative or split vote</td><td>Positive</td><td>Sequence-supported candidate that the task-trained metric may have missed</td><td>Retain, especially for B1/B2-like candidates</td></tr>
+    <tr><td>Negative</td><td>Negative</td><td>Low current support; not proof of absence</td><td>Low, unless orthogonal evidence is strong</td></tr>
+  </tbody>
+</table>
+
+<h2>9. Limitations and claims boundary</h2>
+
+<ol>
+  <li><strong>No held-out assessment of the frozen checkpoints.</strong> Full-data fitting improves reference coverage but removes the possibility of measuring generalization on the same 1,077 structures.</li>
+  <li><strong>Few independent positive lineages.</strong> At the chosen sequence threshold, 142 of 146 positives lie in two components. The nominal sample count therefore overstates independent evolutionary diversity.</li>
+  <li><strong>Subclass and sample-size confounding.</strong> B1/B2 and B3 transfer differ simultaneously in biology and in the number of available task-training positives. The current experiments cannot attribute the asymmetry to either factor alone.</li>
+  <li><strong>Pretraining exposure and homology recognition.</strong> ESM-2 may encode family similarity or knowledge related to sequences encountered during pretraining. Raw-ESM performance is evidence for useful evolutionary retrieval, not sequence-independent chemistry.</li>
+  <li><strong>Architecture-selection reuse.</strong> The challenge panels were used to compare feature and architecture variants. Their results are therefore internal model-development evidence and may be optimistic relative to a genuinely external future benchmark.</li>
+  <li><strong>Reference-bank circularity.</strong> Canonical reference proteins are members of the production training pool and are not independent validation anchors.</li>
+  <li><strong>Provenance confounding.</strong> Positive and negative classes derive from different curation sources, and confidence tier is class-redundant. The model can exploit any correlated source artifact that survives preprocessing.</li>
+  <li><strong>Predicted-input uncertainty.</strong> Most structures and metal sites are computational predictions. Pocket extraction, side-chain geometry, truncation, and local confidence constrain the reliability of downstream scores.</li>
+  <li><strong>Local representation.</strong> The model emphasizes a 12 Å pocket and does not model the complete catalytic reaction, substrate access dynamics, oligomerization, expression, or genomic context.</li>
+  <li><strong>Uncalibrated output.</strong> Neighbor fractions and seed votes are ranking statistics. They must not be interpreted as probabilities of enzymatic activity or resistance.</li>
+</ol>
+
+<h2>10. Publication-ready conclusion</h2>
+
+<p>We established a leakage-audited, structure-aware metric-learning framework for prioritizing putative cryptic MBLs. The production representation combines explicit pocket connectivity and metal-centered chemical geometry with frozen ESM-2 residue embeddings, and the final eight-seed ensemble was trained on the complete labeled collection. Component-level evaluation showed that task-specific graph learning can improve B3 transfer and that a structure-only branch contains reproducible predictive signal. However, the graph ensemble remained markedly less sensitive than raw ESM-2 retrieval when transferring from a small B3-dominated training set to the major B1/B2 component. The evidence therefore supports a dual-signal discovery strategy rather than replacement of evolutionary retrieval by a single learned classifier. Production calls should be reported with seed agreement, raw-ESM-2 support, nearest-neighbor provenance, and explicit distance from known components, and should be treated as hypotheses for biochemical validation rather than annotations of resistance function.</p>
+
+<h2>11. Reproducibility statement</h2>
+
+<p>The frozen model is named <span class="mono">new_graph_flat_production</span>. It comprises eight checkpoints under <span class="mono">models/production/seed_0–seed_7/</span>, each trained for 60 epochs with margin 0.3 and input dimension 1,320. The production manifest is <span class="mono">reports/production_model_manifest.json</span>; it records the training-data SHA-256 hash, checkpoint/reference-bank hashes, ESM-2 checkpoint, feature configuration, clean freeze state, and inference rule. The manifest records freeze commit <span class="mono">0465636a744fb0d4f367c6fe9e24ddcbcdd3fa4c</span>. Corrected panel predictions are stored in <span class="mono">data/per_seed_evaluation.json</span>, the training-free comparator in <span class="mono">data/mean_esm2_baseline.json</span>, and audited challenge definitions and similarity checks under <span class="mono">reports/</span>.</p>
+
+<h2>References</h2>
+
+<p class="ref">1. Alcock BP, Huynh W, Chalil R, et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database. <em>Nucleic Acids Research</em>. 2023;51(D1):D690–D699. <a href="https://doi.org/10.1093/nar/gkac920">doi:10.1093/nar/gkac920</a>.</p>
+
+<p class="ref">2. Berglund F, Marathe NP, Österlund T, et al. Identification of 76 novel B1 metallo-β-lactamases through large-scale screening of genomic and metagenomic data. <em>Microbiome</em>. 2017;5:134. <a href="https://doi.org/10.1186/s40168-017-0353-8">doi:10.1186/s40168-017-0353-8</a>.</p>
+
+<p class="ref">3. Gudeta DD, Bortolaia V, Pollini S, et al. Expanding the repertoire of carbapenem-hydrolyzing metallo-β-lactamases by functional metagenomic analysis of soil microbiota. <em>Frontiers in Microbiology</em>. 2016;7:1985. <a href="https://doi.org/10.3389/fmicb.2016.01985">doi:10.3389/fmicb.2016.01985</a>.</p>
+
+<p class="ref">4. Lin Z, Akin H, Rao R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. <em>Science</em>. 2023;379:1123–1130. <a href="https://doi.org/10.1126/science.ade2574">doi:10.1126/science.ade2574</a>.</p>
+
+<p class="ref">5. Dürr SL, Levy A, Rothlisberger U. Metal3D: a general deep learning framework for accurate metal ion location prediction in proteins. <em>Nature Communications</em>. 2023;14:2713. <a href="https://doi.org/10.1038/s41467-023-37870-6">doi:10.1038/s41467-023-37870-6</a>.</p>
+
+<p class="ref">6. Le Guilloux V, Schmidtke P, Tuffery P. Fpocket: an open source platform for ligand pocket detection. <em>BMC Bioinformatics</em>. 2009;10:168. <a href="https://doi.org/10.1186/1471-2105-10-168">doi:10.1186/1471-2105-10-168</a>.</p>
+
+<p class="ref">7. Steinegger M, Söding J. MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets. <em>Nature Biotechnology</em>. 2017;35:1026–1028. <a href="https://doi.org/10.1038/nbt.3988">doi:10.1038/nbt.3988</a>.</p>
+
+<p class="ref">8. van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein structure search with Foldseek. <em>Nature Biotechnology</em>. 2024;42:243–246. <a href="https://doi.org/10.1038/s41587-023-01773-0">doi:10.1038/s41587-023-01773-0</a>.</p>
+
+<p class="ref">9. Fey M, Lenssen JE. Fast graph representation learning with PyTorch Geometric. In: <em>ICLR Workshop on Representation Learning on Graphs and Manifolds</em>. 2019. <a href="https://arxiv.org/abs/1903.02428">arXiv:1903.02428</a>.</p>
+
+<p class="ref">10. Schroff F, Kalenichenko D, Philbin J. FaceNet: a unified embedding for face recognition and clustering. In: <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2015:815–823. <a href="https://doi.org/10.1109/CVPR.2015.7298682">doi:10.1109/CVPR.2015.7298682</a>.</p>
+
+<div class="footer-note">
+  Prepared directly from the frozen repository configuration and corrected per-seed evaluation artifacts. Before journal submission, author names, affiliations, data/code availability statements, software versions, and the target journal’s reference style should be added.
+</div>
+
+</body>
+</html>

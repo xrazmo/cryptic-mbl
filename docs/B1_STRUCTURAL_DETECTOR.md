@@ -1,5 +1,10 @@
 # Reference-independent B1 structural detector
 
+> **Final status (2026-08-20):** frozen as a canonical-B1 structural
+> confirmation method. The project did not demonstrate recovery of a known B1
+> missed by the correctly thresholded fARGene B1 HMM, and Atlas-scale screening
+> is not recommended from this repository.
+
 ## Scientific question
 
 This branch tests a deliberately narrow hypothesis: can a protein structure
@@ -162,18 +167,19 @@ threshold.
 The structural model outperforms the panel-specific mean-ESM2 nearest-neighbor
 baseline on this B1 task and recovers all of that baseline's misses. It does
 not outperform fARGene's B1 HMM on the available known positives. The present
-dataset therefore establishes a strong sequence-independent and
-reference-independent structural detector, but not yet prospective discovery
-of a biochemically verified fARGene-negative B1 enzyme.
+dataset therefore establishes a strong sequence-homology-independent and
+reference-independent structural confirmation method. It does not establish
+prospective discovery of a biochemically verified fARGene-negative B1 enzyme,
+and substantial unique recall beyond a modern B1 HMM appears unlikely.
 
 That distinction is crucial. This method is not another HMM wrapper: its score
 cannot change when non-donor sequence residues are replaced while coordinates
 and donor chemistry remain fixed. It can in principle recognize a sequence
-outside an HMM boundary. The missing evidence is a real, correctly folded,
-HMM-negative candidate followed by biochemical validation—not another random
-train/test split of known families.
+outside an HMM boundary. The scientifically defensible final scope is
+canonical-B1 architecture confirmation and structural/sequence disagreement
+review, not primary rare-ARG discovery.
 
-No Atlas processing is performed on this branch.
+No Atlas processing was performed, and none is recommended from this branch.
 
 ## Reproduction
 

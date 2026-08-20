@@ -1,0 +1,3 @@
+# Minimal dependencies for the frozen full-chain B1 structural scorer.
+biotite>=0.40
+numpy>=1.24

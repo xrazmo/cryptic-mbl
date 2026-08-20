@@ -5,7 +5,7 @@ DCH (Asp-Cys-His) structural-support channel for production scoring:
 does this candidate have a cysteine sulfur coordinating one of its
 predicted metal sites, the way canonical B1/B2 MBLs do? This is the
 mechanistic rule found in the coordination-fingerprint work
-(reports/coordination_fingerprint_findings.md) -- 0.948 sensitivity /
+(archive/rejected_structure_experiments/reports/coordination_fingerprint_findings.md) -- 0.948 sensitivity /
 0.983 specificity on the B1_B2_transfer held-out panel, operating on
 the corrected data/pockets_v2 (post metal-site-corruption fix).
 

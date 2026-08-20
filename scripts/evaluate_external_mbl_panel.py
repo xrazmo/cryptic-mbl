@@ -17,7 +17,7 @@ from pathlib import Path
 import numpy as np
 
 from b1_structural_model import load_b1_template
-from esm2_embed import THREE_TO_ONE
+from sequence_constants import THREE_TO_ONE
 from metal_independent_b1 import MODIFIED_CYSTEINE_RESNAMES, score_without_predicted_metals
 from utils import get_logger, load_structure
 

@@ -37,7 +37,7 @@ import torch
 
 from utils import get_logger, load_structure, PocketSubgraph
 from graph_construction import collapse_to_residue_level
-import data_assembly
+from sequence_constants import THREE_TO_ONE
 
 log = get_logger(__name__)
 
@@ -45,14 +45,6 @@ MODEL_NAME = "esm2_t33_650M_UR50D"
 REPR_LAYER = 33
 ESM2_DIM = 1280
 MAX_LENGTH_DEFAULT = 1022  # ESM2 positional embedding limit is 1024 incl. BOS/EOS
-
-THREE_TO_ONE = {
-    "ALA": "A", "ARG": "R", "ASN": "N", "ASP": "D", "CYS": "C", "GLN": "Q",
-    "GLU": "E", "GLY": "G", "HIS": "H", "ILE": "I", "LEU": "L", "LYS": "K",
-    "MET": "M", "PHE": "F", "PRO": "P", "SER": "S", "THR": "T", "TRP": "W",
-    "TYR": "Y", "VAL": "V",
-}
-
 
 def load_model(device: str):
     import esm
@@ -174,6 +166,11 @@ def embed_sequence(model, batch_converter, device: str, sequence: str) -> np.nda
 
 
 def main():
+    # Needed only by this historical embedding CLI; active external-panel
+    # evaluation can reuse sequence constants without importing the archived
+    # raw-data/Metal3D assembly pipeline.
+    import data_assembly
+
     p = argparse.ArgumentParser()
     p.add_argument("--manifest", required=True, type=Path)
     p.add_argument("--raw-dir", required=True, type=Path)

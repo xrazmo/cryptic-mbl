@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "project_status": "concluded",
+  "sealed_on": "2026-08-20",
+  "branch": "feature/b1-structural-detector",
+  "sealed_from_commit": "5d3decf",
+  "recommended_method": "metal_independent_b1_pharmacophore_v1",
+  "primary_output": "result.architecture_call",
+  "atlas_screening_recommended": false,
+  "scientific_scope": "canonical B1 structural architecture confirmation",
+  "verification": {
+    "unit_tests": "9 passed",
+    "single_structure_smoke_test": {
+      "structure": "data/external_experimental_mbl/chains/1BMC.pdb",
+      "architecture_call": true,
+      "full_pose_call": true,
+      "pharmacophore_rmsd": 0.5063
+    },
+    "principal_evaluation_reproduced": true,
+    "external_panel_reproduced": true,
+    "threshold_sweep_reproduced": true
+  },
+  "sha256": {
+    "scripts/metal_independent_b1.py": "e5737357308754751afc55839fc6554fcfa77c820188b0de040e59b3c5312cb4",
+    "scripts/b1_structural_model.py": "9511977adf728724456329feb16084a4a6c9c4b55ffd1c5e07498f777ad0ff6c",
+    "scripts/catalytic_feasibility.py": "9c02a5b61a271054b7b76ea13f0da250f8363eb0ea4c0c6e9048a986751a694f",
+    "scripts/structural_chemistry.py": "1cb2c4788890b28bef517625b0e77852938715cef59aeebeef61994ee02dfdd6",
+    "data/catalytic_templates/B1_NDM1_hydrolyzed_meropenem_4EYL.npz": "f2fdfdd13f33daa77d36505887e781b3a068de5c40e987bb6903aca9cc716646",
+    "configs/manifest.csv": "8cbe79eec63ba459ab37d30a8cf1ab48ff664549cc0f75de3d67a055e3ca4cad",
+    "configs/external_experimental_mbl_panel.json": "e1f9e70589453ffda118f6a1432e3560c39c29bdc6e6b45307cdb8f239d08cb7",
+    "data/challenge_splits.json": "b551c4e1f1522e51bed91c319e3a507a7597274dc3d4b833b9948d484b25c703",
+    "data/similarity_audit.json": "8efcd92afb2ae536bd0eeeb1ef98c856e1ff6ea987e9bb1108b88137864d2080",
+    "reports/metal_independent_b1_evaluation.json": "c681f6310e2343dce27add7fd8e695e812d75024bd0eb1c6378925c6dbb80a3a",
+    "reports/external_experimental_mbl_panel.json": "a9da8999b6ffc25cf16bc07189180d32bd1abe51e84af9673a46eb0e5814929e",
+    "reports/metal_independent_b1_threshold_sensitivity.json": "6f3803ad3dfd4072cbb6a8adcea80e6e8d95c0c4055a6cbb53ab39df138115f8",
+    "docs/PROJECT_CLOSURE.md": "7c67d4325d21bf125d944a988660cb09efc74ab0f0c20dd97e635e211b8cdeab",
+    "docs/METHODS_AND_RESULTS.md": "e49e426e95e7a39899ed7c9e93a823ee2a667005a14ac97a826c6b32432c5f68",
+    "docs/REPRODUCIBILITY.md": "3013d7c16f3fe657a6e3c7ad359dc74d1a6f2f06b696b0d1173984710973fe63"
+  },
+  "note": "sealed_from_commit records the last scientific-result commit; this manifest is included in the repository-closure commit."
+}
