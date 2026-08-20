@@ -85,17 +85,43 @@ def accept_by_hash(accession: str, accept_rate: float) -> bool:
     return (int(digest[:8], 16) / 0xFFFFFFFF) < accept_rate
 
 
+def make_session() -> requests.Session:
+    """A single mid-scan network hiccup (observed: a 60s connect timeout to
+    rest.uniprot.org) previously killed the entire multi-hundred-page scan
+    with nothing saved. Retries transient failures with backoff instead of
+    crashing the whole run over one bad request."""
+    from requests.adapters import HTTPAdapter
+    from urllib3.util.retry import Retry
+
+    session = requests.Session()
+    retry = Retry(
+        total=6, backoff_factor=2.0,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+    )
+    session.mount("https://", HTTPAdapter(max_retries=retry))
+    return session
+
+
 def scan_uniprot(
-    length_min: int, length_max: int, target_count: int, max_scan: int, accept_rate: float, excluded: set[str],
+    length_min: int, length_max: int, target_count: int, max_scan: int, accept_rate: float,
+    excluded: set[str], checkpoint_path: Path,
 ) -> list[dict]:
     query = f"reviewed:false AND taxonomy_id:2 AND length:[{length_min} TO {length_max}]"
     fields = "accession,sequence,organism_name,protein_name"
+    session = make_session()
+
     candidates, cursor, n_scanned = [], None, 0
+    if checkpoint_path.exists():
+        state = json.loads(checkpoint_path.read_text())
+        candidates, cursor, n_scanned = state["candidates"], state["cursor"], state["n_scanned"]
+        log.info(f"Resuming scan from checkpoint: {n_scanned} scanned, {len(candidates)} accepted so far")
+
     while n_scanned < max_scan and len(candidates) < target_count:
         params = {"query": query, "format": "json", "size": 500, "fields": fields}
         if cursor:
             params["cursor"] = cursor
-        resp = requests.get(UNIPROT_SEARCH_URL, params=params, timeout=60)
+        resp = session.get(UNIPROT_SEARCH_URL, params=params, timeout=120)
         resp.raise_for_status()
         data = resp.json()
         for entry in data["results"]:
@@ -120,9 +146,10 @@ def scan_uniprot(
         if 'rel="next"' in link:
             next_url = link.split(";")[0].strip("<> ")
             cursor = dict(p.split("=") for p in next_url.split("?", 1)[1].split("&")).get("cursor")
+        checkpoint_path.write_text(json.dumps({"candidates": candidates, "cursor": cursor, "n_scanned": n_scanned}))
         if not cursor:
             break
-        if n_scanned % 25000 < 500:
+        if n_scanned % 5000 < 500:
             log.info(f"  scanned ~{n_scanned}, accepted {len(candidates)} so far")
     log.info(f"Scanned {n_scanned} raw UniProt hits, accepted {len(candidates)} candidates")
     return candidates
@@ -188,8 +215,10 @@ def main():
     excluded = load_exclusion_set(args.manifest, args.catalog)
     log.info(f"Loaded {len(excluded)} corpus accessions to exclude")
 
+    checkpoint_path = args.out_dir / "scan_checkpoint.json"
     candidates = scan_uniprot(
         args.length_min, args.length_max, args.target_count, args.max_scan, args.accept_rate, excluded,
+        checkpoint_path,
     )
 
     log.info(f"Fetching AlphaFold structures for {len(candidates)} candidates ({args.workers} workers)...")
